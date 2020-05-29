@@ -1,0 +1,17 @@
+<% @composers.each do |composer| %>
+  <p>Name: <%= composer.name %></p>
+  <p>Biography: <%= composer.biography %></p>
+  <p>Rating: <%= composer.rating %></p>
+  <p>Pieces:</p>
+  <% composer.pieces.each do |piece| %>
+    <p>Name: <%= piece.name %></p>
+    <p>Level: <%= piece.level.name %></p>
+    <p>Description: <%= piece.description %></p>
+    <p>Rating: <%= piece.rating %></p>
+    <p>----------------</p>
+  <% end %>
+  <p>-------------------------</p>
+<% end %>
+<p>------------------------------------------</p>
+<p><%= link_to "Home", root_path %></p>
+<p><%= link_to "New composer", new_composer_path %></p>

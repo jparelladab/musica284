@@ -1,0 +1,9 @@
+<% @levels.each do |level| %>
+  <p><%= level.name %></p>
+  <p><%= level.number %></p>
+  <p><%= level.description %></p>
+  <p>-------------------------</p>
+<% end %>
+<p>-------------------------------------</p>
+<p><%= link_to "Home", root_path %></p>
+<p><%= link_to "New level", new_level_path %></p>
