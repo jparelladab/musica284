@@ -28,6 +28,13 @@ class ComposersController < ApplicationController
   end
 
   def update
+    if @composer.update(composer_params)
+      flash[:notice] = "composer successfully updated"
+      redirect_to composer_path(@composer)
+    else
+      flash[:notice] = "Sorry, an error has occurred."
+      render :edit
+    end
   end
 
   def destroy
