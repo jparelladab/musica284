@@ -36,7 +36,7 @@ class ComposersController < ApplicationController
   private
 
   def composer_params
-    params.require(:composer).permit(:name, :biography, :rating)
+    params.require(:composer).permit(:name, :biography, :rating, :photo)
   end
 
   def set_composer

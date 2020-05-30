@@ -1,6 +1,9 @@
 <p><%= @composer.name %></p>
 <p><%= @composer.biography %></p>
 <p><%= @composer.rating %></p>
+<% if @composer.photo.attached? %>
+  <p><%= cl_image_tag @composer.photo.key, height: 300, width: 400, crop: :fill %></p>
+<% end %>
 <p>-------------------------</p>
 <p><%= link_to "Home", root_path %></p>
 <p><%= link_to "New composer", new_composer_path %></p>

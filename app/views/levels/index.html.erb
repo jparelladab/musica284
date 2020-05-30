@@ -2,6 +2,9 @@
   <p><%= level.name %></p>
   <p><%= level.number %></p>
   <p><%= level.description %></p>
+  <% if level.photo.attached? %>
+    <p><%= cl_image_tag level.photo.key, height: 300, width: 400, crop: :fill %></p>
+  <% end %>
   <p>-------------------------</p>
 <% end %>
 <p>-------------------------------------</p>

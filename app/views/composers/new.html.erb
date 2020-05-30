@@ -5,6 +5,7 @@
     <%= f.input :name, :as => :string%>
     <%= f.input :biography, :as => :string %>
     <%= f.input :rating, collection: (1..5).to_a, label: "Rate this composer" %>
+    <%= f.input :photo, as: :file %>
     <%= f.submit "Add Composer" %>
   <% end %>
 </div>

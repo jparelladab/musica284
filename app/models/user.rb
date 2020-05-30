@@ -6,4 +6,5 @@ class User < ApplicationRecord
   has_many :pieces
   has_many :composers, through: :pieces
   has_many :subjects
+  has_one_attached :photo
 end
