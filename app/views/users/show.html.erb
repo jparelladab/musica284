@@ -10,7 +10,7 @@
   <% if @user.photo.attached? %>
     <%= cl_image_tag @user.photo.key %>
   <% else %>
-    <%= image_tag("avatar", alt: "Your avatar picture") %>
+    <%=  cl_image_tag("nqeWdH9m2xAE9MhopqXgeZFJ.jpg") %>
   <% end %>
 
   <p> <%= link_to "Edit your profile", edit_user_path(current_user) %></p>
