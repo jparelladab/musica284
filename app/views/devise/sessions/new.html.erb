@@ -1,2 +1,20 @@
-<p><%= render partial: 'devise/shared/login_modal ' %></p>
+<h2>Log in</h2>
+
+<%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+    <%= f.error_notification %>
+    <%= f.input :email,
+                required: false,
+                autofocus: true,
+                input_html: { autocomplete: "email" } %>
+    <%= f.input :password,
+                required: false,
+                input_html: { autocomplete: "current-password" } %>
+
+    <%= f.button :submit, "Sign in", class: "btn-primary" %>
+
+    <%= f.button :button, "Cancel", type: "reset", class: "btn-outline-secondary" %>
+
+    <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+
+<% end %>
 <p><%= render partial: 'devise/shared/links' %></p>
