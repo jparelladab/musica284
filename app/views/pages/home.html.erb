@@ -2,73 +2,20 @@
 
 <main role="main">
 
-  <section class="jumbotron text-center">
+  <section>
     <div class="container">
       <h1>Musical 284</h1>
       <p class="lead text-muted">Connect with your music community. Enhance your music skills. Assess your level. Share and keep track of your progress. Discover exciting tutorials. Unlock and play musical games. And much more.</p>
-      <p>
-        <a href="#" class="btn btn-primary my-2">Start now</a>
-      </p>
     </div>
   </section>
 
-  <div class="album py-5 bg-light">
-    <div class="container">
-
-      <div class="row">
-        <div class="col-md-4">
-          <div class="card mb-4 shadow-sm">
-            <img class="card-img-top" width="100%" height="225" src="https://source.unsplash.com/random/500x500">
-            <div class="card-body">
-              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-              <div class="d-flex justify-content-between align-items-center">
-                <div class="btn-group">
-                  <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                  <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
-                </div>
-                <small class="text-muted">9 mins</small>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="card mb-4 shadow-sm">
-            <img class="bd-placeholder-img card-img-top" width="100%" height="225" src="https://source.unsplash.com/random/500x501" role="img">
-            <div class="card-body">
-              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-              <div class="d-flex justify-content-between align-items-center">
-                <div class="btn-group">
-                  <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                  <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
-                </div>
-                <small class="text-muted">9 mins</small>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="card mb-4 shadow-sm">
-            <img class="bd-placeholder-img card-img-top" width="100%" height="225" src="https://source.unsplash.com/random/500x502" role="img">
-            <div class="card-body">
-              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-              <div class="d-flex justify-content-between align-items-center">
-                <div class="btn-group">
-                  <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                  <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
-                </div>
-                <small class="text-muted">9 mins</small>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+  <div class="home-options container">
+    <p><%= link_to "My profile", user_path(current_user) %></p>
+    <p><%= link_to "New composer", new_composer_path %></p>
+    <p><%= link_to "New piece", new_piece_path %></p>
+    <p><%= link_to "New level", new_level_path %></p>
+    <p><%= link_to "View index of composers", composers_path %></p>
+    <p><%= link_to "View index of levels", levels_path %></p>
+    <p><%= link_to "View index of pieces", pieces_path %></p>
+    <p><%= link_to :logout, destroy_user_session_path, method: :delete %></p>
   </div>
-</main>
-<p><%= link_to "New composer", new_composer_path %></p>
-<p><%= link_to "New piece", new_piece_path %></p>
-<p><%= link_to "New level", new_level_path %></p>
-<p><%= link_to "View index of composers", composers_path %></p>
-<p><%= link_to "View index of levels", levels_path %></p>
-<p><%= link_to "View index of pieces", pieces_path %></p>
-<p><%= link_to :logout, destroy_user_session_path, method: :delete %></p>

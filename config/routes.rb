@@ -15,4 +15,5 @@ Rails.application.routes.draw do
   resources :schools
   resources :subjects
   resources :levels
+  resources :users
 end

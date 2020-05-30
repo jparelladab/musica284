@@ -1,0 +1,18 @@
+<div class="container">
+  <p>First Name: <%= @user.first_name %></p>
+  <p>Last Name: <%= @user.last_name %></p>
+  <p>Email: <%= @user.email %></p>
+  <p>Instrument: <%= @user.instrument %></p>
+  <p>Favorite Composer: <%= @user.favorite_composer %></p>
+  <p>Occupation: <%= @user.occupation %></p>
+  <p>Address: <%= @user.address %></p>
+  <p>Gender: <%= @user.gender %></p>
+  <% if @user.photo.attached? %>
+    <%= cl_image_tag @user.photo.key %>
+  <% else %>
+    <%= image_tag("avatar", alt: "Your avatar picture") %>
+  <% end %>
+
+  <p> <%= link_to "Edit your profile", edit_user_path(current_user) %></p>
+  </%>
+</div>
