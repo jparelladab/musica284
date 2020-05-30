@@ -1,3 +1,51 @@
 // Place all the styles related to the Composers controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.composer-show-container {
+  margin: 10px auto;
+  border: solid 2px;
+  width: 150em;
+  background-color: yellow;
+  width: 20rem;
+  height: 20em;
+  border-radius: 2px;
+}
+
+.composer-show-container p {
+  text-align: center;
+}
+
+.composer-show-photo-container {
+  width: 100%;
+  height: 50%;
+}
+
+.composer-show-photo-container img{
+  width: 100%;
+  height: 100%;
+}
+
+.composer-index-container {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  margin: 10px;
+  grid-row-gap: 10px;
+}
+
+.composer-index-card {
+  border: solid 2px;
+  width: 150em;
+  background-color: yellow;
+  width: 20rem;
+  height: 20em;
+  border-radius: 2px;
+}
+
+.composer-index-card-photo-container {
+  width: 100%;
+  height: 50%;
+}
+.composer-index-card-photo-container img{
+  width: 100%;
+  height: 100%;
+}

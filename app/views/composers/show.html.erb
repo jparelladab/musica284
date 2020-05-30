@@ -1,9 +1,19 @@
-<p><%= @composer.name %></p>
-<p><%= @composer.biography %></p>
-<p><%= @composer.rating %></p>
-<% if @composer.photo.attached? %>
-  <p><%= cl_image_tag @composer.photo.key, height: 300, width: 400, crop: :fill %></p>
-<% end %>
-<p>-------------------------</p>
-<p><%= link_to "Home", root_path %></p>
-<p><%= link_to "New composer", new_composer_path %></p>
+<div class="composer-show-container">
+  <div class="composer-show-photo-container">
+    <% if @composer.photo.attached? %>
+      <%= cl_image_tag @composer.photo.key %>
+    <% else %>
+      <%= image_tag("san_francisco") %>
+  <% end %>
+  </div>
+  <p><%= @composer.name %></p>
+  <p><%= @composer.biography %></p>
+  <p><%= @composer.rating %></p>
+  <p>-------------------------</p>
+  <p>Pieces:</p>
+  <% @composer.pieces.each do |piece| %>
+    <p><%= link_to piece.name, piece_path(piece) %></p>
+  <% end %>
+  <p><%= link_to "Home", root_path %></p>
+  <p><%= link_to "New composer", new_composer_path %></p>
+</div>
