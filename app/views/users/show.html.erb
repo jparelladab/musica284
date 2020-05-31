@@ -15,7 +15,12 @@
       <p>Occupation: <%= @user.occupation %></p>
       <p>Address: <%= @user.address %></p>
       <p>Gender: <%= @user.gender %></p>
-      <p> <%= link_to "Edit your profile", edit_user_path(current_user) %></p>
+      <% if @user.id == current_user.id %>
+        <p><%= link_to "Edit your profile", edit_user_path(current_user) %></p>
+      <% end %>
+      <% if @user.id != current_user.id %>
+        <%= link_to "Follow this user", user_follows_path(@user), method: 'post' %>
+      <% end %>
     </div>
     </%>
   </div>

@@ -5,6 +5,7 @@
   </div>
   <div class="home-options">
     <div>
+      <p>Welcome <%= current_user.first_name %> </p>
       <p><%= link_to "My profile", user_path(current_user) %></p>
       <p><%= link_to :logout, destroy_user_session_path, method: :delete %></p>
     </div>
@@ -27,6 +28,19 @@
     </div>
   </div>
   <div class="home-friends-list">
-    My Friends
+    <div class="friend-card">
+      <p>Followed users:</p>
+        <% @followed_users.each do |fol| %>
+      <p><%= fol.first_name %></p>
+      <% end %>
+    </div>
+  </div>
+  <div class="home-friends-list">
+    <div class="friend-card">
+      <p>All users:</p>
+      <% @all_users.each do |user| %>
+        <%= link_to user.first_name, user_path(user) %>
+      <% end %>
+    </div>
   </div>
 </div>

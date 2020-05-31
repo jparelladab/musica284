@@ -15,5 +15,9 @@ Rails.application.routes.draw do
   resources :schools
   resources :subjects
   resources :levels
+  resources :users, only: [:show] do
+    resources :follows, only: [:create]
+  end
   resources :users
+  resources :follows, only: [:index, :destroy]
 end
