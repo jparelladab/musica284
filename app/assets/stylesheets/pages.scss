@@ -8,9 +8,35 @@ footer p {
   margin-bottom: .25rem;
 }
 
+.home-title {
+  width: 100%;
+  height: 33%;
+  background-color: orange;
+  padding: 2% 5%;
+}
 .home-options {
+  display: flex;
+  justify-content: space-between;
   background-color: lightgreen;
+  height: 33%;
+  width: 100%;
+  padding: 2% 5%;
 }
 .home-options p{
   text-align: left;
 }
+
+.home-friends-list {
+  background-color: yellow;
+  height: 33%;
+  width: 100%;
+}
+
+.home-container {
+  padding: 5vw;
+  width: 100vw;
+  height: 100vh;
+  background-image: url('https://media.giphy.com/media/YWbM6nDnBo8X7WIKpl/giphy.gif');
+
+}
+

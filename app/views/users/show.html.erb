@@ -1,18 +1,27 @@
-<div class="container">
-  <p>First Name: <%= @user.first_name %></p>
-  <p>Last Name: <%= @user.last_name %></p>
-  <p>Email: <%= @user.email %></p>
-  <p>Instrument: <%= @user.instrument %></p>
-  <p>Favorite Composer: <%= @user.favorite_composer %></p>
-  <p>Occupation: <%= @user.occupation %></p>
-  <p>Address: <%= @user.address %></p>
-  <p>Gender: <%= @user.gender %></p>
-  <% if @user.photo.attached? %>
-    <%= cl_image_tag @user.photo.key %>
-  <% else %>
-    <%=  cl_image_tag("nqeWdH9m2xAE9MhopqXgeZFJ.jpg") %>
-  <% end %>
-
-  <p> <%= link_to "Edit your profile", edit_user_path(current_user) %></p>
-  </%>
+<div class="container-profile">
+  <div class="profile-info">
+    <div class="profile-info-picture">
+      <% if @user.photo.attached? %>
+        <%= cl_image_tag @user.photo.key, style: "width: 100%; height:100%;" %>
+      <% else %>
+        <%=  cl_image_tag("nqeWdH9m2xAE9MhopqXgeZFJ.jpg") %>
+      <% end %>
+    </div>
+    <div class="profile-info-data">
+      <p>Name: <%= @user.first_name %> <%= @user.last_name %></p>
+      <p>Email: <%= @user.email %></p>
+      <p>Instrument: <%= @user.instrument %></p>
+      <p>Favorite Composer: <%= @user.favorite_composer %></p>
+      <p>Occupation: <%= @user.occupation %></p>
+      <p>Address: <%= @user.address %></p>
+      <p>Gender: <%= @user.gender %></p>
+      <p> <%= link_to "Edit your profile", edit_user_path(current_user) %></p>
+    </div>
+    </%>
+  </div>
+  <div class="profile-activity">
+      <div class="my-homework"></div>
+      <div class="my-pieces"></div>
+      <div class="my-recordings"></div>
+  </div>
 </div>

@@ -1,21 +1,32 @@
-
-
-<main role="main">
-
-  <section>
-    <div class="container">
+<div class="home-container">
+  <div class="home-title">
       <h1>Musical 284</h1>
       <p class="lead text-muted">Connect with your music community. Enhance your music skills. Assess your level. Share and keep track of your progress. Discover exciting tutorials. Unlock and play musical games. And much more.</p>
-    </div>
-  </section>
-
-  <div class="home-options container">
-    <p><%= link_to "My profile", user_path(current_user) %></p>
-    <p><%= link_to "New composer", new_composer_path %></p>
-    <p><%= link_to "New piece", new_piece_path %></p>
-    <p><%= link_to "New level", new_level_path %></p>
-    <p><%= link_to "View index of composers", composers_path %></p>
-    <p><%= link_to "View index of levels", levels_path %></p>
-    <p><%= link_to "View index of pieces", pieces_path %></p>
-    <p><%= link_to :logout, destroy_user_session_path, method: :delete %></p>
   </div>
+  <div class="home-options">
+    <div>
+      <p><%= link_to "My profile", user_path(current_user) %></p>
+      <p><%= link_to :logout, destroy_user_session_path, method: :delete %></p>
+    </div>
+    <div>
+      <p><%= link_to "New composer", new_composer_path %></p>
+      </%>
+      <p><%= link_to "New piece", new_piece_path %></p>
+      </%>
+      <p><%= link_to "New level", new_level_path %></p>
+      </%>
+    </div>
+    <div>
+      <p><%= link_to "View index of composers", composers_path %></p>
+      </%>
+      <p><%= link_to "View index of levels", levels_path %></p>
+      </%>
+      <p><%= link_to "View index of pieces", pieces_path %></p>
+      </%>
+      </%>
+    </div>
+  </div>
+  <div class="home-friends-list">
+    My Friends
+  </div>
+</div>
