@@ -1,36 +1,38 @@
 class FollowsController < ApplicationController
 
   def index
-    @follows = Follow.all
-  end
-
-  def show
-    @follow = follow.find(params[:id])
-  end
-
-  def new
+    @all_users = User.all
+    @all_follows = Follow.all
+    @my_followed_users = current_user.followings
+    @not_followed_users = User.all - @my_followed_users - [current_user]
   end
 
   def create
-    raise
-    @new_follow = Follow.new(follower_id: current_user.id, followed_user_id: params[:user_id])
+    @new_follow = Follow.new(follower_id: current_user.id, followed_user_id: params[:followed])
     if @new_follow.save
-      flash[:notice] = "New fellow foodie created!"
-      redirect_to root_path
+      flash[:notice] = "New Follow created"
+      redirect_to follows_path
     else
-      flash[:notice] = "Sorry, an error has occurred. Please try again later or contact the MangeToo team."
-      render :index
+      flash[:notice] = "Sorry, an error has occurred."
+      redirect_to follows_path
     end
   end
 
-  def edit
-  end
-
-  def update
-
-  end
-
   def destroy
+    @user = User.find(params[:id])
+    @follow = Follow.find {|f| f.follower_id == current_user.id && f.followed_user_id == @user.id}
+    if @follow.destroy
+      flash[:notice] = "Follow successfully removed."
+      redirect_to follows_path
+    else
+      flash[:notice] = "Sorry, an error has occurred."
+      redirect_to follows_path
+    end
   end
 
+  private
+
+  def follow!(followed)
+    Follow.create(follower_id: current_user.id, followed_user_id: followed.id)
+  end
 end

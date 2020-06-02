@@ -1,0 +1,32 @@
+<div class="container">
+    The users I follow:
+  <div class="followed-users-container follows-container">
+    <% @my_followed_users.each do |usr| %>
+      <div style="background-color: yellow;">
+        <% if usr.photo.attached? %>
+          <%= usr.photo.key %>
+          <% else %>
+            <%= cl_image_tag("v1574354266/mWBrvXmf4zHKXDtWQyBgPiLt.jpg") %>
+          <% end %>
+          <p><%= usr.first_name %></p>
+          <p><%= button_to("Unfollow", follow_path(usr), method: :delete )%></p>
+      </div>
+    <% end %>
+  </div>
+  Users I don't follow:
+  <div class="followed-users-container follows-container">
+    <% @not_followed_users.each do |usr| %>
+      <div style="background-color: yellow;">
+        <% if usr.photo.attached? %>
+          <%= usr.photo.key %>
+          <% else %>
+            <%= cl_image_tag("v1574354266/mWBrvXmf4zHKXDtWQyBgPiLt.jpg") %>
+          <% end %>
+          <p><%= usr.first_name %></p>
+          <p><%= button_to "Follow", follows_path, params: {followed: usr}, method: :post %></p>
+      </div>
+    <% end %>
+  </div>
+
+
+</div>

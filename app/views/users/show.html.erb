@@ -18,9 +18,6 @@
       <% if @user.id == current_user.id %>
         <p><%= link_to "Edit your profile", edit_user_path(current_user) %></p>
       <% end %>
-      <% if @user.id != current_user.id %>
-        <%= link_to "Follow this user", user_follows_path(@user), method: 'post' %>
-      <% end %>
     </div>
     </%>
   </div>

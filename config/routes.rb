@@ -10,14 +10,16 @@ Rails.application.routes.draw do
   get 'about', to: 'pages#about'
   get 'contact', to: 'pages#contact'
 
+  #post 'addcomposer/:id', to: 'composers#create', as: :addcomposer
+
   resources :composers
   resources :pieces
   resources :schools
   resources :subjects
   resources :levels
-  resources :users, only: [:show] do
-    resources :follows, only: [:create]
-  end
   resources :users
-  resources :follows, only: [:index, :destroy]
+  resources :follows, only: [:index, :create, :destroy]
+
+  #post 'follows/:id', to: 'follows#follow!', as: :follow_user
+
 end

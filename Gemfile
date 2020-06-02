@@ -68,3 +68,4 @@ gem 'font-awesome-sass', '~> 5.6.1'
 gem 'webpacker'
 gem 'dotenv-rails', groups: [:development, :test]
 gem 'cloudinary', '~> 1.12.0'
+gem 'jquery-rails'
