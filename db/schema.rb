@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_31_181129) do
+ActiveRecord::Schema.define(version: 2020_06_02_231054) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -72,6 +72,13 @@ ActiveRecord::Schema.define(version: 2020_05_31_181129) do
     t.datetime "updated_at", null: false
     t.index ["composer_id"], name: "index_pieces_on_composer_id"
     t.index ["level_id"], name: "index_pieces_on_level_id"
+  end
+
+  create_table "repertoires", id: false, force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "piece_id", null: false
+    t.index ["piece_id", "user_id"], name: "index_repertoires_on_piece_id_and_user_id"
+    t.index ["user_id", "piece_id"], name: "index_repertoires_on_user_id_and_piece_id"
   end
 
   create_table "schools", force: :cascade do |t|

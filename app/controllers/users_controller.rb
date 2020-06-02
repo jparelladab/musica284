@@ -6,6 +6,8 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    @my_followed_users = current_user.followings
+    @not_followed_users = User.all - @my_followed_users - [current_user]
   end
 
   def new

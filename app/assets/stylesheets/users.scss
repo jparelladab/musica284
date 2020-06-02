@@ -46,7 +46,9 @@
   height: 33%;
   widht: 100%;
 }
-.my-recordings {
+.show-my-follows {
+  display: flex;
+  justify-content: space-between;
   background-color: yellow;
   height: 33%;
   widht: 100%;

@@ -23,7 +23,24 @@
   </div>
   <div class="profile-activity">
       <div class="my-homework"></div>
-      <div class="my-pieces"></div>
-      <div class="my-recordings"></div>
+      <div class="my-pieces">
+        <% current_user.pieces.each do |piece| %>
+          <%= piece.name %>
+        <% end %>
+      </div>
+      <div class="show-my-follows">
+        <% @my_followed_users.each do |usr| %>
+          <div>
+            <% if usr.photo.attached? %>
+              <%= usr.photo.key %>
+            <% else %>
+              <%= cl_image_tag("v1574354266/mWBrvXmf4zHKXDtWQyBgPiLt.jpg") %>
+            <% end %>
+            <div style="display: flex; justify-content: space-between;">
+              <%= link_to usr.first_name, user_path(usr) %> <%= button_to("Unfollow", follow_path(usr), method: :delete )%>
+            </div>
+          </div>
+        <% end %>
+      </div>
   </div>
 </div>

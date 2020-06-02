@@ -8,7 +8,7 @@
           <% else %>
             <%= cl_image_tag("v1574354266/mWBrvXmf4zHKXDtWQyBgPiLt.jpg") %>
           <% end %>
-          <p><%= usr.first_name %></p>
+          <p><%= link_to usr.first_name, user_path(usr) %></p>
           <p><%= button_to("Unfollow", follow_path(usr), method: :delete )%></p>
       </div>
     <% end %>
@@ -22,7 +22,7 @@
           <% else %>
             <%= cl_image_tag("v1574354266/mWBrvXmf4zHKXDtWQyBgPiLt.jpg") %>
           <% end %>
-          <p><%= usr.first_name %></p>
+          <p><%= link_to usr.first_name, user_path(usr) %></p>
           <p><%= button_to "Follow", follows_path, params: {followed: usr}, method: :post %></p>
       </div>
     <% end %>

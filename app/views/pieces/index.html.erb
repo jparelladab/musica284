@@ -1,14 +1,18 @@
-<% @pieces.each do |piece| %>
-  <p>Name: <%= piece.name %></p>
-  <p>Composer: <%= piece.composer.name %></p>
-  <p>Level: <%= piece.level.name %></p>
-  <p>Description: <%= piece.description %></p>
-  <p>Rating: <%= piece.rating %></p>
-  <% if piece.photo.attached? %>
-    <p><%= cl_image_tag piece.photo.key, height: 300, width: 400, crop: :fill %></p>
+<div class="container">
+  <% @pieces.each do |piece| %>
+  <div class="container" style="border: 1px solid; background-color: orange;">
+    <p>Name: <%= piece.name %></p>
+    <p>Composer: <%= piece.composer.name %></p>
+    <p>Level: <%= piece.level.name %></p>
+    <p>Description: <%= piece.description %></p>
+    <p>Rating: <%= piece.rating %></p>
+    <% if piece.photo.attached? %>
+      <p><%= cl_image_tag piece.photo.key, height: 300, width: 400, crop: :fill %></p>
+    <% end %>
+  </div>
   <% end %>
-  <p>-------------------------</p>
-<% end %>
-<p>---------------------------------------------</p>
-<p><%= link_to "Home", root_path %></p>
-<p><%= link_to "New piece", new_piece_path %></p>
+  <p>---------------------------------------------</p>
+  <p><%= link_to "Home", root_path %></p>
+  <p><%= link_to "New piece", new_piece_path %></p>
+
+</div>
