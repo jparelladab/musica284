@@ -1,0 +1,13 @@
+<div class="container">
+  <% @user_repertoire.each do |piece| %>
+    <div style="display: flex;">
+      <%= link_to piece.piece.name, piece_path(piece) %>
+    </div>
+    <% end %>
+    <p>Other suggested pieces</p>
+    <% @all_pieces.each do |piece| %>
+      <div style="display: flex;">
+        <%= link_to piece.name, piece_path(piece) %>
+      </div>
+      <% end %>
+</div>

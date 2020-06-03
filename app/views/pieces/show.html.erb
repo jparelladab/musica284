@@ -9,4 +9,5 @@
 <p>------------------------------</p>
 <p><%= link_to "Home", root_path %></p>
 <p><%= link_to "New piece", new_piece_path %></p>
+<p><%= link_to "Edit piece", edit_piece_path(@piece) %></p>
 <p><%= link_to "Delete piece", piece_path, method: :delete, data: { confirm: 'Are you certain you want to delete this?' } %></p>

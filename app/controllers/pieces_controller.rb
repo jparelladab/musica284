@@ -27,6 +27,13 @@ class PiecesController < ApplicationController
   end
 
   def update
+    if @piece.update(piece_params)
+      flash[:notice] = "piece successfully created"
+      redirect_to piece_path(@piece)
+    else
+      flash[:notice] = "Sorry, an error has occurred."
+      redirect_to edit_piece_path(@piece)
+    end
   end
 
   def destroy

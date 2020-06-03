@@ -10,8 +10,6 @@ Rails.application.routes.draw do
   get 'about', to: 'pages#about'
   get 'contact', to: 'pages#contact'
 
-  #post 'addcomposer/:id', to: 'composers#create', as: :addcomposer
-
   resources :composers
   resources :pieces
   resources :schools
@@ -19,7 +17,6 @@ Rails.application.routes.draw do
   resources :levels
   resources :users
   resources :follows, only: [:index, :create, :destroy]
-
-  #post 'follows/:id', to: 'follows#follow!', as: :follow_user
+  resources :repertoires, only: [:index, :create, :destroy]
 
 end

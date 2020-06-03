@@ -1,0 +1,14 @@
+<h1>Edit Piece</h1>
+
+<div class="container">
+  <%= simple_form_for(@piece, url: piece_path, method: :patch) do |f| %>
+    <%= f.input :name, :as => :string%>
+    <%= f.input :composer_id, collection: Composer.all %>
+    <%= f.input :level_id, collection: Level.all %>
+    <%= f.input :description, :as => :string %>
+    <%= f.input :rating, collection: (1..5).to_a, label: "Rate this piece" %>
+    <%= f.input :photo, as: :file %>
+    <%= f.submit "Save" %>
+  <% end %>
+</div>
+
