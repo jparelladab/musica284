@@ -33,7 +33,7 @@ class ComposersController < ApplicationController
       redirect_to composer_path(@composer)
     else
       flash[:notice] = "Sorry, an error has occurred."
-      render :edit
+      redirect_to composers_path
     end
   end
 

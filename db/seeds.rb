@@ -6,6 +6,8 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+
+
 puts "creating seeds"
 test_user_one = User.create(first_name: "Johannes", last_name: "Brahms", email: "johnny@hola.com", password: "password")
 test_user_two = User.create(first_name: "Antonio", last_name: "Vivaldi", email: "anto@hola.com", password: "password")
@@ -76,3 +78,19 @@ Repertoire.create(user_id: 4, piece_id: 1)
 Repertoire.create(user_id: 5, piece_id: 2)
 Repertoire.create(user_id: 5, piece_id: 3)
 Repertoire.create(user_id: 6, piece_id: 4)
+
+puts "creating Subjects"
+Subject.create(name: "Piano I", level_id: 1, description: "This is your first piano course")
+Subject.create(name: "Piano II", level_id: 2, description: "This is your second piano course")
+Subject.create(name: "Piano III", level_id: 3, description: "This is your third piano course")
+Subject.create(name: "Piano IV", level_id: 4, description: "This is your fourth piano course")
+Subject.create(name: "Impro I", level_id: 2, description: "This is your first Impro course")
+Subject.create(name: "Impro II", level_id: 3, description: "This is your second Impro course")
+Subject.create(name: "Impro III", level_id: 4, description: "This is your third Impro course")
+Subject.create(name: "Impro IV", level_id: 5, description: "This is your fourth Impro course")
+Subject.create(name: "Llenguatge I", level_id: 2, description: "This is your first Llenguatge course")
+Subject.create(name: "Llenguatge II", level_id: 3, description: "This is your second Llenguatge course")
+Subject.create(name: "Llenguatge III", level_id: 4, description: "This is your third Llenguatge course")
+Subject.create(name: "Cambra I", level_id: 3, description: "This is your first Cambra course")
+Subject.create(name: "Cambra II", level_id: 4, description: "This is your second Cambra course")
+Subject.create(name: "Cambra III", level_id: 5, description: "This is your third Cambra course")

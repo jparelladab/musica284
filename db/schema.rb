@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_06_03_104548) do
+ActiveRecord::Schema.define(version: 2020_06_03_134955) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -54,27 +54,10 @@ ActiveRecord::Schema.define(version: 2020_06_03_104548) do
     t.index ["follower_id"], name: "index_follows_on_follower_id"
   end
 
-  create_table "level_pieces", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "levels", force: :cascade do |t|
     t.string "name"
     t.integer "number"
     t.string "description"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "levels_pieces", id: false, force: :cascade do |t|
-    t.bigint "level_id", null: false
-    t.bigint "piece_id", null: false
-    t.index ["level_id", "piece_id"], name: "index_levels_pieces_on_level_id_and_piece_id"
-    t.index ["piece_id", "level_id"], name: "index_levels_pieces_on_piece_id_and_level_id"
-  end
-
-  create_table "pieceforlevels", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -107,11 +90,12 @@ ActiveRecord::Schema.define(version: 2020_06_03_104548) do
 
   create_table "subjects", force: :cascade do |t|
     t.string "name"
-    t.integer "level"
+    t.bigint "level_id"
     t.string "description"
     t.integer "rating"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["level_id"], name: "index_subjects_on_level_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -120,8 +104,6 @@ ActiveRecord::Schema.define(version: 2020_06_03_104548) do
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
     t.string "first_name"
     t.string "last_name"
     t.string "biography"
@@ -129,9 +111,22 @@ ActiveRecord::Schema.define(version: 2020_06_03_104548) do
     t.string "instrument"
     t.string "address"
     t.string "occupation"
+    t.bigint "level_id"
     t.string "gender"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["level_id"], name: "index_users_on_level_id"
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+  end
+
+  create_table "workloads", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "subject_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["subject_id"], name: "index_workloads_on_subject_id"
+    t.index ["user_id"], name: "index_workloads_on_user_id"
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"

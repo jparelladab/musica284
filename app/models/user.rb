@@ -8,7 +8,10 @@ class User < ApplicationRecord
   has_many :pieces, through: :repertoires
 
   has_many :composers, through: :pieces
-  has_many :subjects
+
+  has_many :workloads
+  has_many :subjects, through: :workloads
+
   has_one_attached :photo
 
   # Will return an array of follows for the given user instance

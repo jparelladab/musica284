@@ -18,5 +18,5 @@ Rails.application.routes.draw do
   resources :users
   resources :follows, only: [:index, :create, :destroy]
   resources :repertoires, only: [:index, :create, :destroy]
-
+  resources :workloads, only: [:create]
 end
