@@ -1,6 +1,7 @@
-<div class="container">
+<div class="level-title">Index of pieces</div>
+<div class="pieces-index-container">
   <% @pieces.each do |piece| %>
-  <div class="container" style="border: 1px solid; background-color: orange;">
+  <div class="pieces-index-card">
     <p>Name: <%= link_to piece.name, piece_path(piece) %></p>
     <p>Composer: <%= piece.composer.name %></p>
     <p>Level: <%= piece.level.name %></p>
@@ -12,7 +13,6 @@
     <p><%= button_to "Add to my repertoire", repertoires_path, params: {piece_id: piece.id}, method: :post %></p>
   </div>
   <% end %>
-  <p>---------------------------------------------</p>
   <p><%= link_to "Home", root_path %></p>
   <p><%= link_to "New piece", new_piece_path %></p>
 

@@ -1,3 +1,18 @@
 // Place all the styles related to the Pieces controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.pieces-index-container {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-column-gap: 2rem;
+  grid-row-gap: 2rem;
+}
+
+.pieces-index-card {
+  border: 1px solid black;
+  border-radius: 2px;
+  background-color: orange;
+  margin: 1rem;
+  width: 20rem;
+  padding: 3rem;
+}

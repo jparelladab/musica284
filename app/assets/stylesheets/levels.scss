@@ -1,3 +1,41 @@
 // Place all the styles related to the Levels controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.level-title {
+  text-align: center;
+  background-color: lightgreen;
+  width: 100%;
+  padding: 2rem;
+  height: 10%;
+  margin-bottom: 2rem;
+  border: 1px black solid;
+}
+.level-pieces-container {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-column-gap: 2rem;
+  grid-row-gap: 2rem;
+}
+
+.levels-index-cards {
+  border: 1px solid black;
+  border-radius: 2px;
+  background-color: lightgreen;
+  margin: 1rem;
+  width: 20rem;
+  padding: 3rem;
+}
+
+.level-piece-card {
+  border: 1px solid black;
+  border-radius: 2px;
+  background-color: lightyellow;
+  padding: 2rem;
+}
+
+.levels-index-container {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-column-gap: 2rem;
+  grid-row-gap: 2rem;
+}

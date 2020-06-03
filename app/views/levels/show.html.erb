@@ -1,12 +1,23 @@
 <div class="container">
-  <p><%= @level.name %></p>
-  <p><%= @level.number %></p>
-  <p><%= @level.description %></p>
+  <div class="level-title">
+    <p><%= @level.name %></p>
+    <p><%= @level.description %></p>
+  </div>
   <% if @level.photo.attached? %>
     <p><%= cl_image_tag @level.photo.key, height: 300, width: 400, crop: :fill %></p>
   <% end %>
   <div class="level-pieces-container">
-    <% @level.pieces %>
-
+    <% @level.pieces.each do |piece| %>
+      <div class="level-piece-card">
+        <p><%= link_to piece.name, piece_path(piece) %></p>
+        <p><%= link_to piece.composer.name, composer_path(piece.composer)%></p>
+        <p><%= piece.level.name %></p>
+        <p><%= piece.description %></p>
+        <p>Rating: <%= piece.rating %></p>
+        <% if piece.photo.attached?  %>
+          <p><%= cl_image_tag piece.photo.key %></p>
+        <% end %>
+      </div>
+    <% end %>
   </div>
 </div>

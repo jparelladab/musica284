@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_06_03_101202) do
+ActiveRecord::Schema.define(version: 2020_06_03_104548) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -54,6 +54,11 @@ ActiveRecord::Schema.define(version: 2020_06_03_101202) do
     t.index ["follower_id"], name: "index_follows_on_follower_id"
   end
 
+  create_table "level_pieces", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "levels", force: :cascade do |t|
     t.string "name"
     t.integer "number"
@@ -67,6 +72,11 @@ ActiveRecord::Schema.define(version: 2020_06_03_101202) do
     t.bigint "piece_id", null: false
     t.index ["level_id", "piece_id"], name: "index_levels_pieces_on_level_id_and_piece_id"
     t.index ["piece_id", "level_id"], name: "index_levels_pieces_on_piece_id_and_level_id"
+  end
+
+  create_table "pieceforlevels", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "pieces", force: :cascade do |t|

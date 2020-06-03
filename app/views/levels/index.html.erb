@@ -1,15 +1,16 @@
-<div class="container">
-
+<div class="level-title">Index of Levels</div>
+<div class="levels-index-container">
   <% @levels.each do |level| %>
-    <p><%= level.name %></p>
+  <div class="levels-index-cards">
+    <p><%= link_to level.name, level_path(level)  %></p>
     <p><%= level.number %></p>
     <p><%= level.description %></p>
     <% if level.photo.attached? %>
       <p><%= cl_image_tag level.photo.key, height: 300, width: 400, crop: :fill %></p>
     <% end %>
+  </div>
   <% end %>
-  <p><%= link_to "View Contents of this level", level_path(level) %></p>
-
-  <p><%= link_to "New level", new_level_path %></p>
-
 </div>
+
+  <p><%= link_to "Add New level", new_level_path %></p>
+
