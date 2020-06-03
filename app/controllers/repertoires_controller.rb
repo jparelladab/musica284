@@ -2,6 +2,7 @@ class RepertoiresController < ApplicationController
   def index
     @user_repertoire = current_user.repertoires
     @all_pieces = Piece.all
+    @other_pieces = @all_pieces - @user_repertoire.map {|rep| rep.piece}
   end
 
   def show

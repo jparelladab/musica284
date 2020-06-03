@@ -7,7 +7,7 @@
     <% end %>
     <p>Other suggested pieces</p>
     <div class="container">
-    <% @all_pieces.each do |piece| %>
+    <% @other_pieces.each do |piece| %>
       <div>
         <%= link_to piece.name, piece_path(piece) %>
       </div>

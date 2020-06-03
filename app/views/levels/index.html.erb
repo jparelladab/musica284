@@ -1,12 +1,15 @@
-<% @levels.each do |level| %>
-  <p><%= level.name %></p>
-  <p><%= level.number %></p>
-  <p><%= level.description %></p>
-  <% if level.photo.attached? %>
-    <p><%= cl_image_tag level.photo.key, height: 300, width: 400, crop: :fill %></p>
+<div class="container">
+
+  <% @levels.each do |level| %>
+    <p><%= level.name %></p>
+    <p><%= level.number %></p>
+    <p><%= level.description %></p>
+    <% if level.photo.attached? %>
+      <p><%= cl_image_tag level.photo.key, height: 300, width: 400, crop: :fill %></p>
+    <% end %>
   <% end %>
-  <p>-------------------------</p>
-<% end %>
-<p>-------------------------------------</p>
-<p><%= link_to "Home", root_path %></p>
-<p><%= link_to "New level", new_level_path %></p>
+  <p><%= link_to "View Contents of this level", level_path(level) %></p>
+
+  <p><%= link_to "New level", new_level_path %></p>
+
+</div>
