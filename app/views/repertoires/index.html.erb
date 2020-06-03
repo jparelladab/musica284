@@ -1,13 +1,16 @@
 <div class="container">
+  <p>My repertoire</p>
   <% @user_repertoire.each do |piece| %>
     <div style="display: flex;">
       <%= link_to piece.piece.name, piece_path(piece) %>
     </div>
     <% end %>
     <p>Other suggested pieces</p>
+    <div class="container">
     <% @all_pieces.each do |piece| %>
-      <div style="display: flex;">
+      <div>
         <%= link_to piece.name, piece_path(piece) %>
       </div>
       <% end %>
+    </div>
 </div>

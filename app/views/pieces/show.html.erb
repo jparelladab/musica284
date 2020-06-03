@@ -8,6 +8,6 @@
 <% end %>
 <p>------------------------------</p>
 <p><%= link_to "Home", root_path %></p>
-<p><%= link_to "New piece", new_piece_path %></p>
+<p><%= button_to "Add to my repertoire", repertoires_path, params: {piece_id: @piece.id}, method: :post %></p>
 <p><%= link_to "Edit piece", edit_piece_path(@piece) %></p>
 <p><%= link_to "Delete piece", piece_path, method: :delete, data: { confirm: 'Are you certain you want to delete this?' } %></p>

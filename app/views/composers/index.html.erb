@@ -11,9 +11,8 @@
       <p>Name: <%= link_to composer.name, composer_path(composer)%></p>
       <p>Biography: <%= composer.biography %></p>
       <p>Rating: <%= composer.rating %></p>
+      <p><%= link_to "Edit composer", edit_composer_path(composer) %></p>
     </div>
   <% end %>
 </div>
-<p><%= link_to "Home", root_path %></p>
-<p><%= link_to "New composer", new_composer_path %></p>
-<p><%= link_to "New composer path", addcomposer_path(Composer.find(1).id) %></p>
+<p><%= link_to "Add New composer", new_composer_path %></p>
