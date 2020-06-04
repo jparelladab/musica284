@@ -75,10 +75,13 @@ ActiveRecord::Schema.define(version: 2020_06_03_134955) do
   end
 
   create_table "repertoires", force: :cascade do |t|
-    t.bigint "piece_id", null: false
-    t.bigint "user_id", null: false
-    t.index ["piece_id", "user_id"], name: "index_repertoires_on_piece_id_and_user_id"
-    t.index ["user_id", "piece_id"], name: "index_repertoires_on_user_id_and_piece_id"
+    t.bigint "user_id"
+    t.bigint "piece_id"
+    t.integer "rating"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["piece_id"], name: "index_repertoires_on_piece_id"
+    t.index ["user_id"], name: "index_repertoires_on_user_id"
   end
 
   create_table "schools", force: :cascade do |t|
@@ -123,6 +126,7 @@ ActiveRecord::Schema.define(version: 2020_06_03_134955) do
   create_table "workloads", force: :cascade do |t|
     t.bigint "user_id"
     t.bigint "subject_id"
+    t.integer "rating"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["subject_id"], name: "index_workloads_on_subject_id"

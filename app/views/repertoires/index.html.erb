@@ -1,14 +1,15 @@
-<div class="container">
-  <p>My repertoire</p>
-  <% @user_repertoire.each do |piece| %>
-    <div style="display: flex;">
-      <%= link_to piece.piece.name, piece_path(piece) %>
-    </div>
+<div class="level-title">My Repertoire</div>
+  <div class="pieces-index-container">
+    <% @user_repertoire.each do |piece| %>
+      <div class="pieces-index-card">
+        <%= link_to piece.piece.name, piece_path(piece) %>
+      </div>
     <% end %>
-    <p>Other suggested pieces</p>
-    <div class="container">
+  </div>
+   <div class="level-title">Other Suggested Pieces</div>
+  <div class="pieces-index-container">
     <% @other_pieces.each do |piece| %>
-      <div>
+      <div class="pieces-index-card">
         <%= link_to piece.name, piece_path(piece) %>
       </div>
       <% end %>

@@ -27,12 +27,12 @@ Composer.create(name: "César Frank", biography: "He was a harmonious man.", rat
 
 puts "creating Levels"
 Level.create(name: "Iniciació I", description: "It's the first year", number: 1)
-Level.create(name: "Iniciació II", description: "It's the second year", number: 1)
-Level.create(name: "Preparatori", description: "It's the third year", number: 1)
-Level.create(name: "Elemental A", description: "It's the fourth year", number: 1)
-Level.create(name: "Elemental B", description: "It's the fifth year", number: 1)
-Level.create(name: "Elemental C", description: "It's the sixth year", number: 1)
-Level.create(name: "Elemental D", description: "It's the seventh year", number: 1)
+Level.create(name: "Iniciació II", description: "It's the second year", number: 2)
+Level.create(name: "Preparatori", description: "It's the third year", number: 3)
+Level.create(name: "Elemental A", description: "It's the fourth year", number: 4)
+Level.create(name: "Elemental B", description: "It's the fifth year", number: 5)
+Level.create(name: "Elemental C", description: "It's the sixth year", number: 6)
+Level.create(name: "Elemental D", description: "It's the seventh year", number: 7)
 
 puts "creating Pieces"
 Piece.create(name: "Partita 1", composer_id: 1, level_id: 1, description: "Amanda tried it and failed", rating: 1)
@@ -41,7 +41,7 @@ Piece.create(name: "Drei Klavierstücke", composer_id: 5, level_id: 2, descripti
 Piece.create(name: "Gaspar de la Nuit", composer_id: 2, level_id: 7, description: "It's guaion", rating: 1)
 Piece.create(name: "Rêverie", composer_id: 3, level_id: 2, description: "It makes you dream", rating: 5)
 Piece.create(name: "Violin Sonata", composer_id: 7, level_id: 1, description: "It's total", rating: 5)
-Piece.create(name: "Fantastic Symphony", composer_id: 7, level_id: 3, description: "It's totally escapated", rating: 1)
+Piece.create(name: "Fantastic Symphony", composer_id: 6, level_id: 3, description: "It's totally escapated", rating: 1)
 Piece.create(name: "Llagrimes", composer_id: 4, level_id: 4, description: "It never existed", rating: 1)
 Piece.create(name: "Partita 2", composer_id: 1, level_id: 1, description: "Lovely", rating: 1)
 Piece.create(name: "French Suite No.3", composer_id: 1, level_id: 2, description: "I don't remeber which one it is", rating: 2)

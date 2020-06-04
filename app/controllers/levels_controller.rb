@@ -3,6 +3,10 @@ class LevelsController < ApplicationController
 
   def index
     @levels = Level.all
+    @my_level = current_user.level
+    @previous_levels =  @my_level.nil? ? nil : Level.where(number:(1..@my_level.number)).to_a
+    @next_levels = @levels.to_a - [@my_level] - @previous_levels.to_a
+
   end
 
   def show
@@ -28,6 +32,13 @@ class LevelsController < ApplicationController
   end
 
   def update
+    if @level.update(level_params)
+      flash[:notice] = "level successfully updated"
+      redirect_to level_path(@level)
+    else
+      flash[:notice] = "Sorry, an error has occurred."
+      redirect_to levels_path
+    end
   end
 
   def destroy

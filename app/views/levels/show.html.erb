@@ -2,9 +2,10 @@
   <div class="level-title">
     <p><%= @level.name %></p>
     <p><%= @level.description %></p>
+    <p><%= link_to "Edit Level", edit_level_path(@level) %></p>
   </div>
   <% if @level.photo.attached? %>
-    <p><%= cl_image_tag @level.photo.key, height: 300, width: 400, crop: :fill %></p>
+    <p><%= cl_image_tag @level.photo.key %></p>
   <% end %>
   <div class="level-pieces-container">
     <% @level.pieces.each do |piece| %>

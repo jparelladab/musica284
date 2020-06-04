@@ -14,6 +14,8 @@ class User < ApplicationRecord
 
   has_one_attached :photo
 
+  belongs_to :level, optional: true
+
   # Will return an array of follows for the given user instance
   has_many :received_follows, foreign_key: :followed_user_id, class_name: "Follow"
 

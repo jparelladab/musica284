@@ -9,5 +9,6 @@
     <%= f.input :occupation, :as => :string %>
     <%= f.input :gender, as: :radio_buttons, collection: ["Male", "Female", "Non_Binary"] %>
     <%= f.input :photo, as: :file %>
+    <%= f.input :level_id, collection: Level.all %>
   <%= f.submit "Update Profile" %>
   <% end %>

@@ -1,15 +1,49 @@
-<div class="level-title">Index of Levels</div>
-<div class="levels-index-container">
-  <% @levels.each do |level| %>
-  <div class="levels-index-cards">
-    <p><%= link_to level.name, level_path(level)  %></p>
-    <p><%= level.number %></p>
-    <p><%= level.description %></p>
-    <% if level.photo.attached? %>
-      <p><%= cl_image_tag level.photo.key, height: 300, width: 400, crop: :fill %></p>
+<div class="level-title">My Level</div>
+  <div class="levels-index-container">
+    <% if !@my_level.nil? %>
+      <div class="levels-index-cards">
+        <p><%= link_to @my_level.name, level_path(@my_level)  %></p>
+        <p><%= @my_level.number %></p>
+        <p><%= @my_level.description %></p>
+        <% if @my_level.photo.attached? %>
+          <p><%= cl_image_tag @my_level.photo.key %></p>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+</div>
+<div class="level-title">Previous Levels</div>
+  <div class="levels-index-container">
+    <% if !@previous_levels.nil? %>
+      <% @previous_levels.to_enum.each do |level| %>
+      <div class="levels-index-cards">
+        <p><%= link_to level.name, level_path(level)  %></p>
+        <p><%= level.number %></p>
+        <p><%= level.description %></p>
+        <% if level.photo.attached? %>
+          <p><%= cl_image_tag level.photo.key, height: 300, width: 400, crop: :fill %></p>
+        <% end %>
+      </div>
+      <% end %>
     <% end %>
   </div>
-  <% end %>
 </div>
-<p><%= link_to "Add New level", new_level_path %></p>
+<div class="level-title">Next Levels</div>
+  <div class="levels-index-container">
+    <% if !@previous_levels.nil? %>
+      <% @next_levels.to_enum.each do |level| %>
+        <div class="levels-index-cards">
+          <p><%= link_to level.name, level_path(level)  %></p>
+          <p><%= level.number %></p>
+          <p><%= level.description %></p>
+          <% if level.photo.attached? %>
+            <p><%= cl_image_tag level.photo.key, height: 300, width: 400, crop: :fill %></p>
+          <% end %>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+  <p><%= link_to "Add New level", new_level_path %></p>
+</div>
+
 
