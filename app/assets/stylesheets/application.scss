@@ -1,8 +1,7 @@
+//External libraries
 @import "bootstrap/scss/bootstrap";
-@import "devise";
-@import "composers";
-@import "pages";
-@import "users";
-@import "follows";
-@import "levels";
-@import "pieces";
+@import 'mapbox-gl/dist/mapbox-gl';
+
+//Internal libraries
+@import "pages/index";
+@import "components/index";

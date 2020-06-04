@@ -5,6 +5,13 @@ class FollowsController < ApplicationController
     @all_follows = Follow.all
     @my_followed_users = current_user.followings
     @not_followed_users = User.all - @my_followed_users - [current_user]
+    @users = User.geocoded
+    @markers = @users.map do |user|
+      {
+        lat: user.latitude,
+        lng: user.longitude
+      }
+    end
   end
 
   def create

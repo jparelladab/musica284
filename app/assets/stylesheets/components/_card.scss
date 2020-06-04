@@ -1,0 +1,25 @@
+.card-photo {
+  height: 100%;
+  width:100%;
+
+}
+
+.user-card {
+  display: flex;
+  text-align: center;
+  width: 100%;
+  border: 1px solid black;
+  border-radius: 5px;
+  margin: 1rem 0;
+}
+
+.card-photo-container {
+  width: 40%;
+}
+
+.card-info-container {
+  background-color: orange;
+  width: 60%;
+  padding: 2rem;
+}
+

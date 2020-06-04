@@ -18,6 +18,9 @@ class User < ApplicationRecord
 
   has_many :comment_pieces
 
+  geocoded_by :address
+  after_validation :geocode, if: :will_save_change_to_address?
+
   # Will return an array of follows for the given user instance
   has_many :received_follows, foreign_key: :followed_user_id, class_name: "Follow"
 
@@ -32,8 +35,12 @@ class User < ApplicationRecord
   # returns an array of other users who the user has followed
   has_many :followings, through: :given_follows, source: :followed_user
 
-  private
 
+  def fullname
+    return self.first_name + " " + self.last_name
+  end
+
+  private
   def follows?(current_user, user)
     return current_user.followings.include? user
   end

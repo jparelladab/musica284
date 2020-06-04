@@ -1,32 +1,42 @@
-<div class="container">
-    The users I follow:
-  <div class="followed-users-container follows-container">
+
+<div class="network-container">
+  <div class="users-container">
+    <div class="title">Users I follow</div>
     <% @my_followed_users.each do |usr| %>
-      <div style="background-color: yellow;">
-        <% if usr.photo.attached? %>
-          <%= usr.photo.key %>
-          <% else %>
-            <%= cl_image_tag("WHCKHqceMQcSYcaFK1fdBkT6.jpg") %>
-          <% end %>
-          <p><%= link_to usr.first_name, user_path(usr) %></p>
-          <p><%= button_to("Unfollow", follow_path(usr), method: :delete )%></p>
-      </div>
+        <div class="user-card">
+          <div class="card-photo-container">
+            <% if usr.photo.attached? %>
+              <%= usr.photo.key %>
+            <% else %>
+              <%= cl_image_tag "WHCKHqceMQcSYcaFK1fdBkT6.jpg", class: "card-photo" %>
+            <% end %>
+          </div>
+          <div class="card-info-container">
+            <p><%= link_to usr.fullname, user_path(usr) %></p>
+            <p><%= usr.introduction %></p>
+            <p><%= button_to("Unfollow", follow_path(usr), method: :delete )%></p>
+          </div>
+        </div>
     <% end %>
-  </div>
-  Users I don't follow:
-  <div class="followed-users-container follows-container">
+    <div class="title">Other users</div>
     <% @not_followed_users.each do |usr| %>
-      <div style="background-color: yellow;">
-        <% if usr.photo.attached? %>
-          <%= usr.photo.key %>
+      <div class="user-card">
+        <div class="card-photo-container">
+          <% if usr.photo.attached? %>
+            <%= usr.photo.key %>
           <% else %>
-            <%= cl_image_tag("WHCKHqceMQcSYcaFK1fdBkT6.jpg") %>
+            <%= cl_image_tag("WHCKHqceMQcSYcaFK1fdBkT6.jpg", class: "card-photo") %>
           <% end %>
-          <p><%= link_to usr.first_name, user_path(usr) %></p>
+        </div>
+        <div class="card-info-container">
+          <p><%= link_to usr.fullname, user_path(usr) %></p>
+          <p><%= usr.introduction %></p>
           <p><%= button_to "Follow", follows_path, params: {followed: usr}, method: :post %></p>
+        </div>
       </div>
     <% end %>
   </div>
+  <div class="map-container"><%= render 'shared/map' %></div>
 
 
 </div>

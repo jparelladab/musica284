@@ -1,15 +1,7 @@
 // Place all the styles related to the Levels controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-.level-title {
-  text-align: center;
-  background-color: lightgreen;
-  width: 100%;
-  padding: 2rem;
-  height: 10%;
-  margin-bottom: 2rem;
-  border: 1px black solid;
-}
+
 .level-pieces-container {
   display: grid;
   grid-template-columns: auto auto auto;
