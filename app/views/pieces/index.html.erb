@@ -2,19 +2,15 @@
 <div class="pieces-index-container">
   <% @pieces.each do |piece| %>
   <div class="pieces-index-card">
-    <p>Name: <%= link_to piece.name, piece_path(piece) %></p>
-    <p>Composer: <%= piece.composer.name %></p>
+    <p><%= link_to piece.name, piece_path(piece) %></p>
+    <p><%= piece.composer.name %></p>
     <p>Level: <%= piece.level.name %></p>
-    <p>Description: <%= piece.description %></p>
+    <p><%= piece.description %></p>
     <p>Rating: <%= piece.rating %></p>
     <% if piece.photo.attached? %>
       <p><%= cl_image_tag piece.photo.key %></p>
     <% end %>
     <p><%= button_to "Add to my repertoire", repertoires_path, params: {piece_id: piece.id}, method: :post %></p>
-    <p>Comments on this piece:</p>
-    <% piece.comment_pieces.each do |comment| %>
-      <p><%= comment.user.first_name %><%= comment.comment %></p>
-    <% end %>
   </div>
   <% end %>
 </div>
