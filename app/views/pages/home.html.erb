@@ -7,9 +7,12 @@
     <div>
       <p>Welcome <%= current_user.first_name %> </p>
       <p><%= link_to "My profile", user_path(current_user) %></p>
-      <p><%= link_to :logout, destroy_user_session_path, method: :delete %></p>
+      <p><%= link_to "Log Out", destroy_user_session_path, method: :delete %></p>
+    </div>
+    <div>
       <p><%= link_to "My Network", follows_path %></p>
       <p><%= link_to "My Repertoire", repertoires_path %></p>
+      <p><%= link_to "My Subjects", workloads_path %></p>
     </div>
     <div>
       <p><%= link_to "New composer", new_composer_path %></p>

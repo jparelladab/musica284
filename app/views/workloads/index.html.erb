@@ -1,0 +1,17 @@
+<div class="level-title">My Courses</div>
+  <div class="pieces-index-container">
+    <% @my_courses.each do |course| %>
+      <div class="pieces-index-card">
+        <%= link_to course.name, subject_path(course) %>
+      </div>
+    <% end %>
+  </div>
+   <div class="level-title">Other suggested courses</div>
+  <div class="pieces-index-container">
+    <% @other_courses.each do |course| %>
+      <div class="pieces-index-card">
+        <%= link_to course.name, subject_path(course) %>
+      </div>
+      <% end %>
+    </div>
+</div>

@@ -8,12 +8,15 @@
     <p>Description: <%= piece.description %></p>
     <p>Rating: <%= piece.rating %></p>
     <% if piece.photo.attached? %>
-      <p><%= cl_image_tag piece.photo.key, height: 300, width: 400, crop: :fill %></p>
+      <p><%= cl_image_tag piece.photo.key %></p>
     <% end %>
     <p><%= button_to "Add to my repertoire", repertoires_path, params: {piece_id: piece.id}, method: :post %></p>
+    <p>Comments on this piece:</p>
+    <% piece.comment_pieces.each do |comment| %>
+      <p><%= comment.user.first_name %><%= comment.comment %></p>
+    <% end %>
   </div>
   <% end %>
+</div>
   <p><%= link_to "Home", root_path %></p>
   <p><%= link_to "New piece", new_piece_path %></p>
-
-</div>

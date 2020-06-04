@@ -6,5 +6,7 @@ class Piece < ApplicationRecord
   has_many :repertoires
   has_many :users, through: :repertoires
 
+  has_many :comment_pieces
+
   #has_many :levels, through: :levels_pieces
 end

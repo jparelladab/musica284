@@ -18,7 +18,7 @@ class RepertoiresController < ApplicationController
       redirect_to repertoires_path
     else
       flash[:notice] = "Sorry, an error has occurred."
-      render :new
+      redirect_to repertoires_path
     end
   end
 

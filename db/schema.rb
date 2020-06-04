@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_06_03_134955) do
+ActiveRecord::Schema.define(version: 2020_06_04_122647) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -34,6 +34,16 @@ ActiveRecord::Schema.define(version: 2020_06_03_134955) do
     t.string "checksum", null: false
     t.datetime "created_at", null: false
     t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
+  end
+
+  create_table "comment_pieces", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "piece_id"
+    t.text "comment"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["piece_id"], name: "index_comment_pieces_on_piece_id"
+    t.index ["user_id"], name: "index_comment_pieces_on_user_id"
   end
 
   create_table "composers", force: :cascade do |t|
@@ -114,10 +124,11 @@ ActiveRecord::Schema.define(version: 2020_06_03_134955) do
     t.string "instrument"
     t.string "address"
     t.string "occupation"
-    t.bigint "level_id"
+    t.bigint "level_id", default: 1
     t.string "gender"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "admin", default: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["level_id"], name: "index_users_on_level_id"
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true

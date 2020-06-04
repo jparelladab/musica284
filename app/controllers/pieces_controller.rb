@@ -6,6 +6,7 @@ class PiecesController < ApplicationController
 
   def show
     @piece = Piece.find(params[:id])
+    @comment_piece = CommentPiece.new
   end
 
   def new

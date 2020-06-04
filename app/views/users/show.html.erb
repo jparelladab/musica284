@@ -26,7 +26,7 @@
       <div class="my-homework"></div>
       <div class="my-pieces">
         <% current_user.pieces.each do |piece| %>
-          <%= piece.name %>
+          <%= link_to piece.name, piece_path(piece) %>
         <% end %>
       </div>
       <div class="show-my-follows">

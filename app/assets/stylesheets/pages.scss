@@ -1,19 +1,10 @@
 .home-container {
   padding: 5vw;
-  width: 100vw;
-  //height: 100vh;
+  //width: 100vw;
+  height: 100vh;
   background-color: #00005c;
   //background-image: url('https://media.giphy.com/media/YWbM6nDnBo8X7WIKpl/giphy.gif');
 
-}
-
-footer {
-  padding-top: 3rem;
-  padding-bottom: 3rem;
-}
-
-footer p {
-  margin-bottom: .25rem;
 }
 
 .home-title {
@@ -26,7 +17,7 @@ footer p {
   display: flex;
   justify-content: space-between;
   background-color: lightgreen;
-  height: 33%;
+  //height: 33%;
   width: 100%;
   padding: 2% 5%;
 }
@@ -34,14 +25,5 @@ footer p {
   text-align: left;
 }
 
-.home-friends-list {
-  display: flex;
-  justify-content: space-between;
-  background-color: yellow;
-  height: 33%;
-  width: 100%;
-}
-.friend-card {
-}
 
 

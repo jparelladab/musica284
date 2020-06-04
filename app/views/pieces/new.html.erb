@@ -1,6 +1,6 @@
 <h1>New Piece</h1>
 
-<div>
+<div class="container">
   <%= simple_form_for(@piece, url: pieces_path) do |f| %>
     <%= f.input :name, :as => :string%>
     <%= f.input :composer_id, collection: Composer.all %>

@@ -8,7 +8,7 @@
 
 
 
-puts "creating seeds"
+puts "creating users"
 test_user_one = User.create(first_name: "Johannes", last_name: "Brahms", email: "johnny@hola.com", password: "password")
 test_user_two = User.create(first_name: "Antonio", last_name: "Vivaldi", email: "anto@hola.com", password: "password")
 test_user_three = User.create(first_name: "Claude", last_name: "Debussy", email: "claudi@hola.com", password: "password")

@@ -40,7 +40,7 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.2]
       t.string :instrument
       t.string :address
       t.string :occupation
-      t.belongs_to :level
+      t.belongs_to :level, default: 1
       t.string :gender
 
       t.timestamps null: false

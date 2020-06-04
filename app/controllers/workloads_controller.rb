@@ -1,6 +1,8 @@
 class WorkloadsController < ApplicationController
 
   def index
+    @my_courses = current_user.subjects
+    @other_courses = Subject.where(level_id: current_user.level)
   end
 
   def show
