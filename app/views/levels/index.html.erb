@@ -1,4 +1,4 @@
-<div class="level-title">My Level</div>
+<div class="title">My Level</div>
   <div class="levels-index-container">
     <% if !@my_level.nil? %>
       <div class="levels-index-cards">
@@ -11,7 +11,7 @@
     </div>
   </div>
 </div>
-<div class="level-title">Previous Levels</div>
+<div class="title">Previous Levels</div>
   <div class="levels-index-container">
     <% if !@previous_levels.nil? %>
       <% @previous_levels.to_enum.each do |level| %>
@@ -25,7 +25,7 @@
     <% end %>
   </div>
 </div>
-<div class="level-title">Next Levels</div>
+<div class="title">Next Levels</div>
   <div class="levels-index-container">
     <% if !@previous_levels.nil? %>
       <% @next_levels.to_enum.each do |level| %>

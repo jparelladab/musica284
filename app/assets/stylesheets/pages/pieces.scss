@@ -4,8 +4,6 @@
 .pieces-index-container {
   display: grid;
   grid-template-columns: auto auto auto;
-  grid-column-gap: 2rem;
-  grid-row-gap: 2rem;
 }
 
 .pieces-index-card {
@@ -13,6 +11,26 @@
   border-radius: 2px;
   background-color: orange;
   margin: 1rem;
-  width: 20rem;
-  padding: 3rem;
+  width: 30vw;
+  height: 40vh;
+  text-align: center;
+}
+
+.pieces-card-photo img{
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  overflow: hidden;
+}
+
+.pieces-card-photo {
+    width: 100%;
+    height: 40%;
+}
+
+.pieces-card-info p {
+  margin: 1vh auto;
+  font-size: 2vh;
+  text-align: center;
 }

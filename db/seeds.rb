@@ -9,11 +9,11 @@
 
 
 puts "creating users"
-test_user_one = User.create(first_name: "Johannes", last_name: "Brahms", email: "johnny@hola.com", password: "password", address: "carrer mallorca 300 barcelona", introduction: "Trying to understand the dragonflies behaviour")
-test_user_two = User.create(first_name: "Antonio", last_name: "Vivaldi", email: "anto@hola.com", password: "password", address: "carrer aribau 100 barcelona", introduction: "Sometimes when I'm alone I look at my phone")
-test_user_three = User.create(first_name: "Claude", last_name: "Debussy", email: "claudi@hola.com", password: "password", address: "carrer pau claris 100 barcelona", introduction: "Mountains are high, oceans are deep. You know...")
-test_user_one = User.create(first_name: "Alfred", last_name: "Cortot", email: "alfred@hola.com", password: "password", address: "carrer castillejos 100 barcelona", introduction: "My students are so talentless. Why do gods punish me this way.")
-test_user_two = User.create(first_name: "Enrique", last_name: "Bagaria", email: "baga@hola.com", password: "password", address: "carrer avila 100 barcelona", introduction: "When Blanca Selva told me about this I didn't believe it.")
+test_user_one = User.create(first_name: "Bernat", last_name: "Pollini", email: "berni@hola.com", password: "password", address: "carrer mallorca 300 barcelona", introduction: "Trying to understand the dragonflies behaviour")
+test_user_two = User.create(first_name: "Lali", last_name: "Buniatishvili", email: "lali@hola.com", password: "password", address: "carrer aribau 100 barcelona", introduction: "Sometimes when I'm alone I look at my phone")
+test_user_three = User.create(first_name: "Luireru", last_name: "Abascal", email: "luireru@hola.com", password: "password", address: "carrer pau claris 100 barcelona", introduction: "Mountains are high, oceans are deep. You know...")
+test_user_one = User.create(first_name: "Yarot", last_name: "Arroyo", email: "yaro@hola.com", password: "password", address: "carrer castillejos 100 barcelona", introduction: "My students are so talentless. Why do gods punish me this way.")
+test_user_two = User.create(first_name: "Sergi", last_name: "Wadaixat", email: "sergi@hola.com", password: "password", address: "carrer avila 100 barcelona", introduction: "When Blanca Selva told me about this I didn't believe it.")
 test_user_three = User.create(first_name: "Albert", last_name: "Attenello", email: "albert@hola.com", password: "password", address: "carrer aragó 100 barcelona", introduction: "I whish I could play Appassionata like Bernat or Lali.")
 
 puts "creating Composers"
