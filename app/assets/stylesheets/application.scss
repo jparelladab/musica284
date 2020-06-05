@@ -5,3 +5,8 @@
 //Internal libraries
 @import "pages/index";
 @import "components/index";
+
+.photo-fit {
+  max-width:100%;
+  max-height:100%;
+}
