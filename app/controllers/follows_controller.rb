@@ -1,5 +1,5 @@
 class FollowsController < ApplicationController
-
+  include UsersHelper
   def index
     @all_users = User.all
     @all_follows = Follow.all

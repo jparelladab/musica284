@@ -1,10 +1,6 @@
 <div class="composer-show-container">
   <div class="composer-show-photo-container">
-    <% if @subject.photo.attached? %>
-      <%= cl_image_tag @subject.photo.key %>
-    <% else %>
-      <%= cl_image_tag("WHCKHqceMQcSYcaFK1fdBkT6.jpg") %>
-  <% end %>
+    <%= cl_image_tag find_photo(@subject) %>
   </div>
   <p><%= @subject.name %></p>
   <p><%= @subject.description %></p>

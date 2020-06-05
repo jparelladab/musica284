@@ -7,9 +7,7 @@
     <p>Level: <%= piece.level.name %></p>
     <p><%= piece.description %></p>
     <p>Rating: <%= piece.rating %></p>
-    <% if piece.photo.attached? %>
-      <p><%= cl_image_tag piece.photo.key %></p>
-    <% end %>
+    <%= cl_image_tag find_photo(piece) %>
     <p><%= button_to "Add to my repertoire", repertoires_path, params: {piece_id: piece.id}, method: :post %></p>
   </div>
   <% end %>

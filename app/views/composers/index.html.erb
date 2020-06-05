@@ -3,11 +3,7 @@
   <% @composers.each do |composer| %>
     <div class="composer-index-card">
       <div class="composer-index-card-photo-container">
-        <% if composer.photo.attached? %>
-          <%= cl_image_tag composer.photo.key %>
-        <% else %>
-          <%= cl_image_tag("WHCKHqceMQcSYcaFK1fdBkT6.jpg") %>
-        <% end %>
+        <%= cl_image_tag find_photo(composer) %>
       </div>
       <p>Name: <%= link_to composer.name, composer_path(composer)%></p>
       <p>Biography: <%= composer.biography %></p>

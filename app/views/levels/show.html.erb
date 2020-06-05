@@ -4,9 +4,7 @@
     <p><%= @level.description %></p>
     <p><%= link_to "Edit Level", edit_level_path(@level) %></p>
   </div>
-  <% if @level.photo.attached? %>
-    <p><%= cl_image_tag @level.photo.key %></p>
-  <% end %>
+  <%= cl_image_tag find_photo(@level) %>
   <div class="level-pieces-container">
     <% @level.pieces.each do |piece| %>
       <div class="level-piece-card">
@@ -15,9 +13,7 @@
         <p><%= piece.level.name %></p>
         <p><%= piece.description %></p>
         <p>Rating: <%= piece.rating %></p>
-        <% if piece.photo.attached?  %>
-          <p><%= cl_image_tag piece.photo.key %></p>
-        <% end %>
+        <%= cl_image_tag find_photo(piece) %>
       </div>
     <% end %>
   </div>

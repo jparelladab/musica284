@@ -4,11 +4,7 @@
       <% @my_subjects.each do |subject| %>
         <div class="composer-index-card">
           <div class="composer-index-card-photo-container">
-            <% if subject.photo.attached? %>
-              <%= cl_image_tag subject.photo.key %>
-            <% else %>
-              <%= cl_image_tag("WHCKHqceMQcSYcaFK1fdBkT6.jpg") %>
-            <% end %>
+            <%= cl_image_tag find_photo(subject) %>
           </div>
           <p><%= link_to subject.name, subject_path(subject)%></p>
           <p><%= subject.description %></p>
@@ -23,11 +19,7 @@
     <% @other_subjects.each do |subject| %>
       <div class="composer-index-card">
         <div class="composer-index-card-photo-container">
-          <% if subject.photo.attached? %>
-            <%= cl_image_tag subject.photo.key %>
-          <% else %>
-            <%= cl_image_tag("WHCKHqceMQcSYcaFK1fdBkT6.jpg") %>
-          <% end %>
+          <%= cl_image_tag find_photo(subject) %>
         </div>
         <p><%= link_to subject.name, subject_path(subject)%></p>
         <p><%= subject.description %></p>

@@ -5,9 +5,8 @@
         <p><%= link_to @my_level.name, level_path(@my_level)  %></p>
         <p><%= @my_level.number %></p>
         <p><%= @my_level.description %></p>
-        <% if @my_level.photo.attached? %>
-          <p><%= cl_image_tag @my_level.photo.key %></p>
-        <% end %>
+        <%= cl_image_tag find_photo(@my_level) %>
+      </div>
       <% end %>
     </div>
   </div>
@@ -20,9 +19,7 @@
         <p><%= link_to level.name, level_path(level)  %></p>
         <p><%= level.number %></p>
         <p><%= level.description %></p>
-        <% if level.photo.attached? %>
-          <p><%= cl_image_tag level.photo.key, height: 300, width: 400, crop: :fill %></p>
-        <% end %>
+        <%= cl_image_tag find_photo(level) %>
       </div>
       <% end %>
     <% end %>
@@ -36,9 +33,7 @@
           <p><%= link_to level.name, level_path(level)  %></p>
           <p><%= level.number %></p>
           <p><%= level.description %></p>
-          <% if level.photo.attached? %>
-            <p><%= cl_image_tag level.photo.key, height: 300, width: 400, crop: :fill %></p>
-          <% end %>
+          <%= cl_image_tag find_photo(level) %>
         </div>
       <% end %>
     <% end %>

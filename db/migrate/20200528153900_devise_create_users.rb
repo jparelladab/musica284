@@ -43,6 +43,7 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.2]
       t.belongs_to :level, default: 1
       t.string :gender
       t.text :introduction
+      t.integer :points
 
       t.timestamps null: false
     end

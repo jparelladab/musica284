@@ -1,0 +1,12 @@
+<div class="messages-container">
+  <% @user_ordered_messages.each do |msg| %>
+  <div class="message">
+    <div class="message-photo">
+      <%= cl_image_tag find_photo(msg.sender), height: 100 %>
+    </div>
+    <div class="message-text">
+      <%= msg.text %>
+    </div>
+  </div>
+  <% end %>
+</div>

@@ -1,10 +1,6 @@
 <div class="composer-show-container">
   <div class="composer-show-photo-container">
-    <% if @composer.photo.attached? %>
-      <%= cl_image_tag @composer.photo.key %>
-    <% else %>
-      <%= cl_image_tag("WHCKHqceMQcSYcaFK1fdBkT6.jpg") %>
-  <% end %>
+    <%= cl_image_tag find_photo(@composer) %>
   </div>
   <p><%= @composer.name %></p>
   <p><%= @composer.biography %></p>

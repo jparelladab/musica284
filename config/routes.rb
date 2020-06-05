@@ -21,4 +21,5 @@ Rails.application.routes.draw do
   resources :repertoires, only: [:index, :create, :destroy]
   resources :workloads, only: [:index, :create]
   resources :comment_pieces, only: [:create]
+  resources :messages
 end
