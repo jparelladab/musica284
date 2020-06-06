@@ -1,20 +1,24 @@
-<ul>
-  <% @messages.each do |message| %>
-    <% if message.body %>
-      <li>
-        <h4><%= fullname(message.user) %></h4>
-        <p><%= message.body %></p>
-      </li>
+<div class="general-container">
+  <div class="conversations-container">
+    <% @messages.each do |message| %>
+      <% if message.body %>
+
+          <h4><%= fullname(message.user) %></h4>
+          <p><%= message.body %></p>
+
+      <% end %>
     <% end %>
-  <% end %>
-</ul>
+  </div>
+
 
 <%= form_for [@conversation, @message] do |f| %>
   <div class="field">
     <%= f.text_area :body, placeholder: "Your message" %>
   </div>
 
-  <%= f.submit "Send" %>
+  <%= f.submit "Send", style: "margin-bottom: 1rem;" %>
 <% end %>
 
-<p><%= link_to "Back to conversations", conversations_path %></p>
+<p><%= link_to "Back to conversations", conversations_path, class: "btn btn-primary"%></p>
+
+</div>
