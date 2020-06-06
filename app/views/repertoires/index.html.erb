@@ -1,17 +1,48 @@
 <div class="title">My Repertoire</div>
-  <div class="pieces-index-container">
-    <% @user_repertoire.each do |piece| %>
-      <div class="pieces-index-card">
-        <%= link_to piece.piece.name, piece_path(piece) %>
+<div class="card-container">
+  <% @user_repertoire.each do |repert| %>
+    <div class="card">
+      <div class="card-photo">
+        <%= cl_image_tag find_photo(repert.piece), class: "photo-fit" %>
       </div>
-    <% end %>
-  </div>
-   <div class="title">Other Suggested Pieces</div>
-  <div class="pieces-index-container">
-    <% @other_pieces.each do |piece| %>
-      <div class="pieces-index-card">
-        <%= link_to piece.name, piece_path(piece) %>
+      <div class="card-info">
+        <p><%= link_to trackname(repert.piece), piece_path(repert.piece) %></p>
+        <p><%= link_to repert.piece.level.name, level_path(repert.piece.level.name) %></p>
+        <p><%= repert.piece.description %></p>
+        <p>Started: <%= repert.created_at.strftime("%d-%m-%Y") %></p>
       </div>
-      <% end %>
     </div>
+  <% end %>
+</div>
+<div class="title">Pipeline</div>
+<div class="card-container">
+  <% @pipeline.each do |piece| %>
+    <div class="card">
+      <div class="card-photo">
+        <%= cl_image_tag find_photo(piece), class: "photo-fit" %>
+      </div>
+      <div class="card-info">
+        <p><%= link_to trackname(piece), piece_path(piece) %></p>
+        <p><%= link_to piece.level.name, level_path(piece.level.name) %></p>
+        <p><%= piece.description %></p>
+        <p><%= button_to "Add to Repertoire", repertoires_path(piece), params: {piece_id: piece.id}, method: :post %></p>
+      </div>
+    </div>
+  <% end %>
+</div>
+<div class="title">Other Suggested Pieces</div>
+<div class="card-container">
+  <% @other_pieces.each do |piece| %>
+    <div class="card">
+      <div class="card-photo">
+        <%= cl_image_tag find_photo(piece), class: "photo-fit" %>
+      </div>
+      <div class="card-info">
+        <p><%= link_to trackname(piece), piece_path(piece) %></p>
+        <p><%= link_to piece.level.name, level_path(piece.level.name) %></p>
+        <p><%= piece.description %></p>
+        <p><%= button_to "Add to Pipeline" %></p>
+      </div>
+    </div>
+  <% end %>
 </div>

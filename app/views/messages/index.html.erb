@@ -1,10 +1,20 @@
-<div class="messages-container">
-  <% @user_ordered_messages.each do |msg| %>
-  <div class="message">
-    <%= cl_image_tag find_photo(msg.sender), class: "photo-fit" %>
-    <div class="message-text">
-      <%= fullname(msg.sender) %>: <%= msg.text %>
-    </div>
-  </div>
+<ul>
+  <% @messages.each do |message| %>
+    <% if message.body %>
+      <li>
+        <h4><%= fullname(message.user) %></h4>
+        <p><%= message.body %></p>
+      </li>
+    <% end %>
   <% end %>
-</div>
+</ul>
+
+<%= form_for [@conversation, @message] do |f| %>
+  <div class="field">
+    <%= f.text_area :body, placeholder: "Your message" %>
+  </div>
+
+  <%= f.submit "Send" %>
+<% end %>
+
+<p><%= link_to "Back to conversations", conversations_path %></p>

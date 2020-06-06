@@ -1,44 +1,53 @@
 <div class="title">My Level</div>
-  <div class="levels-index-container">
-    <% if !@my_level.nil? %>
-      <div class="levels-index-cards">
-        <p><%= link_to @my_level.name, level_path(@my_level)  %></p>
-        <p><%= @my_level.number %></p>
-        <p><%= @my_level.description %></p>
+  <div class="card-container">
+    <div class="card">
+      <div class="card-photo">
         <%= cl_image_tag(find_photo(@my_level), class: "photo-fit") %>
       </div>
-      <% end %>
+      <div class="card-info">
+        <p><%= link_to @my_level.name, level_path(@my_level) %></p>
+        <p><%= @my_level.number %></p>
+        <p><%= @my_level.description %></p>
+      </div>
     </div>
   </div>
-</div>
+
+
 <div class="title">Previous Levels</div>
-  <div class="levels-index-container">
-    <% if !@previous_levels.nil? %>
-      <% @previous_levels.to_enum.each do |level| %>
-      <div class="levels-index-cards">
-        <p><%= link_to level.name, level_path(level)  %></p>
-        <p><%= level.number %></p>
-        <p><%= level.description %></p>
-        <%= cl_image_tag(find_photo(level), class: "photo-fit") %>
-      </div>
-      <% end %>
-    <% end %>
-  </div>
-</div>
-<div class="title">Next Levels</div>
-  <div class="levels-index-container">
-    <% if !@previous_levels.nil? %>
-      <% @next_levels.to_enum.each do |level| %>
-        <div class="levels-index-cards">
-          <p><%= link_to level.name, level_path(level)  %></p>
+
+<div class="card-container">
+  <% if !@previous_levels.nil? %>
+    <% @previous_levels.to_enum.each do |level| %>
+      <div class="card">
+        <div class="card-photo">
+          <%= cl_image_tag(find_photo(level), class: "photo-fit") %>
+        </div>
+        <div class="card-info">
+          <p><%= link_to level.name, level_path(level) %></p>
           <p><%= level.number %></p>
           <p><%= level.description %></p>
-          <%= cl_image_tag(find_photo(level), class: "photo-fit") %>
+        </div>
+      </div>
+    <% end %>
+  <% end %>
+</div>
+<div class="title">Next Levels</div>
+  <div class="card-container">
+    <% if !@next_levels.nil? %>
+      <% @next_levels.to_enum.each do |level| %>
+        <div class="card">
+          <div class="card-photo">
+            <%= cl_image_tag(find_photo(level), class: "photo-fit") %>
+          </div>
+          <div class="card-info">
+            <p><%= link_to level.name, level_path(level)  %></p>
+            <p><%= level.number %></p>
+            <p><%= level.description %></p>
+          </div>
         </div>
       <% end %>
     <% end %>
   </div>
-  <p><%= link_to "Add New level", new_level_path %></p>
-</div>
+<p><%= link_to "Add New level", new_level_path %></p>
 
 

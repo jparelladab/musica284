@@ -1,12 +1,12 @@
 <div class="title">Index of pieces</div>
-<div class="pieces-index-container">
+<div class="card-container">
   <% @pieces.each do |piece| %>
-  <div class="pieces-index-card">
-    <div class="pieces-card-photo">
+  <div class="card">
+    <div class="card-photo">
       <%= cl_image_tag find_photo(piece), class: "photo-fit" %>
     </div>
-    <div class="pieces-card-info">
-      <p><%= link_to piece.name, piece_path(piece) %> - <%= link_to piece.composer.name, composer_path(piece.composer) %></p>
+    <div class="card-info">
+      <p><%= link_to trackname(piece), piece_path(piece) %></p>
       <p><%= link_to piece.level.name, level_path(piece.level) %></p>
       <p><%= piece.description %></p>
       <p>Rating: <%= piece.rating %></p>
@@ -15,5 +15,5 @@
   </div>
   <% end %>
 </div>
-  <p><%= link_to "Home", root_path %></p>
-  <p><%= link_to "New piece", new_piece_path %></p>
+<p><%= link_to "Home", root_path %></p>
+<p><%= link_to "New piece", new_piece_path %></p>

@@ -6,6 +6,8 @@ class CreatePieces < ActiveRecord::Migration[5.2]
       t.references :level, foreign_key: true
       t.string :description
       t.integer :rating
+      t.boolean :pipeline, default: false
+      t.boolean :favorite, default: false
 
       t.timestamps
     end

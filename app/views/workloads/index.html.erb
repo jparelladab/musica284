@@ -1,17 +1,31 @@
-<div class="level-title">My Courses</div>
-  <div class="pieces-index-container">
+<div class="title">My Courses</div>
+  <div class="card-container">
     <% @my_courses.each do |course| %>
-      <div class="pieces-index-card">
-        <%= link_to course.name, subject_path(course) %>
+      <div class="card">
+        <div class="card-photo">
+          <%= cl_image_tag find_photo(course), class: "photo-fit" %>
+        </div>
+        <div class="card-info">
+          <p><%= link_to course.name, subject_path(course) %></p>
+          <p>Level: <%= link_to course.level.name, level_path(course.level) %></p>
+          <p><%= course.description %></p>
+        </div>
       </div>
     <% end %>
   </div>
-   <div class="level-title">Other suggested courses</div>
-  <div class="pieces-index-container">
+   <div class="title">Other suggested courses</div>
+  <div class="card-container">
     <% @other_courses.each do |course| %>
-      <div class="pieces-index-card">
-        <%= link_to course.name, subject_path(course) %>
+      <div class="card">
+        <div class="card-photo">
+          <%= cl_image_tag find_photo(course), class: "photo-fit" %>
+        </div>
+        <div class="card-info">
+          <p><%= link_to course.name, subject_path(course) %></p>
+          <p>Level: <%=link_to course.level.name, level_path(course.level) %></p>
+          <p><%= course.description %></p>
+        </div>
       </div>
-      <% end %>
-    </div>
+    <% end %>
+  </div>
 </div>

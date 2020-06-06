@@ -1,14 +1,16 @@
-<div class="level-title">Index of Composers</div>
-<div class="composer-index-container">
+<div class="title">Index of Composers</div>
+<div class="card-container">
   <% @composers.each do |composer| %>
-    <div class="composer-index-card">
-      <div class="composer-index-card-photo-container">
+    <div class="card">
+      <div class="card-photo">
         <%= cl_image_tag find_photo(composer) %>
       </div>
-      <p>Name: <%= link_to composer.name, composer_path(composer)%></p>
-      <p>Biography: <%= composer.biography %></p>
-      <p>Rating: <%= composer.rating %></p>
-      <p><%= link_to "Edit composer", edit_composer_path(composer) %></p>
+      <div class="card-info">
+        <p>Name: <%= link_to composer.name, composer_path(composer)%></p>
+        <p>Biography: <%= composer.biography %></p>
+        <p>Rating: <%= composer.rating %></p>
+        <p><%= link_to "Edit composer", edit_composer_path(composer) %></p>
+      </div>
     </div>
   <% end %>
 </div>
