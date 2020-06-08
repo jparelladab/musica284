@@ -5,6 +5,15 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+require 'json'
+require 'open-uri'
+
+composers_url = "https://imslp.org/imslpscripts/API.ISCR.php?account=worklist/disclaimer=accepted/sort=id/type=1/start=0/retformat=json"
+serialized_composers = open(composers_url).read
+composers = JSON.parse(serialized_composers)
+
+composers = JSON.parse(serialized_composers)
+
 
 puts "creating users"
 User.create(first_name: "Bernat", last_name: "Pollini", email: "berni@hola.com", password: "password", address: "carrer mallorca 300 barcelona", introduction: "Trying to understand the dragonflies behaviour")

@@ -5,7 +5,7 @@ class LevelsController < ApplicationController
   def index
     @levels = Level.all
     @my_level = current_user.level
-    @previous_levels = @my_level.nil? ? nil : Level.where(number:(1..@my_level.number)).to_a
+    @previous_levels = Level.where(number:(1..@my_level.number)) - Level.where(number: current_user.level.number)
     @next_levels = @levels.to_a - [@my_level] - @previous_levels.to_a
   end
 

@@ -7,5 +7,6 @@
   <p><%= @subject.rating %></p>
   <p>Enjoy it!</p>
   <p><%= link_to "Edit subject", edit_subject_path(@subject) %></p>
+  <p><%= link_to "Delete subject", @subject, method: :delete %></p>
   <p><%= link_to "Back to my Workload", subjects_path %></p>
 </div>

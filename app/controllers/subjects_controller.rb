@@ -20,7 +20,6 @@ class SubjectsController < ApplicationController
       flash[:notice] = "subject successfully created"
       redirect_to subject_path(@subject)
     else
-      raise
       flash[:notice] = "Sorry, an error has occurred."
       redirect_to new_subject_path(@subject)
     end
@@ -40,6 +39,14 @@ class SubjectsController < ApplicationController
   end
 
   def destroy
+    subject = Subject.find(params[:id])
+    if subject.destroy
+      flash[:notice] = "subject successfully removed."
+      redirect_to subjects_path
+    else
+      flash[:notice] = "Sorry, an error has occurred."
+      redirect_to subject_path
+    end
   end
 
   private
