@@ -18,6 +18,8 @@ class User < ApplicationRecord
 
   has_many :comment_pieces
 
+  has_many :recordings
+
   geocoded_by :address
   after_validation :geocode, if: :will_save_change_to_address?
 
