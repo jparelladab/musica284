@@ -42,14 +42,26 @@
   widht: 100%;
 }
 .my-pieces {
-  background-color: orange;
+  background-color: palegreen;
   height: 33%;
-  widht: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  .card {
+    width: 15vw;
+    height: 90%;
+  }
 }
 .show-my-follows {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
+  align-items: center;
   background-color: yellow;
   height: 33%;
   widht: 100%;
+  .card {
+    width: 15vw;
+    height: 90%;
+  }
 }
