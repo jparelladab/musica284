@@ -117,6 +117,11 @@ Subject.create(name: "Repertori IV", level_id: 4, description: "This is your fou
 Subject.create(name: "Anàlisi IV", level_id: 4, description: "This is your fourth anàlisi course")
 Subject.create(name: "Harmonia IV", level_id: 4, description: "This is your fourth harmonia course")
 
+puts "creating Videos"
+Video.create(title: "Relaxing Piano Jazz", url: "https://www.youtube.com/watch?v=XiuaGPGUiUA", user: User.first, description: "Very relaxing")
+Video.create(title: "Prokofiev Tocatta", url: "https://www.youtube.com/watch?v=XYFpfFsbshk", user: User.first, description: "Very percusive")
+Video.create(title: "Debussy Images", url: "https://www.youtube.com/watch?v=L47SRue0gt8", user: User.first, description: "Very impressionist")
+
 
 # puts "creating Messages"
 # Message.create(sender_id: 1, receiver_id: 2, text: "Hola que tal whats up.")

@@ -104,17 +104,6 @@ ActiveRecord::Schema.define(version: 2020_06_10_151445) do
     t.index ["level_id"], name: "index_pieces_on_level_id"
   end
 
-  create_table "recordings", force: :cascade do |t|
-    t.string "title"
-    t.bigint "user_id"
-    t.string "url"
-    t.integer "votes"
-    t.text "description"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_recordings_on_user_id"
-  end
-
   create_table "repertoires", force: :cascade do |t|
     t.bigint "user_id"
     t.bigint "piece_id"
@@ -169,6 +158,19 @@ ActiveRecord::Schema.define(version: 2020_06_10_151445) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  create_table "videos", force: :cascade do |t|
+    t.string "title"
+    t.bigint "user_id"
+    t.string "url"
+    t.integer "votes"
+    t.bigint "composer_id"
+    t.text "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["composer_id"], name: "index_videos_on_composer_id"
+    t.index ["user_id"], name: "index_videos_on_user_id"
+  end
+
   create_table "workloads", force: :cascade do |t|
     t.bigint "user_id"
     t.bigint "subject_id"
@@ -184,5 +186,6 @@ ActiveRecord::Schema.define(version: 2020_06_10_151445) do
   add_foreign_key "messages", "users"
   add_foreign_key "pieces", "composers"
   add_foreign_key "pieces", "levels"
-  add_foreign_key "recordings", "users"
+  add_foreign_key "videos", "composers"
+  add_foreign_key "videos", "users"
 end
