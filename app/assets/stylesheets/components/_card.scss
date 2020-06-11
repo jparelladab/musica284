@@ -22,6 +22,7 @@
   display: grid;
   grid-template-columns: auto auto auto auto;
   background-color: #00005c;
+  min-height: 100vh;
 }
 .card {
   border: 1px solid black;
@@ -33,6 +34,14 @@
   text-align: center;
 }
 .card-photo img{
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  overflow: hidden;
+}
+
+.card-video iframe{
   display: block;
   width: 100%;
   height: 100%;
