@@ -16,13 +16,13 @@ composers = JSON.parse(serialized_composers)
 
 
 puts "creating users"
-User.create(first_name: "Bernat", last_name: "Pollini", email: "berni@hola.com", password: "password", address: "carrer mallorca 300 barcelona", introduction: "Trying to understand the dragonflies behaviour")
+User.create(first_name: "Bernat", last_name: "Horowitz", email: "berni@hola.com", password: "password", address: "carrer mallorca 300 barcelona", introduction: "Trying to understand the dragonflies behaviour")
 User.create(first_name: "Lali", last_name: "Buniatishvili", email: "lali@hola.com", password: "password", address: "carrer aribau 100 barcelona", introduction: "Sometimes when I'm alone I look at my phone")
-User.create(first_name: "Luireru", last_name: "Abascal", email: "luireu@hola.com", password: "password", address: "carrer pau claris 100 barcelona", introduction: "Mountains are high, oceans are deep.")
+User.create(first_name: "Luireru", last_name: "Reru", email: "luireu@hola.com", password: "password", address: "carrer pau claris 100 barcelona", introduction: "Mountains are high, oceans are deep.")
 User.create(first_name: "Yarot", last_name: "Arroyo", email: "yaro@hola.com", password: "password", address: "carrer castillejos 100 barcelona", introduction: "My students are so talentless. Why do gods punish me this way.")
 User.create(first_name: "Sergi", last_name: "Wadaixat", email: "sergi@hola.com", password: "password", address: "carrer avila 100 barcelona", introduction: "When Blanca Selva told me about this I didn't believe it.")
 User.create(first_name: "Albert", last_name: "Attenello", email: "albert@hola.com", password: "password", address: "carrer aragó 100 barcelona", introduction: "I whish I could play Appassionata like Bernat or Lali.")
-User.create(first_name: "Joan", last_name: "P", email: "joan.parellada789@gmail.com", password: "password", admin: true)
+User.create(first_name: "Joan", last_name: "Parell", email: "joan.parellada789@gmail.com", password: "password", admin: true)
 
 puts "creating Composers"
 Composer.create(name: "J.S.Bach", biography: "He was a wise man.", rating: 5)

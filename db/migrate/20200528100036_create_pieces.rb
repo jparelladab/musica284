@@ -8,6 +8,7 @@ class CreatePieces < ActiveRecord::Migration[5.2]
       t.integer :rating
       t.boolean :pipeline, default: false
       t.boolean :favorite, default: false
+      t.string :url
 
       t.timestamps
     end
