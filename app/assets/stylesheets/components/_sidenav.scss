@@ -1,0 +1,41 @@
+.sidenav {
+  height: 100%;
+  width: 20%;
+  position: fixed;
+  //z-index: 1;
+  //top: 0;
+  //left: 0;
+  background-color: #111;
+  //overflow-x: hidden;
+  padding-top: 20px;
+
+  a {
+    color: white;
+    padding: 6px 6px 6px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    font-size: 1.5vw;
+  }
+}
+
+
+.avatar-sidebar {
+  height:20vh;
+  width:20vh;
+  border-radius: 50%;
+  margin: 0 auto;
+  margin-bottom: 5vh;
+  display: block;
+}
+
+h1 {
+  text-align: center;
+  font-size: 3vw;
+}
+
+
+.links {
+  margin-top: 5vh;
+}

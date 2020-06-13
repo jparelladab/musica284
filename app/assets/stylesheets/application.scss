@@ -6,7 +6,19 @@
 @import "pages/index";
 @import "components/index";
 
+
+body {
+  width: 100vw;
+  height: 100vh;
+}
 .photo-fit {
   width:100%;
   height:100%;
 }
+
+
+
+.main {
+  margin-left: 20%;
+}
+
