@@ -1,9 +1,7 @@
 <div class="container-profile">
   <div class="wall-paper"></div>
+  <%= cl_image_tag find_photo(@user), class: "profile-info-picture" %>
   <div class="profile-info">
-    <div class="profile-info-picture">
-      <%= cl_image_tag find_photo(@user) %>
-    </div>
     <div class="profile-info-data">
       <p>Name: <%= @user.first_name %> <%= @user.last_name %></p>
       <p>Email: <%= @user.email %></p>

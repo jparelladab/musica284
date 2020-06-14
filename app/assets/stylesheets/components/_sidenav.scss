@@ -20,22 +20,10 @@
 
  a:hover {
   color: #f1f1f1;
-}
-}
-.sidenav-expanded {
-  height: 100%;
-  width: 20%;
-  position: fixed;
-  //z-index: 1;
-  //top: 0;
-  //left: 0;
-  background-color: #111;
-  //overflow-x: hidden;
-  //padding-top: 20px;
-
- a:hover {
+  }
+  i:hover{
   color: #f1f1f1;
-}
+  }
 }
 
 
@@ -47,16 +35,32 @@ h1 {
 
 
 .links {
-  margin-top: 5vh;
+  text-align: center;
+  p {
+    color: #818181;
+    margin-bottom: 3vw;
+  }
+  i {
+    font-size: 2vw;
+  }
+  a {
+    color: #818181;
+    margin-bottom: 3vw;
+    text-decoration: none;
+  }
+}
+
+.menu-button {
+  margin-top: 3vw;
+  margin-bottom: 6vw;
   text-align: center;
   a {
     color: #818181;
     display: block;
-    margin-bottom: 2vw;
+    margin-bottom: 3vw;
   }
   i {
-    font-size: 3vw;
+    font-size: 2vw;
   }
 }
-
 

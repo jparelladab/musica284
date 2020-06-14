@@ -26,9 +26,13 @@
       $(".sidenav").hover(function(){
         $(".sidenav").animate({width: "20%"},1000);
         $(".main").animate({paddingLeft: "20%"},1000);
+        $("i").animate({fontSize: "3vw"},1000);
+        //$("a").show(1000);
       }, function(){
         $(".main").animate({paddingLeft: "10%"},1000);
         $(".sidenav").animate({width: "10%"},1000);
+        $("i").animate({fontSize: "2vw"},1000);
+        //$("a").hide(1000);
       })
     </script>
   </body>
