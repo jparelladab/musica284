@@ -9,11 +9,27 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload', defer: true %>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag "application" %>
+    <script src="https://kit.fontawesome.com/a5354dd95c.js" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   </head>
 
   <body>
-      <%= render 'shared/sidebar' %>
+    <% if current_user.nil? %>
+      <%= yield %>
+    <% else %>
+    <div id="page">
+      <%= render 'shared/sidenav' %>
       <div class="main"><%= yield %></div>
     </div>
+    <% end %>
+    <script>
+      $(".sidenav").hover(function(){
+        $(".sidenav").animate({width: "20%"},1000);
+        $(".main").animate({paddingLeft: "20%"},1000);
+      }, function(){
+        $(".main").animate({paddingLeft: "10%"},1000);
+        $(".sidenav").animate({width: "10%"},1000);
+      })
+    </script>
   </body>
 </html>

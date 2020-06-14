@@ -1,6 +1,7 @@
 //External libraries
 @import "bootstrap/scss/bootstrap";
 @import 'mapbox-gl/dist/mapbox-gl';
+@import 'font-awesome';
 
 //Internal libraries
 @import "pages/index";
@@ -16,9 +17,14 @@ body {
   height:100%;
 }
 
-
-
 .main {
-  margin-left: 20%;
+  width:100%;
+  height: 200vh;
+  padding-left: 10%;
 }
+
+.main-shrinked {
+  padding-left: 20%;
+}
+
 

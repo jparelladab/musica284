@@ -1,8 +1,14 @@
 // Place all the styles related to the Users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.wall-paper {
+  background-color: yellow;
+  height: 35vh;
+  width: 100vw;
+}
+
+
 .container-profile {
-  display: flex;
   height: 100vh;
   width: 100vw;
   background-color: red;

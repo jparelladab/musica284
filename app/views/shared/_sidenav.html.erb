@@ -1,0 +1,9 @@
+<div class="sidenav">
+  <div class="links">
+    <a id="toggle-btn"><i class="fas fa-bars"></i></a>
+    <%= link_to icon('fas','user'), user_path(current_user)%>
+    <%= link_to icon('fas','home'), root_path %>
+    <%= link_to icon('fas','inbox'), conversations_path %>
+    <%= link_to icon('fas','users'),follows_path %>
+  </div>
+</div>
