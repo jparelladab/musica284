@@ -5,11 +5,17 @@
     <div class="user-name"><%= @user.first_name %> <%= @user.last_name %></div>
   </div>
   <div class="profile-options">
-    <div class="option">Timeline</div>
-    <div class="option">About</div>
+    <%= link_to "Timeline", posts_path, remote: true, class: "option" %>
+
+
     <div class="option">Friends</div>
     <div class="option">Photos</div>
   </div>
-  <div class="profile-content"></div>
+  <div id="profile-content">
+
+  </div>
+
 
 </div>
+
+

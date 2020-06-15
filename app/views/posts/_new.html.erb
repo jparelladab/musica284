@@ -1,0 +1,5 @@
+<h1>New Post</h1>
+<%= form_with(model: @post) do |f| %>
+  <%= f.text_field :text, :as => :text %>
+  <%= f.submit "Submit Post", id: "submit-post" %>
+<% end %>

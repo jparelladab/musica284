@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_06_10_151445) do
+ActiveRecord::Schema.define(version: 2020_06_15_151338) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -98,10 +98,20 @@ ActiveRecord::Schema.define(version: 2020_06_10_151445) do
     t.integer "rating"
     t.boolean "pipeline", default: false
     t.boolean "favorite", default: false
+    t.string "url"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["composer_id"], name: "index_pieces_on_composer_id"
     t.index ["level_id"], name: "index_pieces_on_level_id"
+  end
+
+  create_table "posts", force: :cascade do |t|
+    t.bigint "user_id"
+    t.text "text"
+    t.integer "likes"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_posts_on_user_id"
   end
 
   create_table "repertoires", force: :cascade do |t|
@@ -186,6 +196,7 @@ ActiveRecord::Schema.define(version: 2020_06_10_151445) do
   add_foreign_key "messages", "users"
   add_foreign_key "pieces", "composers"
   add_foreign_key "pieces", "levels"
+  add_foreign_key "posts", "users"
   add_foreign_key "videos", "composers"
   add_foreign_key "videos", "users"
 end

@@ -22,6 +22,8 @@ class User < ApplicationRecord
 
   has_many :videos
 
+  has_many :posts
+
   geocoded_by :address
   after_validation :geocode, if: :will_save_change_to_address?
 

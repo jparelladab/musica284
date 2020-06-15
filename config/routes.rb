@@ -1,10 +1,5 @@
 Rails.application.routes.draw do
 
-  get 'recordings/index'
-  get 'recordings/show'
-  get 'recordings/new'
-  get 'recordings/edit'
-  get 'conversations/index'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root to: 'pages#home'
   devise_for :users
@@ -27,6 +22,7 @@ Rails.application.routes.draw do
   resources :workloads, only: [:index, :create]
   resources :comment_pieces, only: [:create]
   resources :videos
+  resources :posts
 
   resources :conversations, only: [:index, :create] do
   resources :messages, only: [:index, :create]
