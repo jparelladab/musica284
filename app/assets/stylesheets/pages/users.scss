@@ -1,27 +1,62 @@
-// Place all the styles related to the Users controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
-.wall-paper {
+
+.container-profile {
+  //height: 100vh;
+  width: 80vw;
+  background-color: red;
+  position: relative;
+  margin: 0 auto;
+}
+
+.wallpaper {
   background-color: yellow;
-  height: 15vw;
-  width: 100vw;
+  height: 20vw;
+  width: 100%;
+}
+.wallpaper-photo {
+
 }
 
 
 .profile-info-picture {
-  border-radius: 50%;
+  //border-radius: 50%;
   position: absolute;
-  top: 5vw;
-  left: 35vw;
-  height: 20vw;
-  width: 20vw;
+  /* top: 5vw;
+  left: 35vw; */
+  height: 15vw;
+  width: 15vw;
+  top: 7vw;
+  left: 3vw;
+  border: white 5px solid;
 }
 
-.container-profile {
-  height: 100vh;
-  width: 100vw;
-  background-color: red;
-  position: relative;
+.user-name {
+  position: absolute;
+  top: 17vw;
+  left: 21vw;
+}
+.profile-options {
+  width: 100%;
+  height: 3vw;
+  background-color: #E8F0F1;
+  display: flex;
+  justify-content: center;
+  .option {
+    height:2.7vw;
+    border: solid black 1px;
+    background-color: white;
+    width: 10vw;
+    text-align: center;
+    margin: 1px 0 1px 2px;
+    vertical-align: middle;
+    color: grey;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+.option:hover {
+
 }
 
 .profile-info {

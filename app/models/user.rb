@@ -12,7 +12,9 @@ class User < ApplicationRecord
   has_many :workloads
   has_many :subjects, through: :workloads
 
-  has_one_attached :photo
+  has_one_attached :avatar
+  has_one_attached :wallPaper
+  has_many_attached :photos
 
   belongs_to :level, optional: true
 

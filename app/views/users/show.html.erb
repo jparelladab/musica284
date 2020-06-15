@@ -1,51 +1,15 @@
 <div class="container-profile">
-  <div class="wall-paper"></div>
-  <%= cl_image_tag find_photo(@user), class: "profile-info-picture" %>
-  <div class="profile-info">
-    <div class="profile-info-data">
-      <p>Name: <%= @user.first_name %> <%= @user.last_name %></p>
-      <p>Email: <%= @user.email %></p>
-      <p>Instrument: <%= @user.instrument %></p>
-      <p>Favorite Composer: <%= @user.favorite_composer %></p>
-      <p>Level: <%= @user.level.name %></p>
-      <p>Occupation: <%= @user.occupation %></p>
-      <p>Address: <%= @user.address %></p>
-      <p>Gender: <%= @user.gender %></p>
-      <% if @user.id == current_user.id %>
-        <p><%= link_to "Edit your profile", edit_user_path(current_user) %></p>
-      <% end %>
-    </div>
-    </%>
+  <div class="wallpaper">
+    <%= cl_image_tag find_wallPaper(@user), class: "wallpaper-photo photo-fit" %>
+    <%= cl_image_tag find_photo(@user), class: "profile-info-picture" %>
+    <div class="user-name"><%= @user.first_name %> <%= @user.last_name %></div>
   </div>
-  <div class="profile-activity">
-      <div class="my-homework"></div>
-      <div class="my-pieces">
-        <% current_user.pieces.each do |piece| %>
-          <div class="card">
-            <div class="card-photo">
-              <%= cl_image_tag find_photo(piece), class: "photo-fit" %>
-            </div>
-            <div class="card-info">
-              <p><%= link_to trackname(piece), piece_path(piece) %></p>
-              <p><%= link_to piece.level.name, level_path(piece.level) %></p>
-              <p><%= piece.description %></p>
-              <p>Rating: <%= piece.rating %></p>
-            </div>
-          </div>
-        <% end %>
-      </div>
-      <div class="show-my-follows">
-        <% @my_followed_users.each do |usr| %>
-          <div class="card">
-            <div class="card-photo">
-              <%= cl_image_tag find_photo(usr) %>
-            </div>
-            <div class="card-info">
-              <p><%= link_to usr.first_name, user_path(usr) %> </p>
-              <p><%= button_to("Unfollow", follow_path(usr), method: :delete )%></p>
-            </div>
-          </div>
-        <% end %>
-      </div>
+  <div class="profile-options">
+    <div class="option">Timeline</div>
+    <div class="option">About</div>
+    <div class="option">Friends</div>
+    <div class="option">Photos</div>
   </div>
+  <div class="profile-content"></div>
+
 </div>
