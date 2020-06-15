@@ -122,6 +122,22 @@ Video.create(title: "Relaxing Piano Jazz", url: "https://www.youtube.com/watch?v
 Video.create(title: "Prokofiev Tocatta", url: "https://www.youtube.com/watch?v=XYFpfFsbshk", user: User.first, description: "Very percusive")
 Video.create(title: "Debussy Images", url: "https://www.youtube.com/watch?v=L47SRue0gt8", user: User.first, description: "Very impressionist")
 
+puts "creating Posts"
+Post.create(user_id: 1, text: "A qué huelen las nuves")
+Post.create(user_id: 1, text: "Hakuna Matata")
+Post.create(user_id: 2, text: "Gotta Catch Them All")
+Post.create(user_id: 2, text: "Qui canta els seus mals espanta")
+Post.create(user_id: 3, text: "Cantem una canço!")
+Post.create(user_id: 3, text: "Cantem-ne 140.")
+Post.create(user_id: 4, text: "Hark the herald angels sing")
+Post.create(user_id: 4, text: "Què collons Miami ni que Florida Beach")
+Post.create(user_id: 5, text: "Albert tienes las llaves del coche?")
+Post.create(user_id: 5, text: "Tarragona m'esborrona")
+Post.create(user_id: 6, text: "Frohes Weihnachten")
+Post.create(user_id: 6, text: "Und einen guten Rutsch")
+Post.create(user_id: 7, text: "Les oiseaux, qui chantent.")
+Post.create(user_id: 7, text: "Les feuilles volent sous le vent.")
+
 
 # puts "creating Messages"
 # Message.create(sender_id: 1, receiver_id: 2, text: "Hola que tal whats up.")
