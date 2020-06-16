@@ -1,0 +1,41 @@
+
+
+.post {
+  width: 100%;
+  box-shadow: 0 0 6px rgba(0,0,0,0.4);
+  margin: 2vw 0;
+  padding: 1vw;
+
+  .post-avatar-username-date {
+    height: 4vw;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    .post-avatar {
+      height: 4vw;
+      width: 4vw;
+      margin-right: 1vw;
+      img {
+
+      }
+    }
+    .post-username-date {
+    }
+    .post-date {
+      font-size: 1vw;
+    }
+  }
+  .post-body {
+
+    .post-text{
+      margin-top: 1vw;
+
+    }
+    .post-photo {
+
+    }
+    .post-likes {
+
+    }
+  }
+}

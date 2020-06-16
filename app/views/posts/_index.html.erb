@@ -1,1 +1,32 @@
-<%= @my_posts %>
+
+  <% @my_posts.each do |post| %>
+    <div class="post">
+      <div class="post-avatar-username-date">
+        <div class="post-avatar">
+          <%= cl_image_tag find_photo(post.user), class: 'photo-fit' %>
+        </div>
+        <div class="post-username-date">
+          <%= fullname(post.user) %>
+          <div class="post-date text-muted">
+            <%= time_ago_in_words(post.created_at) %>
+          </div>
+        </div>
+
+      </div>
+      <div class="post-body">
+        <div class="post-text">
+          <%= post.text %>
+        </div>
+        <% if post.photo.attached? %>
+          <div class="post-photo">
+            <%= cl_image_tag post.photo.key %>
+          </div>
+        <% end %>
+        <div class="post-likes">
+          <%= post.likes %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+
+
