@@ -14,6 +14,8 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @my_followed_users = current_user.followings
     @not_followed_users = User.all - @my_followed_users - [current_user]
+    @my_posts = current_user.posts.sort_by {|post| post.created_at}.reverse!
+
   end
 
   def new
