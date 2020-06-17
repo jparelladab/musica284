@@ -2,8 +2,13 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 .network-container {
-  display: flex;
-  background-color: #00005c;
+  display: grid;
+  grid-template-columns: auto auto;
+  //margin: 10px;
+  grid-row-gap: 2vw;
+  grid-column-gap: 2vw;
+  //background-color: white;
+  //box-shadow: 0 0 6px rgba(0,0,0,0.4);
 }
 
 .users-container {

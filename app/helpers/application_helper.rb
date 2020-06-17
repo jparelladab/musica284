@@ -12,7 +12,7 @@ module ApplicationHelper
     if user.avatar.attached?
         return user.avatar.key
     else
-        return "nqeWdH9m2xAE9MhopqXgeZFJ.jpg"
+        return "Bj9yxqpaRCbTPGJZpP3MVZZD.jpg"
     end
   end
 

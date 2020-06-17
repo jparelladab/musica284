@@ -1,7 +1,6 @@
 class VideosController < ApplicationController
   def index
-    @my_videos = current_user.videos
-    @all_videos = Video.all
+    @user_videos = User.find(params[:user_id]).videos
   end
 
   def show

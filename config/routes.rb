@@ -22,6 +22,7 @@ Rails.application.routes.draw do
   resources :workloads, only: [:index, :create]
   resources :comment_pieces, only: [:create]
   resources :videos
+
   resources :posts
 
   resources :conversations, only: [:index, :create] do

@@ -5,7 +5,7 @@
     <% @my_followed_users.each do |usr| %>
         <div class="user-card">
           <div class="card-photo-container">
-            <%= cl_image_tag find_photo(usr), class: "photo-fit" %>
+            <%= cl_image_tag find_avatar(usr), class: "photo-fit" %>
           </div>
           <div class="card-info-container">
             <p><%= link_to fullname(usr), user_path(usr) %></p>
@@ -18,7 +18,7 @@
     <% @not_followed_users.each do |usr| %>
       <div class="user-card">
         <div class="card-photo-container">
-          <%= cl_image_tag find_photo(usr), class: "photo-fit" %>
+          <%= cl_image_tag find_avatar(usr), class: "photo-fit" %>
         </div>
         <div class="card-info-container">
           <p><%= link_to fullname(usr), user_path(usr) %></p>

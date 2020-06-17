@@ -1,5 +1,10 @@
 $("#profile-content").html("");
-$("#profile-content").append("<%= j render 'new' %>");
+
+"<% if params[:user_id].to_i == current_user.id %>";
+  $("#profile-content").append("<%= j render 'new' %>");
+"<% end %>";
+
 $("#profile-content").append("<%= j render 'index' %>");
+
 
 
