@@ -9,7 +9,7 @@
     <p>Level: <%= @piece.level.name %></p>
     <p>Description: <%= @piece.description %></p>
     <p>Rating: <%= @piece.rating %></p>
-    <%= cl_image_tag find_photo(@piece) %>
+    <%= cl_image_tag find_avatar(@piece) %>
     <p>Comments on this piece:</p>
     <% @piece.comment_pieces.each do |comment| %>
       <p><%= comment.user.first_name %> - <%= comment.comment %></p>

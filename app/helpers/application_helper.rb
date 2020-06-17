@@ -1,12 +1,21 @@
 module ApplicationHelper
 
   def find_photo(element)
-    if element.avatar.attached?
-        return element.avatar.key
+    if element.photo.attached?
+        return element.photo.key
     else
         return "nqeWdH9m2xAE9MhopqXgeZFJ.jpg"
     end
   end
+
+  def find_avatar(user)
+    if user.avatar.attached?
+        return user.avatar.key
+    else
+        return "nqeWdH9m2xAE9MhopqXgeZFJ.jpg"
+    end
+  end
+
   def find_wallPaper(element)
     if element.wallPaper.attached?
         return element.wallPaper.key

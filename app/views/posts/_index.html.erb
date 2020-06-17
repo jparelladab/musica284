@@ -3,7 +3,7 @@
     <div class="post">
       <div class="post-avatar-username-date">
         <div class="post-avatar">
-          <%= cl_image_tag find_photo(post.user), class: 'photo-fit' %>
+          <%= cl_image_tag find_avatar(post.user), class: 'photo-fit' %>
         </div>
         <div class="post-username-date">
           <%= fullname(post.user) %>

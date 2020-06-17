@@ -7,7 +7,7 @@
     <%= f.input :level_id, collection: Level.all %>
     <%= f.input :description, :as => :string %>
     <%= f.input :rating, collection: (1..5).to_a, label: "Rate this piece" %>
-    <%= f.input :photo, as: :file %>
+    <%= f.input :avatar, as: :file %>
     <%= f.submit "Add piece" %>
   <% end %>
 </div>

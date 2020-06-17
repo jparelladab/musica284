@@ -1,0 +1,31 @@
+.profile-info {
+  width: 100%;
+
+  .info-title {
+    width: 30%;
+  }
+
+  .about-me-edit {
+    border-bottom: black 1px solid;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+
+  }
+  .basic-info {
+    border-bottom: black 1px solid;
+    display: flex;
+
+
+  }
+  .biography {
+    border-bottom: black 1px solid;
+    display: flex;
+
+  }
+  .music {
+    border-bottom: black 1px solid;
+    display: flex;
+
+  }
+}

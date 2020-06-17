@@ -2,12 +2,12 @@
   <div class="wallpaper-options">
     <div class="wallpaper">
       <%= cl_image_tag find_wallPaper(@user), class: "wallpaper-photo photo-fit" %>
-      <%= cl_image_tag find_photo(@user), class: "profile-info-picture" %>
+      <%= cl_image_tag find_avatar(@user), class: "profile-info-picture" %>
       <div class="user-name"><%= @user.first_name %> <%= @user.last_name %></div>
     </div>
     <div class="profile-options">
       <%= link_to "Timeline", posts_path, remote: true, class: "option" %>
-      <%= link_to "About", user_path, remote: true, class: "option" %>
+      <%= link_to "Info", user_path, remote: true, class: "option" %>
       <%= link_to "Friends", follows_path, remote: true, class: "option" %>
       <%= link_to "Videos", videos_path, remote: true, class: "option" %>
       <div class="option">Stats</div>

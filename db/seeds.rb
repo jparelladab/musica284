@@ -5,14 +5,14 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-require 'json'
-require 'open-uri'
+#require 'json'
+#require 'open-uri'
 
-composers_url = "https://imslp.org/imslpscripts/API.ISCR.php?account=worklist/disclaimer=accepted/sort=id/type=1/start=0/retformat=json"
-serialized_composers = open(composers_url).read
-composers = JSON.parse(serialized_composers)
+#composers_url = "https://imslp.org/imslpscripts/API.ISCR.php?account=worklist/disclaimer=accepted/sort=id/type=1/start=0/retformat=json"
+#serialized_composers = open(composers_url).read
+#composers = JSON.parse(serialized_composers)
 
-composers = JSON.parse(serialized_composers)
+#composers = JSON.parse(serialized_composers)
 
 
 puts "creating users"
@@ -137,6 +137,34 @@ Post.create(user_id: 6, text: "Frohes Weihnachten")
 Post.create(user_id: 6, text: "Und einen guten Rutsch")
 Post.create(user_id: 7, text: "Les oiseaux, qui chantent.")
 Post.create(user_id: 7, text: "Les feuilles volent sous le vent.")
+Post.create(user_id: 1, text: "Lorem ipsum dolor sit amet, ex mei ferri fabellas scribentur, qui veritus dolores at. Veri dictas ut cum, omittam qualisque splendide sit et. Ad vix mutat adversarium voluptatibus, duis posse invenire ut pro. Ne nam propriae adolescens contentiones, eu sed nemore legendos, vix id saepe contentiones. Nec ei agam aperiam. Ridens aeterno eum cu.Homero appareat at sed. Nec no impetus aliquid fastidii. Omittam appareat platonem nec no, id usu assentior referrentur. Ei hinc latine senserit quo, duo ad tollit vivendum. Eum at laudem regione salutandi.
+Cum ei facilis docendi ponderum, usu everti molestie eu, eius deterruisset cum et. Cu soleat mnesarchum cum, ad his quodsi urbanitas, has ad antiopam suscipiantur. Has id natum perfecto maluisset, placerat facilisi petentium duo et. Pro case omnium alterum ea. No erat minimum pro, ex solet conclusionemque qui, quo dicit epicurei complectitur ex.
+Nec te atqui elitr impedit. Facilisi suscipiantur intellegebat an eam, ut qui stet persius philosophia. An suas mutat qui, iisque luptatum per te, eam at laoreet adipisci. No mel ludus labitur definiebas. Te mei noster sapientem, ius an viris iracundia inciderint. Populo vivendo pri eu, falli maiorum antiopam sit at, clita assueverit has ut.
+Eu decore sanctus definitionem nam, ")
+Post.create(user_id: 2, text: "Lorem ipsum dolor sit amet, ex mei ferri fabellas scribentur, qui veritus dolores at. Veri dictas ut cum, omittam qualisque splendide sit et. Ad vix mutat adversarium voluptatibus, duis posse invenire ut pro. Ne nam propriae adolescens contentiones, eu sed nemore legendos, vix id saepe contentiones. Nec ei agam aperiam. Ridens aeterno eum cu.Homero appareat at sed. Nec no impetus aliquid fastidii. Omittam appareat platonem nec no, id usu assentior referrentur. Ei hinc latine senserit quo, duo ad tollit vivendum. Eum at laudem regione salutandi.
+Cum ei facilis docendi ponderum, usu everti molestie eu, eius deterruisset cum et. Cu soleat mnesarchum cum, ad his quodsi urbanitas, has ad antiopam suscipiantur. Has id natum perfecto maluisset, placerat facilisi petentium duo et. Pro case omnium alterum ea. No erat minimum pro, ex solet conclusionemque qui, quo dicit epicurei complectitur ex.
+Nec te atqui elitr impedit. Facilisi suscipiantur intellegebat an eam, ut qui stet persius philosophia. An suas mutat qui, iisque luptatum per te, eam at laoreet adipisci. No mel ludus labitur definiebas. Te mei noster sapientem, ius an viris iracundia inciderint. Populo vivendo pri eu, falli maiorum antiopam sit at, clita assueverit has ut.
+Eu decore sanctus definitionem nam, ")
+Post.create(user_id: 3, text: "Lorem ipsum dolor sit amet, ex mei ferri fabellas scribentur, qui veritus dolores at. Veri dictas ut cum, omittam qualisque splendide sit et. Ad vix mutat adversarium voluptatibus, duis posse invenire ut pro. Ne nam propriae adolescens contentiones, eu sed nemore legendos, vix id saepe contentiones. Nec ei agam aperiam. Ridens aeterno eum cu.Homero appareat at sed. Nec no impetus aliquid fastidii. Omittam appareat platonem nec no, id usu assentior referrentur. Ei hinc latine senserit quo, duo ad tollit vivendum. Eum at laudem regione salutandi.
+Cum ei facilis docendi ponderum, usu everti molestie eu, eius deterruisset cum et. Cu soleat mnesarchum cum, ad his quodsi urbanitas, has ad antiopam suscipiantur. Has id natum perfecto maluisset, placerat facilisi petentium duo et. Pro case omnium alterum ea. No erat minimum pro, ex solet conclusionemque qui, quo dicit epicurei complectitur ex.
+Nec te atqui elitr impedit. Facilisi suscipiantur intellegebat an eam, ut qui stet persius philosophia. An suas mutat qui, iisque luptatum per te, eam at laoreet adipisci. No mel ludus labitur definiebas. Te mei noster sapientem, ius an viris iracundia inciderint. Populo vivendo pri eu, falli maiorum antiopam sit at, clita assueverit has ut.
+Eu decore sanctus definitionem nam, ")
+Post.create(user_id: 4, text: "Lorem ipsum dolor sit amet, ex mei ferri fabellas scribentur, qui veritus dolores at. Veri dictas ut cum, omittam qualisque splendide sit et. Ad vix mutat adversarium voluptatibus, duis posse invenire ut pro. Ne nam propriae adolescens contentiones, eu sed nemore legendos, vix id saepe contentiones. Nec ei agam aperiam. Ridens aeterno eum cu.Homero appareat at sed. Nec no impetus aliquid fastidii. Omittam appareat platonem nec no, id usu assentior referrentur. Ei hinc latine senserit quo, duo ad tollit vivendum. Eum at laudem regione salutandi.
+Cum ei facilis docendi ponderum, usu everti molestie eu, eius deterruisset cum et. Cu soleat mnesarchum cum, ad his quodsi urbanitas, has ad antiopam suscipiantur. Has id natum perfecto maluisset, placerat facilisi petentium duo et. Pro case omnium alterum ea. No erat minimum pro, ex solet conclusionemque qui, quo dicit epicurei complectitur ex.
+Nec te atqui elitr impedit. Facilisi suscipiantur intellegebat an eam, ut qui stet persius philosophia. An suas mutat qui, iisque luptatum per te, eam at laoreet adipisci. No mel ludus labitur definiebas. Te mei noster sapientem, ius an viris iracundia inciderint. Populo vivendo pri eu, falli maiorum antiopam sit at, clita assueverit has ut.
+Eu decore sanctus definitionem nam, ")
+Post.create(user_id: 5, text: "Lorem ipsum dolor sit amet, ex mei ferri fabellas scribentur, qui veritus dolores at. Veri dictas ut cum, omittam qualisque splendide sit et. Ad vix mutat adversarium voluptatibus, duis posse invenire ut pro. Ne nam propriae adolescens contentiones, eu sed nemore legendos, vix id saepe contentiones. Nec ei agam aperiam. Ridens aeterno eum cu.Homero appareat at sed. Nec no impetus aliquid fastidii. Omittam appareat platonem nec no, id usu assentior referrentur. Ei hinc latine senserit quo, duo ad tollit vivendum. Eum at laudem regione salutandi.
+Cum ei facilis docendi ponderum, usu everti molestie eu, eius deterruisset cum et. Cu soleat mnesarchum cum, ad his quodsi urbanitas, has ad antiopam suscipiantur. Has id natum perfecto maluisset, placerat facilisi petentium duo et. Pro case omnium alterum ea. No erat minimum pro, ex solet conclusionemque qui, quo dicit epicurei complectitur ex.
+Nec te atqui elitr impedit. Facilisi suscipiantur intellegebat an eam, ut qui stet persius philosophia. An suas mutat qui, iisque luptatum per te, eam at laoreet adipisci. No mel ludus labitur definiebas. Te mei noster sapientem, ius an viris iracundia inciderint. Populo vivendo pri eu, falli maiorum antiopam sit at, clita assueverit has ut.
+Eu decore sanctus definitionem nam, ")
+Post.create(user_id: 6, text: "Lorem ipsum dolor sit amet, ex mei ferri fabellas scribentur, qui veritus dolores at. Veri dictas ut cum, omittam qualisque splendide sit et. Ad vix mutat adversarium voluptatibus, duis posse invenire ut pro. Ne nam propriae adolescens contentiones, eu sed nemore legendos, vix id saepe contentiones. Nec ei agam aperiam. Ridens aeterno eum cu.Homero appareat at sed. Nec no impetus aliquid fastidii. Omittam appareat platonem nec no, id usu assentior referrentur. Ei hinc latine senserit quo, duo ad tollit vivendum. Eum at laudem regione salutandi.
+Cum ei facilis docendi ponderum, usu everti molestie eu, eius deterruisset cum et. Cu soleat mnesarchum cum, ad his quodsi urbanitas, has ad antiopam suscipiantur. Has id natum perfecto maluisset, placerat facilisi petentium duo et. Pro case omnium alterum ea. No erat minimum pro, ex solet conclusionemque qui, quo dicit epicurei complectitur ex.
+Nec te atqui elitr impedit. Facilisi suscipiantur intellegebat an eam, ut qui stet persius philosophia. An suas mutat qui, iisque luptatum per te, eam at laoreet adipisci. No mel ludus labitur definiebas. Te mei noster sapientem, ius an viris iracundia inciderint. Populo vivendo pri eu, falli maiorum antiopam sit at, clita assueverit has ut.
+Eu decore sanctus definitionem nam, ")
+Post.create(user_id: 7, text: "Lorem ipsum dolor sit amet, ex mei ferri fabellas scribentur, qui veritus dolores at. Veri dictas ut cum, omittam qualisque splendide sit et. Ad vix mutat adversarium voluptatibus, duis posse invenire ut pro. Ne nam propriae adolescens contentiones, eu sed nemore legendos, vix id saepe contentiones. Nec ei agam aperiam. Ridens aeterno eum cu.Homero appareat at sed. Nec no impetus aliquid fastidii. Omittam appareat platonem nec no, id usu assentior referrentur. Ei hinc latine senserit quo, duo ad tollit vivendum. Eum at laudem regione salutandi.
+Cum ei facilis docendi ponderum, usu everti molestie eu, eius deterruisset cum et. Cu soleat mnesarchum cum, ad his quodsi urbanitas, has ad antiopam suscipiantur. Has id natum perfecto maluisset, placerat facilisi petentium duo et. Pro case omnium alterum ea. No erat minimum pro, ex solet conclusionemque qui, quo dicit epicurei complectitur ex.
+Nec te atqui elitr impedit. Facilisi suscipiantur intellegebat an eam, ut qui stet persius philosophia. An suas mutat qui, iisque luptatum per te, eam at laoreet adipisci. No mel ludus labitur definiebas. Te mei noster sapientem, ius an viris iracundia inciderint. Populo vivendo pri eu, falli maiorum antiopam sit at, clita assueverit has ut.
+Eu decore sanctus definitionem nam, ")
 
 
 # puts "creating Messages"
