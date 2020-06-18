@@ -1,7 +1,5 @@
-
-<div class="network-container">
-  <div class="users-container">
-    <div class="title">Users I follow</div>
+<div class="title">Users I follow</div>
+  <div class="network-container">
     <% @my_followed_users.each do |usr| %>
         <div class="user-card">
           <div class="card-photo-container">
@@ -14,7 +12,9 @@
           </div>
         </div>
     <% end %>
-    <div class="title">Other users</div>
+  </div>
+  <div class="title">Other users</div>
+    <div class="network-container">
     <% @not_followed_users.each do |usr| %>
       <div class="user-card">
         <div class="card-photo-container">
@@ -28,7 +28,4 @@
       </div>
     <% end %>
   </div>
-  <div class="map-container"><%= render 'shared/map' %></div>
-
-
 </div>

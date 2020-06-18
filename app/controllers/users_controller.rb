@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
 
-  before_action :set_user, only: [:show, :edit, :update, :destroy]
+  #before_action :set_user, only: [:show, :edit, :update, :destroy]
   def index
     @users = User.geocoded
     @markers = @users.map do |user|
@@ -15,8 +15,9 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @my_followed_users = current_user.followings
     @not_followed_users = User.all - @my_followed_users - [current_user]
-    #@my_posts = current_user.posts.sort_by {|post| post.created_at}.reverse!
-    @user_posts = User.find(params[:id]).posts
+    @my_posts = current_user.posts.sort_by {|post| post.created_at}.reverse!
+    @user_posts = @user.posts.sort_by {|post| post.created_at}.reverse!
+    @all_posts = @my_posts + (current_user.followings.map {|foll| foll.posts}.flatten).sort_by {|post| post.created_at}.reverse!
   end
 
   def new
@@ -50,8 +51,5 @@ class UsersController < ApplicationController
     params.require(:user).permit(:email, :occupation, :favorite_composer, :instrument, :gender, :biography, :address, :first_name, :last_name, :avatar, :level_id)
   end
 
-  def set_user
-    @user = current_user
-  end
 
 end
