@@ -21,8 +21,12 @@
           <%= cl_image_tag find_avatar(usr), class: "photo-fit" %>
         </div>
         <div class="card-info-container">
-          <p><%= link_to fullname(usr), user_path(usr) %></p>
-          <p><%= usr.introduction %></p>
+          <div class="card-info-name">
+            <%= link_to fullname(usr), user_path(usr) %>
+          </div>
+          <div class="card-info-text">
+            <%= usr.introduction %>
+          </div>
           <p><%= button_to "Follow", follows_path, params: {followed: usr}, method: :post %></p>
         </div>
       </div>

@@ -1,4 +1,5 @@
 class PostsController < ApplicationController
+  include ApplicationHelper
   #before_action :set_post, only: [:show, :edit, :update, :destroy]
 
   def index
@@ -18,7 +19,6 @@ class PostsController < ApplicationController
   def create
     @post = Post.new(user_id: params[:user_id], text: params[:post][:text])
     respond_to do |format|
-    #@general_wall = params[:general_wall]
       if @post.save
         @my_posts = current_user.posts.sort_by {|post| post.created_at}.reverse!
         @user_posts = params[:user_id].nil? ? nil : User.find(params[:user_id]).posts.sort_by {|post| post.created_at}.reverse!

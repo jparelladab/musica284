@@ -1,17 +1,16 @@
 
-<div class="card-container">
+
   <% @user_videos.each do |video| %>
     <div class="card">
       <div class="card-video">
-        <%= youtube_video video.url %>
+        <%= render_youtube_video video.url %>
       </div>
       <div class="card-info">
-        <p><%= link_to video.title, video %></p>
-        <p>Uploaded by: <%= link_to fullname(video.user), user_path(video.user) %></p>
+        <p><%= video.title %></p>
         <p><%= video.description %></p>
-        <p>Rating: <%= video.votes %></p>
+
       </div>
     </div>
   <% end %>
-</div>
+
 <p><%= link_to "Add Video", new_piece_path, class: "btn btn-primary" %></p>

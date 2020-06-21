@@ -1,10 +1,10 @@
 $("#profile-content").html("");
 
 "<% if params[:user_id].to_i == current_user.id %>";
-  $("#profile-content").append("<%= j render 'new', params: {user_id: params[:user_id].to_i, general_wall: params[:general_wall].to_b} %>");
+  $("#profile-content").append("<%= j render 'new', params: {user_id: params[:user_id].to_i, general_wall: params[:general_wall]} %>");
 "<% end %>";
 
-$("#profile-content").append("<%= j render 'index', params: {user_id: params[:user_id].to_i, general_wall: params[:general_wall].to_b} %>");
+$("#profile-content").append("<%= j render 'index', params: {user_id: params[:user_id].to_i, general_wall: params[:general_wall]} %>");
 
 
 

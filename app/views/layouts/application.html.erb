@@ -17,10 +17,10 @@
     <% if current_user.nil? %>
       <%= yield %>
     <% else %>
-    <div id="page">
+
       <%= render 'shared/sidenav' %>
       <div class="main"><%= yield %></div>
-    </div>
+      <%= render 'shared/rightnav' %>
     <% end %>
     <script>
       /*$(".sidenav").hover(function(){

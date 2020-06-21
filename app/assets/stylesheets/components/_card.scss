@@ -7,7 +7,8 @@
 .user-card {
   display: flex;
   text-align: center;
-  width: 100%;
+  //width: 20vw;
+  height: 20vh;
   box-shadow: 0 0 6px rgba(0,0,0,0.4);
 }
 
@@ -27,6 +28,7 @@
 .card {
   box-shadow: 0 0 6px rgba(0,0,0,0.4);
   text-align: center;
+  margin-bottom: 2vh;
 }
 .card-photo img{
   display: block;
@@ -36,12 +38,15 @@
   overflow: hidden;
 }
 
-.card-video iframe{
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  overflow: hidden;
+.card-video {
+  height: 60vh;
+  iframe{
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    overflow: hidden;
+  }
 }
 
 .card-photo {
@@ -54,11 +59,14 @@
   background-color: orange;
   width: 60%;
   padding: 2rem;
-}
-
-
-.card-info p {
-  margin: 1vh auto;
-  font-size: 2vh;
   text-align: center;
+  .card-info-name a {
+    font-size: 70%;
+  }
+  .card-info-text  {
+    font-size: 50%;
+  }
 }
+
+
+

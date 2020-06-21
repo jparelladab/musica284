@@ -24,12 +24,19 @@ module ApplicationHelper
     end
   end
 
-  def youtube_video(url)
-    unless(url.nil?)
-      video_id = url.split("?v=")[1]
+  def render_youtube_video(text)
+      regex = /www.youtube.com\/watch\?v=(\w{11})/
+    unless(text.nil? || text.match(regex).nil?)
+      video_id = text.match(regex)[1]
+      #video_id = url.split("?v=")[1]
       embed_url = "https://www.youtube.com/embed/" + video_id
       render :partial => 'shared/video', :locals => { :url => embed_url }
     end
+  end
+
+  def remove_video_link_from_text(text)
+    regex = /(https:\/\/)?www.youtube.com\/watch\?v=(\w{11})/
+    text.sub(regex, "")
   end
 
 end

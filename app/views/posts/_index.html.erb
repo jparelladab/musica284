@@ -22,11 +22,16 @@
     </div>
     <div class="post-body">
       <div class="post-text">
-        <%= post.text %>
+        <%= remove_video_link_from_text(post.text) %>
       </div>
       <% if post.photo.attached? %>
         <div class="post-photo">
           <%= cl_image_tag post.photo.key %>
+        </div>
+      <% end %>
+      <% unless render_youtube_video(post.text).nil? %>
+        <div class="post-video">
+          <%= render_youtube_video(post.text) %>
         </div>
       <% end %>
       <div class="post-likes">

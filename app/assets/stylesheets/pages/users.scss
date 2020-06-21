@@ -1,33 +1,31 @@
 
 .container-profile {
   //height: 100vh;
-  width: 80vw;
+  width: 95%;
   background-color: #F9F9FB;
-  position: relative;
+
   margin: 0 auto;
 }
+.profile-header {
+  position: relative;
+  .wallpaper {
+    height: 20vw;
+    width: 100%;
+    .profile-info-picture {
+      position: absolute;
+      height: 11vw;
+      width: 11vw;
+      bottom: 2vw;
+      left: 2vw;
+      border: white 5px solid;
+    }
+  }
+  .wallpaper-options {
+    box-shadow: 0 0 6px rgba(0,0,0,0.4);
+    margin-bottom: 2vw;
+  }
+}
 
-.wallpaper {
-  background-color: yellow;
-  height: 20vw;
-  width: 100%;
-}
-.wallpaper-options {
-  box-shadow: 0 0 6px rgba(0,0,0,0.4);
-  margin-bottom: 2vw;
-}
-
-.profile-info-picture {
-  //border-radius: 50%;
-  position: absolute;
-  /* top: 5vw;
-  left: 35vw; */
-  height: 15vw;
-  width: 15vw;
-  top: 7vw;
-  left: 3vw;
-  border: white 5px solid;
-}
 
 .user-name {
   position: absolute;
@@ -46,7 +44,7 @@
     height:2.7vw;
     border: solid black 1px;
     background-color: white;
-    width: 10vw;
+    width: 7vw;
     text-align: center;
     margin: 1px 0 1px 2px;
     vertical-align: middle;
