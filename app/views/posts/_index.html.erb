@@ -1,8 +1,12 @@
-<% if !params[:id].nil? %>
+
+<% if params[:user_id] == current_user.id && params[:general_wall] == "false" %>
+  <% posts = @my_posts %>
+<% elsif params[:user_id] != current_user.id && params[:general_wall] == "false"  %>
   <% posts = @user_posts %>
 <% else %>
   <% posts = @all_posts %>
 <% end %>
+
 <% posts.each do |post| %>
   <div class="post">
     <div class="post-avatar-username-date">
@@ -28,6 +32,11 @@
       <div class="post-likes">
         <%= post.likes %>
       </div>
+      <% if post.user_id == current_user.id %>
+        <div class="post-delete">
+          <%= link_to icon('far', 'trash-alt'), post_path(post, general_wall: params[:general_wall]), method: :delete, remote: true %>
+        </div>
+      <% end %>
     </div>
   </div>
 <% end %>

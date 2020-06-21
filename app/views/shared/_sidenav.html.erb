@@ -5,7 +5,7 @@
     <p><%=link_to icon('fas','user'), user_path(current_user) %></p>
     <p><%= link_to icon('fas','inbox') , conversations_path %></p>
     <p><%= link_to icon('fas','users'), follows_path %></p>
-    <p><%= link_to icon('far','comment-dots'), posts_path %></p>
+    <p><%= link_to icon('far','comment-dots'), posts_path, params: {general_wall: true} %></p>
 
   </div>
 </div>

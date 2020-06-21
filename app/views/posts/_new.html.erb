@@ -4,6 +4,7 @@
   <%= form_with model: Post.new do |f| %>
     <%= f.text_area :text, placeholder: "What's in your mind?" %>
     <%= hidden_field_tag :user_id, current_user.id %>
+    <%= hidden_field_tag :general_wall, params[:general_wall] %>
     <%= f.submit "post", class: "btn btn-default btn-primary" %>
   <% end %>
 

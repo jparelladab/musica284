@@ -1,0 +1,7 @@
+
+$("#profile-content").html("");
+"<% if params[:user_id].to_i == current_user.id || params[:user_id].nil? %>";
+  $("#profile-content").append("<%= j render 'new', params: {general_wall: params[:general_wall]} %>");
+"<% end %>";
+
+$("#profile-content").append("<%= j render 'index', params: {usr: @usr, user_id: current_user.id, general_wall: params[:general_wall]} %>");

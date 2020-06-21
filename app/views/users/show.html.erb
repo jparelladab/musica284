@@ -6,7 +6,7 @@
       <div class="user-name"><%= fullname(@user) %></div>
     </div>
     <div class="profile-options">
-      <%= link_to "Timeline", posts_path(user_id: @user.id, posts: @user_posts), remote: true, class: "option" %>
+      <%= link_to "Timeline", posts_path(user_id: @user.id, general_wall: "false"), remote: true, class: "option" %>
       <%= link_to "Info", user_path, remote: true, class: "option" %>
       <%= link_to "Friends", follows_path, remote: true, class: "option" %>
       <%= link_to "Videos", videos_path(user_id: @user.id), remote: true, class: "option" %>
@@ -15,9 +15,9 @@
   </div>
   <div id="profile-content">
     <% if @user.id == current_user.id %>
-      <%= render 'posts/new' %>
+      <%= render 'posts/new', params: {general_wall: "false"} %>
     <% end %>
-    <%= render 'posts/index' %>
+    <%= render 'posts/index', params: {user_id: @user.id, general_wall: "false"} %>
   </div>
 
 
