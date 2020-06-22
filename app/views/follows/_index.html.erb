@@ -1,22 +1,18 @@
 
 <div class="network-container">
-
-    <% @my_followed_users.each do |usr| %>
-        <div class="user-card">
-          <div class="card-photo-container">
-            <%= cl_image_tag find_avatar(usr), class: "photo-fit" %>
-          </div>
-          <div class="card-info-container">
-          <div class="card-info-name">
-            <%= link_to fullname(usr), user_path(usr) %>
-          </div>
-          <div class="card-info-text">
-            <%= usr.introduction %>
-          </div>
-            <p><%= button_to("Unfollow", follow_path(usr), method: :delete )%></p>
-          </div>
+  <% @my_followed_users.each do |usr| %>
+    <div class="user-card">
+      <div class="card-photo-container">
+        <%= cl_image_tag find_avatar(usr), class: "photo-fit" %>
+      </div>
+      <div class="card-info-container">
+        <div class="card-info-name">
+          <%= link_to fullname(usr), user_path(usr) %>
         </div>
-    <% end %>
-
-
+        <div class="card-info-text">
+          <%= usr.introduction %>
+        </div>
+      </div>
+    </div>
+  <% end %>
 </div>
