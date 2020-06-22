@@ -4,4 +4,17 @@
 .conversations-container {
   background-color: lightgreen;
   padding: 2rem;
+  width: 100%;
+  min-height: 100vh;
+  .conversation {
+    width: 100%;
+    height: 20vh;
+    background-color: white;
+    display: flex;
+    .conversation-avatar {
+      width: 20%;
+      height: 100%;
+    }
+  }
 }
+

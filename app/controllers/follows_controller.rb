@@ -28,12 +28,12 @@ class FollowsController < ApplicationController
   def destroy
     @user = User.find(params[:id])
     @follow = Follow.find {|f| f.follower_id == current_user.id && f.followed_user_id == @user.id}
-    if @follow.destroy
-      flash[:notice] = "Follow successfully removed."
-      redirect_to follows_path
-    else
-      flash[:notice] = "Sorry, an error has occurred."
-      redirect_to follows_path
+    respond_to do |format|
+      if @follow.destroy
+        format.js
+      else
+        format.js
+      end
     end
   end
 

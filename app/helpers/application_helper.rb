@@ -39,4 +39,12 @@ module ApplicationHelper
     text.sub(regex, "")
   end
 
+  def conversation_other(conversation)
+    if (conversation.sender_id == current_user.id)
+      return User.find(conversation.receiver_id)
+    else
+      return User.find(conversation.sender_id)
+    end
+  end
+
 end
