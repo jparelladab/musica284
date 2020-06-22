@@ -2,22 +2,25 @@ class MessagesController < ApplicationController
 
   before_action do
     @conversation = Conversation.find(params[:conversation_id])
+    #@conversation = params[:conversation]
   end
 
   def index
     @messages = @conversation.messages
-
     @messages.where("user_id != ? AND read = ?", current_user.id, false).update_all(read: true)
-
     @message = @conversation.messages.new
   end
 
   def create
+    @conversation = Conversation.find(params[:conversation_id])
     @message = @conversation.messages.new(message_params)
     @message.user = current_user
-
-    if @message.save
-      redirect_to conversation_messages_path(@conversation)
+    respond_to do |format|
+      if @message.save
+        format.js
+      else
+        format.js
+      end
     end
   end
 

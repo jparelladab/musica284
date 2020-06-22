@@ -11,7 +11,7 @@
 body {
   width: 100vw;
   height: 100vh;
-  background-color: #FAFAFC;
+  //background-color: #FAFAFC;
 }
 .photo-fit {
   width:100%;
@@ -19,19 +19,18 @@ body {
 }
 
 .main {
-
   min-height: 100vh;
   margin-left: 20%;
-  margin-right: 20%;
-}
-
-.main-shrinked {
-  padding-left: 20%;
+  display: flex;
 }
 
 .central-content {
-  margin-right: 1vw;
-  margin-left: 1vw;
+  width: 50%;
+  min-height: 100vh;
+}
+.right-content {
+  width: 50%;
+  min-height: 100vh;
 }
 
 

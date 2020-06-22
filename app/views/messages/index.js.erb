@@ -1,0 +1,3 @@
+$(".conversation-active").html("");
+$(".conversation-active").append("<%= j render 'index', params:{conversation: params[:conversation]} %>");
+window.scrollTo(0,document.querySelector(".conversation-active").scrollHeight);

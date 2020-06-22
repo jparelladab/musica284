@@ -1,0 +1,43 @@
+.message {
+  width: 100%;
+  box-shadow: 0 0 6px rgba(0,0,0,0.4);
+  margin-bottom: 1vw;
+  padding: 1vw;
+  position: relative;
+  .message-avatar-username-date {
+    height: 4vw;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    .message-avatar {
+      height: 4vw;
+      width: 4vw;
+      margin-right: 1vw;
+      img {
+
+      }
+    }
+    .message-date {
+      font-size: 1vw;
+    }
+  }
+  .message-body {
+    .message-text{
+      margin-top: 1vw;
+      margin-bottom: 1vw;
+    }
+    .message-photo {
+
+    }
+    .message-video {
+      width: 100%;
+      iframe {
+        width: 100%;
+        height: 60vh;
+      }
+    }
+    .message-likes {
+
+    }
+  }
+}

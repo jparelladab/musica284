@@ -1,0 +1,7 @@
+
+<%= form_for [@conversation, @message] do |f| %>
+  <div class="new-message-field">
+    <%= f.text_area :body, placeholder: "Your message" %>
+  </div>
+  <%= f.submit "Send", style: "margin-bottom: 1rem;" %>
+<% end %>

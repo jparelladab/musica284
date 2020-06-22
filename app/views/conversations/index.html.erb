@@ -1,19 +1,28 @@
+
+
+<div class="conversation-active">
+  <% if @conversations.any? %>
+    <%= render 'messages/index' %>
+  <% end %>
+</div>
+
 <div class="conversations-container">
-
   <% @conversations.each do |conversation| %>
-    <div class="conversation">
-      <div class="conversation-avatar"><%= cl_image_tag find_avatar(conversation_other(conversation)), class: 'photo-fit' %></div>
-      <%= link_to fullname(conversation.recipient(current_user)), conversation_messages_path(conversation) %>
-      <% if !conversation.unread_message_count(current_user).zero? %>
-        <span style="background-color: lightgreen;">(<%= conversation.unread_message_count(current_user) %>)</span>
-      <% end %>
-    </div>
+    <%= link_to conversation_messages_path(conversation), remote: true do %>
+      <div class="conversation">
+        <div class="conversation-avatar"><%= cl_image_tag find_avatar(conversation_other(conversation)), class: 'photo-fit' %></div>
+        <div class="conversation-body">
+          <div class="conversation-name"><%= fullname(conversation.recipient(current_user)) %></div>
+          <div class="conversation-time text-muted"><%= time_ago_in_words(conversation.messages.last.created_at) %></div>
+          <div class="conversation-text"><%= conversation.messages.last.body.truncate(15) %></div>
+        </div>
+        <% if !conversation.unread_message_count(current_user).zero? %>
+          <span style="background-color: lightgreen;">(<%= conversation.unread_message_count(current_user) %>)</span>
+        <% end %>
+      </div>
+    <% end %>
   <% end %>
-
-  <% @users.each do |user| %>
-    <p><%= button_to fullname(user), conversations_path, params: {sender_id: current_user.id, receiver_id: user.id}, method: :post %></p>
-  <% end %>
-
-
 
 </div>
+
+

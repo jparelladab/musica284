@@ -1,24 +1,26 @@
-<div class="title">Users I follow</div>
-<%= render 'index' %>
+<div class="central-content">
+  <div class="title">Users I follow</div>
+  <%= render 'index' %>
 
-<div class="title">Other users</div>
+  <div class="title">Other users</div>
 
-<div class="network-container">
-  <% @not_followed_users.each do |usr| %>
-    <div class="user-card">
-      <div class="card-photo-container">
-        <%= cl_image_tag find_avatar(usr), class: "photo-fit" %>
-      </div>
-      <div class="card-info-container">
-        <div class="card-info-name">
-          <%= link_to fullname(usr), user_path(usr) %>
+  <div class="network-container">
+    <% @not_followed_users.each do |usr| %>
+      <div class="user-card">
+        <div class="card-photo-container">
+          <%= cl_image_tag find_avatar(usr), class: "photo-fit" %>
         </div>
-        <div class="card-info-text">
-          <%= usr.introduction %>
+        <div class="card-info-container">
+          <div class="card-info-name">
+            <%= link_to fullname(usr), user_path(usr) %>
+          </div>
+          <div class="card-info-text">
+            <%= usr.introduction %>
+          </div>
+            <p><%= button_to "Follow", follows_path, params: {followed: usr}, method: :post %></p>
         </div>
-          <p><%= button_to "Follow", follows_path, params: {followed: usr}, method: :post %></p>
       </div>
-    </div>
-  <% end %>
+    <% end %>
+  </div>
 </div>
-
+<div class="right-pane"></div>

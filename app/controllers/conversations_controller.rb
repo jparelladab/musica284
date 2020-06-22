@@ -3,6 +3,10 @@ class ConversationsController < ApplicationController
   def index
     @conversations = Conversation.where("sender_id = ? OR receiver_id = ?", current_user.id, current_user.id)
     @users = User.where.not(id: current_user.id)
+    @conversation = @conversations.last
+    @messages = @conversation.messages
+    @messages.where("user_id != ? AND read = ?", current_user.id, false).update_all(read: true)
+    #@message = @conversation.messages.new
   end
 
   def create
