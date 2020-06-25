@@ -5,9 +5,7 @@
         <%= cl_image_tag find_wallPaper(@user), class: "wallpaper-photo photo-fit" %>
         <%= cl_image_tag find_avatar(@user), class: "profile-info-picture" %>
         <div class="user-name"><%= fullname(@user) %></div>
-        <% if @user.in?(current_user.followings) %>
-          <%= link_to("Unfollow", follow_path(@user), remote: true, method: :delete, class: "unfollow-btn") %>
-        <% end %>
+        <div id="follow-btn"><%= render 'follows/followbtn' %></div>
       </div>
       <div class="profile-options">
         <%= link_to "Timeline", posts_path(user_id: @user.id, general_wall: "false"), remote: true, class: "option" %>
@@ -24,8 +22,7 @@
     <% end %>
     <%= render 'posts/index', params: {user_id: @user.id, general_wall: "false"} %>
   </div>
-
-
 </div>
+<div class="right-pane"></div>
 
 

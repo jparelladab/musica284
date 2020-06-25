@@ -1,14 +1,13 @@
 class MessagesController < ApplicationController
-
   before_action do
     @conversation = Conversation.find(params[:conversation_id])
-    #@conversation = params[:conversation]
   end
 
   def index
     @messages = @conversation.messages
     @messages.where("user_id != ? AND read = ?", current_user.id, false).update_all(read: true)
-    @message = @conversation.messages.new
+    #@message = @conversation.messages.new
+    #@conversations = Conversation.where("sender_id = ? OR receiver_id = ?", current_user.id, current_user.id)
   end
 
   def create
