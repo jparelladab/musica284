@@ -6,12 +6,11 @@ class MessagesController < ApplicationController
   def index
     @messages = @conversation.messages
     @messages.where("user_id != ? AND read = ?", current_user.id, false).update_all(read: true)
-    #@message = @conversation.messages.new
-    #@conversations = Conversation.where("sender_id = ? OR receiver_id = ?", current_user.id, current_user.id)
+      #@message = @conversation.messages.new
+      #@conversations = Conversation.where("sender_id = ? OR receiver_id = ?", current_user.id, current_user.id)
   end
 
   def create
-    @conversation = Conversation.find(params[:conversation_id])
     @message = @conversation.messages.new(message_params)
     @message.user = current_user
     respond_to do |format|

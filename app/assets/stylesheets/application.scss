@@ -21,12 +21,28 @@ body {
 
 .main {
   min-height: 100vh;
-  margin-left: 20%;
+  margin-left: 20vw;
   display: flex;
+  width: 80vw;
 }
 
 .central-content {
-  width: 50%;
+  //width: 50%;
+  min-height: 100vh;
+}
+
+.rightnav-container {
+  background-color: black;
+  width: 20%;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  right: 0;
+}
+
+
+.right-pane {
+  //width: 50%;
   min-height: 100vh;
 }
 

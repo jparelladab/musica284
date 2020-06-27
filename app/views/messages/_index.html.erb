@@ -13,13 +13,13 @@
 <% unless conversation.messages.nil? %>
   <% conversation.messages.each do |message| %>
     <% if user.nil? %><% user = message.user %><% else %><% same_user = (user == message.user) %><% end %>
+    <% user = message.user %>
     <div class="msg-container">
       <% if same_user %><% if (message.user == current_user) %><div class="bubble altfollow"><% else %><div class="bubble follow"><% end %>
       <% else %><% if (message.user == current_user) %><div class="bubble alt"><% else %><div class="bubble"><% end %>
       <% end %>
         <div class="txt">
           <% if !same_user %><% if (message.user == current_user) %><span class="name alt"><%= fullname(message.user) %></span><% else %><span class="name"><%= fullname(message.user) %></span><% end %>
-          <% else %><span class="name"><%= fullname(message.user) %></span>
           <% end %>
           <span class="timestamp"><%= time_ago_in_words(message.created_at) %></span>
           <% if same_user %><span class="msg follow"><%= message.body %></span><% else %><span class="msg"><%= message.body %></span><% end %>
@@ -33,13 +33,14 @@
     </div>
   <% end %>
 <% end %>
-
-<%= form_with model: [conversation, conversation.messages.new] do |f| %>
-  <div class="new-message-field">
-    <%= f.text_area :body, placeholder: "Your message" %>
-  </div>
-    <%= hidden_field_tag :user_id, current_user.id %>
-  <%= f.submit "Send", style: "margin-bottom: 1rem;" %>
-<% end %>
+<div class="messages-input">
+  <%= form_with model: [conversation, conversation.messages.new] do |f| %>
+    <div class="new-message-field">
+      <%= f.text_area :body, placeholder: "Your message" %>
+    </div>
+      <%= hidden_field_tag :user_id, current_user.id %>
+    <%= f.submit "Send", style: "margin-bottom: 1rem;" %>
+  <% end %>
+</div>
 
 

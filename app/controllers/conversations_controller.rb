@@ -1,7 +1,7 @@
 class ConversationsController < ApplicationController
   #include UsersHelper
   def index
-    @conversations = Conversation.where("sender_id = ? OR receiver_id = ?", current_user.id, current_user.id)
+    @conversations = Conversation.where("sender_id = ? OR receiver_id = ?", current_user.id, current_user.id).sort_by {|conv| conv.updated_at}
     #@users = User.where.not(id: current_user.id)
     @conversation = @conversations.last
     #@messages = @conversation.messages

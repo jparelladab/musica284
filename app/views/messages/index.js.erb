@@ -1,3 +1,5 @@
+
 $(".conversation-active").html("");
+$("#undread-count").hide();
 $(".conversation-active").append("<%= j render 'index' %>");
 window.scrollTo(0,document.querySelector(".conversation-active").scrollHeight);

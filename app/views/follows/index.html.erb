@@ -1,11 +1,12 @@
 <div class="central-content">
-  <div class="title">Users I follow</div>
-  <%= render 'index' %>
-
-  <div class="title">Other users</div>
-
-  <div class="network-container">
-    <% @not_followed_users.each do |usr| %>
+<h1>Search for other users</h1>
+  <%= form_with url: follows_path, method: :get do %>
+  <%= text_field_tag :query, params[:query], class: "form-control", placeholder: "Find a user" %>
+  <%= submit_tag "Search", class: "btn btn-primary" %>
+<% end %>
+<div class="network-container">
+  <div class="users-grid">
+    <% @all_users.each do |usr| %>
       <div class="user-card">
         <div class="card-photo-container">
           <%= cl_image_tag find_avatar(usr), class: "photo-fit" %>

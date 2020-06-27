@@ -1,10 +1,14 @@
 class FollowsController < ApplicationController
   #include UsersHelper
   def index
+    if params[:query].present?
+      @followings = current_user.followings.where("first_name ILIKE ?", "%#{params[:query]}%") | current_user.followings.where("last_name ILIKE ?", "%#{params[:query]}%")
+    else
+      @followings = current_user.followings
+    end
     @all_users = User.all
     @all_follows = Follow.all
-    @my_followed_users = current_user.followings
-    @not_followed_users = User.all - @my_followed_users - [current_user]
+    @not_followed_users = User.all - @followings - [current_user]
     @users = User.geocoded
     @markers = @users.map do |user|
       {
