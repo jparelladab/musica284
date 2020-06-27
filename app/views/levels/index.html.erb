@@ -1,15 +1,18 @@
+<div>
+
 <div class="title">My Level</div>
-  <div class="card-container">
-    <div class="card">
-      <div class="card-photo">
+
+<div style="width:50%;">
+
+
         <%= cl_image_tag(find_avatar(@my_level), class: "photo-fit") %>
-      </div>
-      <div class="card-info">
+
+
         <p><%= link_to @my_level.name, level_path(@my_level) %></p>
         <p><%= @my_level.number %></p>
         <p><%= @my_level.description %></p>
-      </div>
-    </div>
+
+
   </div>
 
 
@@ -51,3 +54,5 @@
 <p><%= link_to "Add New level", new_level_path %></p>
 
 
+
+</div>
