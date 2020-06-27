@@ -4,7 +4,7 @@
       <% @my_subjects.each do |subject| %>
         <div class="card">
           <div class="card-photo">
-            <%= cl_image_tag find_photo(subject) %>
+            <%= cl_image_tag find_avatar(subject) %>
           </div>
           <div class="card-info">
             <p><%= link_to subject.name, subject_path(subject)%></p>
@@ -21,7 +21,7 @@
     <% @other_subjects.each do |subject| %>
       <div class="card">
         <div class="card-photo">
-          <%= cl_image_tag find_photo(subject) %>
+          <%= cl_image_tag find_avatar(subject) %>
         </div>
         <div class="card-info">
           <p><%= link_to subject.name, subject_path(subject)%></p>

@@ -3,7 +3,7 @@
     <% @my_courses.each do |course| %>
       <div class="card">
         <div class="card-photo">
-          <%= cl_image_tag find_photo(course), class: "photo-fit" %>
+          <%= cl_image_tag find_avatar(course), class: "photo-fit" %>
         </div>
         <div class="card-info">
           <p><%= link_to course.name, subject_path(course) %></p>
@@ -18,7 +18,7 @@
     <% @other_courses.each do |course| %>
       <div class="card">
         <div class="card-photo">
-          <%= cl_image_tag find_photo(course), class: "photo-fit" %>
+          <%= cl_image_tag find_avatar(course), class: "photo-fit" %>
         </div>
         <div class="card-info">
           <p><%= link_to course.name, subject_path(course) %></p>

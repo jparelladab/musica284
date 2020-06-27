@@ -3,7 +3,7 @@
   <% @composers.each do |composer| %>
     <div class="card">
       <div class="card-photo">
-        <%= cl_image_tag find_photo(composer) %>
+        <%= cl_image_tag find_avatar(composer) %>
       </div>
       <div class="card-info">
         <p>Name: <%= link_to composer.name, composer_path(composer)%></p>

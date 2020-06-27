@@ -2,7 +2,7 @@
   <div class="card-container">
     <div class="card">
       <div class="card-photo">
-        <%= cl_image_tag(find_photo(@my_level), class: "photo-fit") %>
+        <%= cl_image_tag(find_avatar(@my_level), class: "photo-fit") %>
       </div>
       <div class="card-info">
         <p><%= link_to @my_level.name, level_path(@my_level) %></p>
@@ -20,7 +20,7 @@
     <% @previous_levels.to_enum.each do |level| %>
       <div class="card">
         <div class="card-photo">
-          <%= cl_image_tag(find_photo(level), class: "photo-fit") %>
+          <%= cl_image_tag(find_avatar(level), class: "photo-fit") %>
         </div>
         <div class="card-info">
           <p><%= link_to level.name, level_path(level) %></p>
@@ -37,7 +37,7 @@
       <% @next_levels.to_enum.each do |level| %>
         <div class="card">
           <div class="card-photo">
-            <%= cl_image_tag(find_photo(level), class: "photo-fit") %>
+            <%= cl_image_tag(find_avatar(level), class: "photo-fit") %>
           </div>
           <div class="card-info">
             <p><%= link_to level.name, level_path(level)  %></p>
