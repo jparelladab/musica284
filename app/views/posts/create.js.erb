@@ -8,3 +8,9 @@ $("#profile-content").append("<%= j render 'index', params: {user_id: current_us
 
 
 
+$(".central-content").html("");
+$(".central-content").append("<%= j render 'new', params: {general_wall: params[:general_wall]} %>");
+$(".central-content").append("<%= j render 'index', params: {user_id: current_user.id, general_wall: params[:general_wall]} %>");
+
+
+

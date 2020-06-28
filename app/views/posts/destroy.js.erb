@@ -5,3 +5,9 @@ $("#profile-content").html("");
 "<% end %>";
 
 $("#profile-content").append("<%= j render 'index', params: {usr: @usr, user_id: current_user.id, general_wall: params[:general_wall]} %>");
+
+
+
+$(".central-content").html("");
+$(".central-content").append("<%= j render 'new', params: {general_wall: params[:general_wall]} %>");
+$(".central-content").append("<%= j render 'index', params: {usr: @usr, user_id: current_user.id, general_wall: params[:general_wall]} %>");
