@@ -1,9 +1,10 @@
 <div class="central-content">
-<h1>Search for other users</h1>
-  <%= form_with url: follows_path, method: :get do %>
-  <%= text_field_tag :query, params[:query], class: "form-control", placeholder: "Find a user" %>
-  <%= submit_tag "Search", class: "btn btn-primary" %>
-<% end %>
+  <div class="follows-search">
+      <%= form_with url: follows_path, method: :get, class: "form-inline" do %>
+      <%= text_field_tag :query, params[:query], class: "form-control", placeholder: "Find a user" %>
+      <%= submit_tag "Search", class: "btn btn-primary" %>
+    <% end %>
+  </div>
 <div class="network-container">
   <div class="users-grid">
     <% @all_users.each do |usr| %>

@@ -23,6 +23,7 @@ class FollowsController < ApplicationController
     @new_follow = Follow.new(follower_id: current_user.id, followed_user_id: params[:followed])
     respond_to do |format|
       if @new_follow.save
+        Conversation.create(sender_id: current_user.id, receiver_id: params[:followed])
         flash[:notice] = "New Follow created"
         format.html {redirect_to user_path(params[:followed])}
       else

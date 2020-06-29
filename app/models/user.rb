@@ -40,8 +40,25 @@ class User < ApplicationRecord
   has_many :received_messages, foreign_key: :receiver_id, class_name: "Conversation"
   has_many :sent_messages, foreign_key: :sender_id, class_name: "Conversation"
 
+
   def full_name
-    self.first_name + self.last_name
+    self.first_name + " " + self.last_name
+  end
+
+  def conversations
+    Conversation.where("sender_id = ? OR receiver_id = ?", self.id, self.id).sort_by {|conv| conv.updated_at}
+  end
+
+  def conversations_recipients
+    self.conversations.map {|conv| conv.recipient(self)}
+  end
+
+  def find_conversation_with(recipient)
+    conv = Conversation.where("sender_id = ? AND receiver_id = ?", self.id, recipient.id)
+    if conv.empty?
+      conv = Conversation.where("sender_id = ? AND receiver_id = ?", recipient.id, self.id)
+    end
+    conv
   end
 
   private
@@ -57,5 +74,6 @@ class User < ApplicationRecord
   def follow(current_user, user)
     Follow.create(follower_id: current_user.id, followed_user_id: user.id)
   end
+
 
 end
