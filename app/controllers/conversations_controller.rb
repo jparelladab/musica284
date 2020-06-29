@@ -1,16 +1,18 @@
 class ConversationsController < ApplicationController
-  #include UsersHelper
+  include ConversationsHelper
   def index
-    @conversations = Conversation.where("sender_id = ? OR receiver_id = ?", current_user.id, current_user.id).sort_by {|conv| conv.updated_at}
+    @conversations = current_user.conversations
     #@users = User.where.not(id: current_user.id)
     @conversation = @conversations.last
     #@messages = @conversation.messages
     #@messages.where("user_id != ? AND read = ?", current_user.id, false).update_all(read: true)
     #@message = @conversation.messages.new
-    conv_users = @conversations.map {|conversation| (conversation.sender_id == current_user.id) ? conversation.receiver_id : conversation.sender_id}
-    follows_ids = current_user.followings.map {|foll| foll.id}
-    @follows_without_conv = follows_ids - conv_users
-    @follows = User.select {|usr| @follows_without_conv.include?(usr.id)}
+    #follows_ids = current_user.followings.map {|foll| foll.id}
+    #@follows_without_conv = follows_ids - conv_users
+    #@follows = User.select {|usr| @follows_without_conv.include?(usr.id)}
+    if params[:query].present?
+      @search = current_user.conversations_recipients.select {|user| user.full_name.downcase.match(/#{params[:query].downcase}/)}.map {|user| user.find_conversation_with(current_user)}.flatten
+    end
   end
 
   def create

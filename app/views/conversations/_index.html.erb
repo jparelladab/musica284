@@ -1,0 +1,19 @@
+
+  <% @conversations.each do |conversation| %>
+    <%= link_to conversation_messages_path(conversation), remote: true do %>
+      <div class="conversation">
+        <div class="conversation-avatar"><%= cl_image_tag find_avatar(conversation_other(conversation)), class: 'photo-fit' %></div>
+        <div class="conversation-body">
+          <div class="conversation-name"><%= fullname(conversation.recipient(current_user)) %></div>
+          <% if conversation.messages.any? %>
+            <% unless conversation.messages.last.created_at.nil? %><div class="conversation-time text-muted"><%= time_ago_in_words(conversation.messages.last.created_at) %></div><% end %>
+            <% unless conversation.messages.last.body.nil? %><div class="conversation-text"><%= conversation.messages.last.body.truncate(15) %></div><% end %>
+          <% end %>
+        </div>
+        <% if !conversation.unread_message_count(current_user).zero? %>
+          <span id="undread-count" style="background-color: lightgreen;">(<%= conversation.unread_message_count(current_user) %>)</span>
+        <% end %>
+      </div>
+    <% end %>
+  <% end %>
+

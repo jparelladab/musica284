@@ -11,6 +11,7 @@
 <% same_user = false %>
 
 <div class="messages-container">
+  <h1>Conversation with <%= conversation.recipient(current_user).full_name %></h1>
   <% unless conversation.messages.nil? %>
     <% conversation.messages.each do |message| %>
       <% if user.nil? %><% user = message.user %><% else %><% same_user = (user == message.user) %><% end %>
