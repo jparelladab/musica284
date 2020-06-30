@@ -40,6 +40,7 @@ class User < ApplicationRecord
   has_many :received_messages, foreign_key: :receiver_id, class_name: "Conversation"
   has_many :sent_messages, foreign_key: :sender_id, class_name: "Conversation"
 
+  has_many :post_likes
 
   def full_name
     self.first_name + " " + self.last_name
