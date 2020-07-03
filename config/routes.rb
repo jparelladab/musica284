@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'post_likes/create'
+  get 'post_likes/destroy'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root to: 'pages#home'
   devise_for :users
@@ -10,7 +12,6 @@ Rails.application.routes.draw do
 
   get 'about', to: 'pages#about'
   get 'contact', to: 'pages#contact'
-  post 'like', to: 'posts#like'
 
   resources :composers
   resources :pieces
@@ -25,6 +26,8 @@ Rails.application.routes.draw do
   resources :videos
 
   resources :posts
+
+  resources :post_likes, only: [:create, :destroy]
 
   resources :conversations, only: [:index, :create] do
   resources :messages, only: [:index, :create]

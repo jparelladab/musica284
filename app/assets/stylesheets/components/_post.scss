@@ -45,8 +45,14 @@
       }
     }
     .post-likes {
-
+      i {
+        text-decoration: none;
+      }
     }
+    .like-active i {
+        color: orange;
+    }
+
     .post-delete {
       position: absolute;
       top: 0;
