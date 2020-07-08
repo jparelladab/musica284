@@ -11,4 +11,5 @@ class Post < ApplicationRecord
   def find_post_like(user)
     self.post_likes.where(user_id: user.id).first
   end
+
 end

@@ -47,4 +47,12 @@ module ApplicationHelper
     end
   end
 
+  def user_posts(user_id)
+    User.find(user_id).posts.sort_by {|post| post.created_at}.reverse!
+  end
+
+  def all_posts(user_id)
+    user_posts(user_id) + (User.find(user_id).followings.map {|foll| foll.posts}.flatten).sort_by {|post| post.created_at}.reverse!
+  end
+
 end
