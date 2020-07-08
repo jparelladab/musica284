@@ -77,17 +77,40 @@ Piece.create(name: "El llac", composer_id: 4, level_id: 4, description: "Bagaria
 
 puts "creating Follows"
 Follow.create(follower_id: 1, followed_user_id: 2)
+Conversation.create(sender_id: 1, receiver_id: 2)
+
 Follow.create(follower_id: 1, followed_user_id: 3)
+Conversation.create(sender_id: 1, receiver_id: 3)
+
 Follow.create(follower_id: 2, followed_user_id: 1)
+Conversation.create(sender_id: 2, receiver_id: 1)
+
 Follow.create(follower_id: 2, followed_user_id: 4)
+Conversation.create(sender_id: 2, receiver_id: 4)
+
 Follow.create(follower_id: 3, followed_user_id: 6)
+Conversation.create(sender_id: 3, receiver_id: 6)
+
 Follow.create(follower_id: 3, followed_user_id: 5)
+Conversation.create(sender_id: 3, receiver_id: 5)
+
 Follow.create(follower_id: 4, followed_user_id: 2)
+Conversation.create(sender_id: 4, receiver_id: 2)
+
 Follow.create(follower_id: 4, followed_user_id: 3)
+Conversation.create(sender_id: 4, receiver_id: 3)
+
 Follow.create(follower_id: 5, followed_user_id: 1)
+Conversation.create(sender_id: 5, receiver_id: 1)
+
 Follow.create(follower_id: 5, followed_user_id: 6)
+Conversation.create(sender_id: 5, receiver_id: 6)
+
 Follow.create(follower_id: 6, followed_user_id: 4)
+Conversation.create(sender_id: 6, receiver_id: 4)
+
 Follow.create(follower_id: 6, followed_user_id: 5)
+Conversation.create(sender_id: 6, receiver_id: 5)
 
 puts "creating Repertoire"
 Repertoire.create(user_id: 1, piece_id: 1)

@@ -2,6 +2,7 @@ class ConversationsController < ApplicationController
   include ConversationsHelper
   def index
     @conversations = current_user.conversations
+    @followings_without_conversation = current_user.followings - @conversations.map {|conv| conv.recipient(current_user)}
     #@users = User.where.not(id: current_user.id)
     @conversation = @conversations.last
     #@messages = @conversation.messages

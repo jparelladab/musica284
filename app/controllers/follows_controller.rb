@@ -6,7 +6,7 @@ class FollowsController < ApplicationController
     else
       @followings = current_user.followings
     end
-    @all_users = User.all
+    @all_users = User.all - [current_user]
     @all_follows = Follow.all
     @not_followed_users = User.all - @followings - [current_user]
     @users = User.geocoded
@@ -19,7 +19,6 @@ class FollowsController < ApplicationController
   end
 
   def create
-    puts params
     @new_follow = Follow.new(follower_id: current_user.id, followed_user_id: params[:followed])
     respond_to do |format|
       if @new_follow.save

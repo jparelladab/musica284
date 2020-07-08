@@ -47,10 +47,11 @@
     .post-likes {
       i {
         text-decoration: none;
+        color: black;
       }
     }
     .like-active i {
-        color: orange;
+        color: blue;
     }
 
     .post-delete {
