@@ -72,7 +72,7 @@ Piece.create(name: "Impromptus", composer_id: 5, level_id: 2, description: "It's
 Piece.create(name: "Miroirs", composer_id: 2, level_id: 7, description: "It's random", rating: 1)
 Piece.create(name: "La plus que lente", composer_id: 3, level_id: 2, description: "Debussy's most romantic style", rating: 5)
 Piece.create(name: "Prélude Chorale and Fugue", composer_id: 7, level_id: 1, description: "It's interesting", rating: 5)
-Piece.create(name: "????", composer_id: 7, level_id: 3, description: "We don't know more works from this escapated man", rating: 1)
+Piece.create(name: "????", composer_id: 6, level_id: 3, description: "We don't know more works from this escapated man", rating: 1)
 Piece.create(name: "El llac", composer_id: 4, level_id: 4, description: "Bagaria played it in Palau", rating: 1)
 
 puts "creating Follows"

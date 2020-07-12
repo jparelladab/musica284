@@ -3,7 +3,7 @@
   <% @user_repertoire.each do |repert| %>
     <div class="card">
       <div class="card-photo">
-        <%= cl_image_tag find_photo(repert.piece), class: "photo-fit" %>
+        <%= cl_image_tag find_avatar(repert.piece), class: "photo-fit" %>
       </div>
       <div class="card-info">
         <p><%= link_to trackname(repert.piece), piece_path(repert.piece) %></p>
@@ -19,7 +19,7 @@
   <% @pipeline.each do |piece| %>
     <div class="card">
       <div class="card-photo">
-        <%= cl_image_tag find_photo(piece), class: "photo-fit" %>
+        <%= cl_image_tag find_avatar(piece), class: "photo-fit" %>
       </div>
       <div class="card-info">
         <p><%= link_to trackname(piece), piece_path(piece) %></p>
@@ -35,7 +35,7 @@
   <% @other_pieces.each do |piece| %>
     <div class="card">
       <div class="card-photo">
-        <%= cl_image_tag find_photo(piece), class: "photo-fit" %>
+        <%= cl_image_tag find_avatar(piece), class: "photo-fit" %>
       </div>
       <div class="card-info">
         <p><%= link_to trackname(piece), piece_path(piece) %></p>

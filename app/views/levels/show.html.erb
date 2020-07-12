@@ -1,20 +1,8 @@
-<div class="container">
-  <div class="level-title">
-    <p><%= @level.name %></p>
-    <p><%= @level.description %></p>
-    <p><%= link_to "Edit Level", edit_level_path(@level) %></p>
-  </div>
-  <%= cl_image_tag find_photo(@level) %>
-  <div class="level-pieces-container">
-    <% @level.pieces.each do |piece| %>
-      <div class="level-piece-card">
-        <p><%= link_to piece.name, piece_path(piece) %></p>
-        <p><%= link_to piece.composer.name, composer_path(piece.composer)%></p>
-        <p><%= piece.level.name %></p>
-        <p><%= piece.description %></p>
-        <p>Rating: <%= piece.rating %></p>
-        <%= cl_image_tag find_avatar(piece) %>
-      </div>
-    <% end %>
-  </div>
-</div>
+
+  <div class="level-title"><%= @level.name %></div>
+  <div class="level-banner"><%= cl_image_tag find_avatar(@level) %></div>
+  <div class="level-description">(Description) <%= @level.description %></div>
+  <div class="level-pieces">Check out this level recommended repertoire for your instrument!</div>
+  <div class="level-subjects">Check out this level subjects!</div>
+  <div class="level-students">Find other students of this level!</div>
+

@@ -2,32 +2,55 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.level-pieces-container {
-  display: grid;
-  grid-template-columns: auto auto auto;
-  grid-column-gap: 2rem;
-  grid-row-gap: 2rem;
-}
-
-.levels-index-cards {
-  border: 1px solid black;
-  border-radius: 2px;
+.level-title {
+  height: 15vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background-color: lightgreen;
-  margin: 1rem;
-  width: 20rem;
-  padding: 3rem;
+
 }
 
-.level-piece-card {
-  border: 1px solid black;
-  border-radius: 2px;
+.level-description {
+  height: 15vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: lightblue;
+}
+
+.level-banner {
+  height: 15vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+}
+
+.level-pieces {
+  height: 15vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background-color: lightyellow;
-  padding: 2rem;
 }
 
-.levels-index-container {
-  display: grid;
-  grid-template-columns: auto auto auto;
-  grid-column-gap: 2rem;
-  grid-row-gap: 2rem;
+.level-subjects {
+  height: 15vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: teal;
+}
+
+.level-students {
+  height: 15vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: orange;
 }
