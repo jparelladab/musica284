@@ -4,6 +4,7 @@ class SubjectsController < ApplicationController
   def index
     @my_subjects = current_user.subjects
     @other_subjects = Subject.all - @my_subjects
+    @other_subjects_level = current_user.level.subjects - @my_subjects
   end
 
   def show
