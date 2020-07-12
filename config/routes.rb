@@ -21,7 +21,7 @@ Rails.application.routes.draw do
   resources :users
   resources :follows, only: [:index, :create, :destroy]
   resources :repertoires, only: [:index, :create, :destroy]
-  resources :workloads, only: [:index, :create]
+  resources :workloads, only: [:index, :create, :destroy]
   resources :comment_pieces, only: [:create]
   resources :videos
 

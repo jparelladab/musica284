@@ -12,13 +12,13 @@ class WorkloadsController < ApplicationController
   end
 
   def create
-     @workload = Workload.new(user_id: current_user.id, subject_id: params[:subject_id])
-    if @workload.save
-      flash[:notice] = "workload successfully created"
-      redirect_to subjects_path
-    else
-      flash[:notice] = "Sorry, an error has occurred."
-      redirect_to subjects_path
+    @workload = Workload.new(user_id: params[:user_id], subject_id: params[:subject_id])
+     respond_to do |format|
+      if @workload.save
+        format.js
+      else
+        format.js
+      end
     end
   end
 
@@ -29,6 +29,11 @@ class WorkloadsController < ApplicationController
   end
 
   def destroy
+    @workload = Workload.where(user_id: params[:user_id], subject_id: params[:subject_id]).first
+    respond_to do |format|
+      @workload.destroy
+      format.js
+    end
   end
 
 end

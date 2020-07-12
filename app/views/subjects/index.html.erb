@@ -1,7 +1,7 @@
 <div>
-
 <div class="title">My subjects</div>
   <div class="card-container">
+
     <% if @my_subjects.any? %>
       <% @my_subjects.each do |subject| %>
         <div class="card">
@@ -29,7 +29,6 @@
           <p><%= link_to subject.name, subject_path(subject)%></p>
           <p><%= subject.description %></p>
           <p><%= subject.rating %></p>
-          <p><%= button_to "Take this subject", workloads_path, params: { subject_id: subject.id}, method: :post %></p>
         </div>
       </div>
     <% end %>
@@ -38,4 +37,4 @@
 </div>
 
 
-</div>
+

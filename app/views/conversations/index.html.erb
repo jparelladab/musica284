@@ -1,22 +1,22 @@
-
-
-<div class="conversation-active">
-  <% if @conversations.any? %>
-    <%= render 'messages/index' %>
-  <% else %>
-    <h1>Start a new conversation with any of your friends</h1>
-  <% end %>
-</div>
-
-<div class="conversations-container right-pane">
-  <div class="conversations-search">
-    <%= form_with url: conversations_path, class: "form-inline", method: :get do %>
-      <%= text_field_tag :query, params[:query], class: "form-control", placeholder: "Find a user" %>
-      <%= submit_tag "Search", class: "btn btn-primary", id:"submit_search" %>
+<div style="display: flex;">
+  <div class="conversation-active">
+    <% if @conversations.any? %>
+      <%= render 'messages/index' %>
+    <% else %>
+      <h1>Start a new conversation with any of your friends</h1>
     <% end %>
   </div>
-  <div class="conversations">
-    <%= render 'index' %>
+
+  <div class="conversations-container right-pane">
+    <div class="conversations-search">
+      <%= form_with url: conversations_path, class: "form-inline", method: :get do %>
+        <%= text_field_tag :query, params[:query], class: "form-control", placeholder: "Find a user" %>
+        <%= submit_tag "Search", class: "btn btn-primary", id:"submit_search" %>
+      <% end %>
+    </div>
+    <div class="conversations">
+      <%= render 'index' %>
+    </div>
   </div>
 </div>
 

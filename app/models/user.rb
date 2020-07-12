@@ -62,6 +62,10 @@ class User < ApplicationRecord
     conv
   end
 
+  def is_enrolled_to(subject)
+    !Workload.where(user_id: self.id, subject_id: subject.id).empty?
+  end
+
   private
 
   def follows?(current_user, user)
