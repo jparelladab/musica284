@@ -1,15 +1,20 @@
-<div class="composer-show-container">
-  <div class="composer-show-photo-container">
-    <%= cl_image_tag find_avatar(@subject) %>
-  </div>
-  <p><%= @subject.name %></p>
-  <p><%= @subject.description %></p>
-  <p><%= @subject.rating %></p>
-  <p>Enjoy it!</p>
+
+
+  <div class="subject-name"><%= @subject.name %></div>
+  <div class="subject-description"><%= @subject.description %></div>
+
   <% if current_user.is_enrolled_to(@subject) %>
-    <p><%= link_to "Unenroll", workload_path(user_id: current_user.id, subject_id: @subject.id), remote: true, method: :delete, id: "enroll-btn" %></p>
-  <% else %>
+    <div class="subject-options">
+      <div class="subject-members">Members</div>
+      <div class="subject-homework">Homework</div>
+      <div class="subject-materials">Materials</div>
+      <div class="subject-practice">Practice!</div>
+    </div>
+    <% else %>
+
     <p><%= link_to "Take this subject", workloads_path(user_id: current_user.id, subject_id: @subject.id), remote: true, method: :post, id: "enroll-btn" %></p>
     <% end %>
   <p><%= link_to "Back to my Workload", subjects_path %></p>
+  <p><%= link_to "Unenroll", workload_path(user_id: current_user.id, subject_id: @subject.id), remote: true, method: :delete, id: "enroll-btn" %></p>
+
 </div>
