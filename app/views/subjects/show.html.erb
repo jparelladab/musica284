@@ -1,7 +1,7 @@
 
 
   <div class="subject-name"><%= @subject.name %></div>
-  <div class="subject-description"><%= @subject.description %></div>
+  <div class="subject-description">(Description, Syllabus, Goals, Calendar) <%= @subject.description %></div>
 
   <% if current_user.is_enrolled_to(@subject) %>
     <div class="subject-options">

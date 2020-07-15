@@ -38,9 +38,9 @@
       <div class="post-likes">
         <%= post.post_likes.count %>
         <% if post.liked_by(current_user) %>
-          <%= link_to icon("far", "thumbs-up"), post_like_path(post.find_post_like(current_user), user_id: current_user.id, post_id: post.id), method: :delete, remote: true, class: "like-active" %>
+          <%= link_to icon("far", "thumbs-up"), post_like_path(post.find_post_like(current_user), user_id: current_user.id, post_id: post.id), method: :delete, remote: true, class: "like-active", id: "like-btn-on" %>
         <% else %>
-          <%= link_to icon("far", "thumbs-up"), post_likes_path(user_id: current_user.id, post_id: post.id), method: :post, remote: true %>
+          <%= link_to icon("far", "thumbs-up"), post_likes_path(user_id: current_user.id, post_id: post.id), method: :post, remote: true, id: "like-btn-off" %>
         <% end %>
       </div>
       <% if post.user_id == current_user.id %>

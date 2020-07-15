@@ -1,16 +1,2 @@
-$("#profile-content").html("");
-
-"<% if params[:user_id].to_i == current_user.id %>";
-  $("#profile-content").append("<%= j render 'posts/new', params: {general_wall: params[:general_wall]} %>");
-"<% end %>";
-
-$("#profile-content").append("<%= j render 'posts/index', params: {user_id: current_user.id, general_wall: params[:general_wall]} %>");
-
-
-
-$(".central-content").html("");
-$(".central-content").append("<%= j render 'posts/new', params: {general_wall: params[:general_wall]} %>");
-$(".central-content").append("<%= j render 'posts/index', params: {user_id: current_user.id, general_wall: params[:general_wall]} %>");
-
-
-
+$("#profile-content").load(location.href + " #profile-content");
+$(".central-content").load(location.href + " .central-content");

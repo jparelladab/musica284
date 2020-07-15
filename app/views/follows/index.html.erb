@@ -25,3 +25,14 @@
   </div>
 </div>
 <div class="right-pane"></div>
+
+<script>
+  $("#query").keyup(function(){
+    let val = $(this).val();
+    if(val == ""){
+      $("network-container").html("<%= j render 'index' %>");
+    } else {
+      $("#submit_search").click();
+    }
+  });
+</script>

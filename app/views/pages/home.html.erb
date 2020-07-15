@@ -1,15 +1,14 @@
 <div class="home-container">
   <div class="home-options">
     <div>
-      <p>Welcome <%= current_user.first_name %> </p>
-      <p><%= link_to "My profile", user_path(current_user) %></p>
-      <p><%= link_to "Log Out", destroy_user_session_path, method: :delete %></p>
-    </div>
-    <div>
-      <p><%= link_to "My Network", follows_path %></p>
-      <p><%= link_to "My Repertoire", repertoires_path %></p>
-      <p><%= link_to "My Subjects", workloads_path %></p>
-      <p><%= link_to "My Inbox", conversations_path %></p>
+      <p>Welcome <%= current_user.first_name %>!</p>
+      <p>--> Complete your profile</p>
+      <p>--> Write a post, to let your followers know about your thoughts!</p>
+      <p>--> Keep updated at the general post wall</p>
+      <p>--> See your network and follow other studetns</p>
+      <p>--> Work on you current subjects</p>
+      <p>--> <%= link_to "Log Out", destroy_user_session_path, method: :delete %></p>
+      <p>--> Check your Mail</p>
     </div>
   </div>
 </div>
