@@ -4,6 +4,13 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
+  geocoded_by :address
+  after_validation :geocode, if: :will_save_change_to_address?
+
+  has_many :posts, dependent: :destroy
+  has_many :post_likes
+  has_one_attached :avatar
+  has_one_attached :wallPaper
   has_many :repertoires
   has_many :pieces, through: :repertoires
 
@@ -12,8 +19,6 @@ class User < ApplicationRecord
   has_many :workloads
   has_many :subjects, through: :workloads
 
-  has_one_attached :avatar
-  has_one_attached :wallPaper
   has_many_attached :photos
 
   belongs_to :level, optional: true
@@ -21,11 +26,6 @@ class User < ApplicationRecord
   has_many :comment_pieces
 
   has_many :videos
-
-  has_many :posts
-
-  geocoded_by :address
-  after_validation :geocode, if: :will_save_change_to_address?
 
   # Will return an array of follows for the given user instance
   has_many :received_follows, foreign_key: :followed_user_id, class_name: "Follow"
@@ -40,10 +40,12 @@ class User < ApplicationRecord
   has_many :received_messages, foreign_key: :receiver_id, class_name: "Conversation"
   has_many :sent_messages, foreign_key: :sender_id, class_name: "Conversation"
 
-  has_many :post_likes
-
   def full_name
     self.first_name + " " + self.last_name
+  end
+
+  def is_enrolled_to(subject)
+    !Workload.where(user_id: self.id, subject_id: subject.id).empty?
   end
 
   def conversations
@@ -60,10 +62,6 @@ class User < ApplicationRecord
       conv = Conversation.where("sender_id = ? AND receiver_id = ?", recipient.id, self.id)
     end
     conv
-  end
-
-  def is_enrolled_to(subject)
-    !Workload.where(user_id: self.id, subject_id: subject.id).empty?
   end
 
   private

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_06_30_104833) do
+ActiveRecord::Schema.define(version: 2020_07_15_155230) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -69,6 +69,15 @@ ActiveRecord::Schema.define(version: 2020_06_30_104833) do
     t.index ["followed_user_id", "follower_id"], name: "index_follows_on_followed_user_id_and_follower_id", unique: true
     t.index ["followed_user_id"], name: "index_follows_on_followed_user_id"
     t.index ["follower_id"], name: "index_follows_on_follower_id"
+  end
+
+  create_table "homeworks", force: :cascade do |t|
+    t.bigint "subject_id"
+    t.text "description"
+    t.date "deadline"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["subject_id"], name: "index_homeworks_on_subject_id"
   end
 
   create_table "levels", force: :cascade do |t|
@@ -155,20 +164,18 @@ ActiveRecord::Schema.define(version: 2020_06_30_104833) do
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
+    t.string "type"
     t.string "first_name"
     t.string "last_name"
     t.text "biography"
-    t.string "favorite_composer"
-    t.string "instrument"
-    t.string "address"
-    t.string "occupation"
-    t.bigint "level_id", default: 1
-    t.string "gender"
     t.text "introduction"
+    t.string "address"
+    t.string "phone"
+    t.string "gender"
+    t.bigint "level_id", default: 1
     t.integer "points", default: 0
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.boolean "admin", default: false
     t.float "latitude"
     t.float "longitude"
     t.index ["email"], name: "index_users_on_email", unique: true
@@ -200,6 +207,7 @@ ActiveRecord::Schema.define(version: 2020_06_30_104833) do
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "homeworks", "subjects"
   add_foreign_key "messages", "conversations"
   add_foreign_key "messages", "users"
   add_foreign_key "pieces", "composers"

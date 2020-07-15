@@ -32,17 +32,18 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.2]
       # t.string   :unlock_token # Only if unlock strategy is :email or :both
       # t.datetime :locked_at
 
+      #Type of user (Admin, Teacher, Student)
+      t.string :type
+
       #Other fields
       t.string :first_name
       t.string :last_name
       t.text :biography
-      t.string :favorite_composer
-      t.string :instrument
-      t.string :address
-      t.string :occupation
-      t.belongs_to :level, default: 1
-      t.string :gender
       t.text :introduction
+      t.string :address
+      t.string :phone
+      t.string :gender
+      t.belongs_to :level, default: 1
       t.integer :points, default: 0
 
       t.timestamps null: false

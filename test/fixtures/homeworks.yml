@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  subject: one
+  description: MyText
+  teacher: one
+  deadline: 2020-07-15
+
+two:
+  subject: two
+  description: MyText
+  teacher: two
+  deadline: 2020-07-15

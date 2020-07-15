@@ -6,7 +6,6 @@
   <div class="basic-info">
     <div class="info-title text-muted">Basic info</div>
     <div class="info-params">
-      <% unless @user.occupation.nil? %><p>Occupation: <%= @user.occupation %></p><% end %>
       <% unless @user.gender.nil? %><p>Gender: <%= @user.gender %></p><% end %>
       <% unless @user.introduction.nil? %><p>Introduction: <%= @user.introduction %></p><% end %>
     </div>
@@ -20,9 +19,6 @@
   <div class="music">
     <div class="info-title text-muted">Music Achievements</div>
     <div class="info-params">
-      <% unless @user.instrument.nil? %><p>Instrument: <%= @user.instrument %></p><% end %>
-      <% unless @user.favorite_composer.nil? %><p>Favorite Composer: <%= @user.favorite_composer %></p><% end %>
-      <p>Level: <%= @user.level.name %></p>
       <p>Points: <%= @user.points %></p>
     </div>
   </div>

@@ -2,7 +2,7 @@ class Post < ApplicationRecord
   belongs_to :user
   has_one_attached :photo
   has_one_attached :avatar
-  has_many :post_likes
+  has_many :post_likes, dependent: :destroy
 
   def liked_by(user)
     !user.post_likes.where(post_id: self.id).empty?
