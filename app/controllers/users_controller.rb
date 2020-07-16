@@ -31,6 +31,7 @@ class UsersController < ApplicationController
   end
 
   def update
+    @user = current_user
     if @user.update(user_params)
       flash[:notice] = "user successfully updated"
       redirect_to user_path(@user)
@@ -43,13 +44,18 @@ class UsersController < ApplicationController
   def destroy
   end
 
-
-
   private
 
   def user_params
-    params.require(:user).permit(:email, :occupation, :favorite_composer, :instrument, :gender, :biography, :address, :first_name, :last_name, :avatar, :level_id)
+    if current_user.class == User
+      params.require(:user).permit(:email, :instrument, :gender, :biography, :introduction, :phone, :password, :address, :first_name, :last_name, :avatar, :level_id)
+    elsif current_user.class == Student
+      params.require(:student).permit(:email, :instrument, :gender, :biography, :introduction, :phone, :password, :address, :first_name, :last_name, :avatar, :level_id)
+    elsif current_user.class == Teacher
+      params.require(:teacher).permit(:email, :instrument, :gender, :biography, :introduction, :phone, :password, :address, :first_name, :last_name, :avatar, :level_id)
+    elsif current_user.class == Admin
+      params.require(:admin).permit(:email, :instrument, :gender, :biography, :introduction, :phone, :password, :address, :first_name, :last_name, :avatar, :level_id)
+    end
   end
-
 
 end

@@ -2,6 +2,7 @@
 
   <div class="subject-name"><%= @subject.name %></div>
   <div class="subject-description">(Description, Syllabus, Goals, Calendar) <%= @subject.description %></div>
+<div class="subject-content">
 
   <% if current_user.is_enrolled_to(@subject) %>
     <div class="subject-options">
@@ -10,8 +11,10 @@
       <div class="subject-materials">Materials</div>
       <div class="subject-practice">Practice!</div>
     </div>
-      <p><%= link_to "Unenroll", workload_path(user_id: current_user.id, subject_id: @subject.id), remote: true, method: :delete, id: "enroll-btn" %></p>
+      <p><%= link_to "Unenroll", workload_path(student_id: current_user.id, subject_id: @subject.id), remote: true, method: :delete, id: "enroll-btn" %></p>
     <% else %>
-      <p><%= link_to "Take this subject", workloads_path(user_id: current_user.id, subject_id: @subject.id), remote: true, method: :post, id: "enroll-btn" %></p>
+      <p><%= link_to "Take this subject", workloads_path(student_id: current_user.id, subject_id: @subject.id), remote: true, method: :post, id: "enroll-btn" %></p>
     <% end %>
   <p><%= link_to "Back to my Workload", subjects_path %></p>
+
+</div>

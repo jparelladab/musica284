@@ -1,4 +1,6 @@
 module ApplicationHelper
+  require 'faker'
+
 
   def find_photo(element)
     if element.photo.attached?

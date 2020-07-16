@@ -1,7 +1,7 @@
 class Workload < ApplicationRecord
-  belongs_to :user
+  belongs_to :student
   belongs_to :subject
 
-  validates_uniqueness_of :user_id, scope: :subject_id
+  validates_uniqueness_of :student_id, scope: :subject_id
 
 end

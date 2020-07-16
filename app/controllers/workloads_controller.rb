@@ -12,7 +12,7 @@ class WorkloadsController < ApplicationController
   end
 
   def create
-    @workload = Workload.new(user_id: params[:user_id], subject_id: params[:subject_id])
+    @workload = Workload.new(student_id: params[:student_id], subject_id: params[:subject_id])
      respond_to do |format|
       if @workload.save
         format.js
@@ -29,7 +29,7 @@ class WorkloadsController < ApplicationController
   end
 
   def destroy
-    @workload = Workload.where(user_id: params[:user_id], subject_id: params[:subject_id]).first
+    @workload = Workload.where(student_id: params[:student_id], subject_id: params[:subject_id]).first
     respond_to do |format|
       @workload.destroy
       format.js

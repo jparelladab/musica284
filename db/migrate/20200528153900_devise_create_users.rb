@@ -43,6 +43,7 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.2]
       t.string :address
       t.string :phone
       t.string :gender
+      t.string :instrument
       t.belongs_to :level, default: 1
       t.integer :points, default: 0
 

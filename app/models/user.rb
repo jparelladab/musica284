@@ -11,20 +11,8 @@ class User < ApplicationRecord
   has_many :post_likes
   has_one_attached :avatar
   has_one_attached :wallPaper
-  has_many :repertoires
-  has_many :pieces, through: :repertoires
-
-  has_many :composers, through: :pieces
-
-  has_many :workloads
-  has_many :subjects, through: :workloads
-
   has_many_attached :photos
-
-  belongs_to :level, optional: true
-
   has_many :comment_pieces
-
   has_many :videos
 
   # Will return an array of follows for the given user instance
@@ -45,7 +33,7 @@ class User < ApplicationRecord
   end
 
   def is_enrolled_to(subject)
-    !Workload.where(user_id: self.id, subject_id: subject.id).empty?
+    !Workload.where(student_id: self.id, subject_id: subject.id).empty?
   end
 
   def conversations

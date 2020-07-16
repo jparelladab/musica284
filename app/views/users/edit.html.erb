@@ -4,11 +4,12 @@
   <%= f.error_notification %>
     <%= f.input :first_name, :as => :string%>
     <%= f.input :last_name, :as => :string %>
-    <%= f.input :instrument, :as => :string %>
+    <%= f.input :instrument, collection: ["Piano", "Violin", "Flute", "Cello", "Guitar", "Something escapated"] %>
     <%= f.input :biography, :as => :string %>
-    <%= f.input :favorite_composer, :as => :string %>
+    <%= f.input :introduction, :as => :string %>
+    <%= f.input :phone, :as => :string %>
     <%= f.input :email, :as => :string %>
-    <%= f.input :occupation, :as => :string %>
+    <%= f.input :password, :as => :string %>
     <%= f.input :gender, as: :radio_buttons, collection: ["Male", "Female", "Non_Binary"] %>
     <%= f.input :avatar, as: :file %>
     <%= f.input :level_id, collection: Level.all %>

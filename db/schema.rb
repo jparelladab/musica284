@@ -37,13 +37,13 @@ ActiveRecord::Schema.define(version: 2020_07_15_155230) do
   end
 
   create_table "comment_pieces", force: :cascade do |t|
-    t.bigint "user_id"
+    t.bigint "student_id"
     t.bigint "piece_id"
     t.text "comment"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["piece_id"], name: "index_comment_pieces_on_piece_id"
-    t.index ["user_id"], name: "index_comment_pieces_on_user_id"
+    t.index ["student_id"], name: "index_comment_pieces_on_student_id"
   end
 
   create_table "composers", force: :cascade do |t|
@@ -132,13 +132,13 @@ ActiveRecord::Schema.define(version: 2020_07_15_155230) do
   end
 
   create_table "repertoires", force: :cascade do |t|
-    t.bigint "user_id"
+    t.bigint "student_id"
     t.bigint "piece_id"
     t.integer "rating"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["piece_id"], name: "index_repertoires_on_piece_id"
-    t.index ["user_id"], name: "index_repertoires_on_user_id"
+    t.index ["student_id"], name: "index_repertoires_on_student_id"
   end
 
   create_table "schools", force: :cascade do |t|
@@ -172,6 +172,7 @@ ActiveRecord::Schema.define(version: 2020_07_15_155230) do
     t.string "address"
     t.string "phone"
     t.string "gender"
+    t.string "instrument"
     t.bigint "level_id", default: 1
     t.integer "points", default: 0
     t.datetime "created_at", null: false
@@ -197,13 +198,13 @@ ActiveRecord::Schema.define(version: 2020_07_15_155230) do
   end
 
   create_table "workloads", force: :cascade do |t|
-    t.bigint "user_id"
+    t.bigint "student_id"
     t.bigint "subject_id"
     t.integer "rating"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["student_id"], name: "index_workloads_on_student_id"
     t.index ["subject_id"], name: "index_workloads_on_subject_id"
-    t.index ["user_id"], name: "index_workloads_on_user_id"
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"

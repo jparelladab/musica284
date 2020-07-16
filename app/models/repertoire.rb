@@ -1,5 +1,5 @@
 class Repertoire < ApplicationRecord
-  belongs_to :user
+  belongs_to :student
   belongs_to :piece
-  validates :user, uniqueness: { scope: :piece, message: "user cannot add twice the same piece" }
+  validates :student, uniqueness: { scope: :piece, message: "student cannot add twice the same piece" }
 end
