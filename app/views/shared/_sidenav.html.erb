@@ -7,6 +7,6 @@
     <p><%= link_to icon('far','comment-dots'), posts_path, params: {general_wall: true} %></p>
     <p><%= link_to icon('fas','book-open'), workloads_path %></p>
     <p><%= link_to icon('fas','inbox') , conversations_path %></p>
-
+    <p><%= link_to icon('fas','wrench') , edit_user_registration_path(current_user) %></p>
   </div>
 </div>

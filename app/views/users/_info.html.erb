@@ -8,6 +8,7 @@
     <div class="info-params">
       <% unless @user.gender.nil? %><p>Gender: <%= @user.gender %></p><% end %>
       <% unless @user.introduction.nil? %><p>Introduction: <%= @user.introduction %></p><% end %>
+      <% unless @user.phone.nil? %><p>Phone: <%= @user.phone %></p><% end %>
     </div>
   </div>
   <div class="biography">
@@ -19,6 +20,7 @@
   <div class="music">
     <div class="info-title text-muted">Music Achievements</div>
     <div class="info-params">
+      <% unless @user.instrument.nil? %><p>instrument: <%= @user.instrument %></p><% end %>
       <p>Points: <%= @user.points %></p>
     </div>
   </div>
