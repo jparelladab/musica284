@@ -8,5 +8,7 @@
     <p><%= link_to icon('fas','book-open'), workloads_path %></p>
     <p><%= link_to icon('fas','inbox') , conversations_path %></p>
     <p><%= link_to icon('fas','wrench') , edit_user_registration_path(current_user) %></p>
+    <p><%= link_to icon('fas', 'door-open'), destroy_user_session_path, method: :delete %> </p>
   </div>
+
 </div>
