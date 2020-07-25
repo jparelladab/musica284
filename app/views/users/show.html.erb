@@ -4,9 +4,10 @@
       <div class="wallpaper">
         <%= cl_image_tag find_wallPaper(@user), class: "wallpaper-photo photo-fit" %>
         <%= cl_image_tag find_avatar(@user), class: "profile-info-picture" %>
-        <div class="user-name"><%= fullname(@user) %></div>
+        <%= link_to icon("far", "edit"), edit_user_path(@user), class: "wallpaper-edit-icon" %>
         <div id="follow-btn"><%= render 'follows/followbtn' %></div>
       </div>
+      <div class="user-name"><%= fullname(@user) %></div>
       <div class="profile-options">
         <%= link_to "Timeline", posts_path(user_id: @user.id, general_wall: "false"), remote: true, class: "option" %>
         <%= link_to "Info", user_path, remote: true, class: "option" %>
