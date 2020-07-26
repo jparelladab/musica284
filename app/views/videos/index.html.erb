@@ -3,8 +3,8 @@
 <div class="title">Index of Videos</div>
 <div class="card-container">
   <% @all_videos.each do |video| %>
-    <div class="card">
-      <div class="card-video">
+    <div class="videocard">
+      <div class="videocard-video">
         <%= render_youtube_video video.url %>
       </div>
       <div class="card-info">

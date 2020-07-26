@@ -1,6 +1,6 @@
 <div id="new-post">
 
-  <div class="new-post-title">Update your status</div>
+  <div class="new-post-title">Update your status. Or share a youtube video ;)</div>
   <%= form_with model: Post.new do |f| %>
     <%= f.text_area :text, placeholder: "What's in your mind?" %>
     <%= hidden_field_tag :user_id, current_user.id %>

@@ -1,11 +1,16 @@
 
+<p><%= link_to "Add Video old", new_piece_path, class: "btn btn-primary" %></p>
+
+<%= link_to 'Add Video', new_video_path,  {remote: true, 'data-toggle' =>  "modal", 'data-target' => '#modal-window', class: 'btn btn-primary btn-lg'}  %>
+
+<div id="modal-window" style="display:none;"></div>
 
   <% @user_videos.each do |video| %>
-    <div class="card">
-      <div class="card-video">
+    <div class="videocard">
+      <div class="videocard-video">
         <%= render_youtube_video video.url %>
       </div>
-      <div class="card-info">
+      <div class="videocard-info">
         <p><%= video.title %></p>
         <p><%= video.description %></p>
 
@@ -13,4 +18,3 @@
     </div>
   <% end %>
 
-<p><%= link_to "Add Video", new_piece_path, class: "btn btn-primary" %></p>
