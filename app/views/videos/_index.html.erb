@@ -1,9 +1,8 @@
-
-<p><%= link_to "Add Video old", new_piece_path, class: "btn btn-primary" %></p>
-
-<%= link_to 'Add Video', new_video_path,  {remote: true, 'data-toggle' =>  "modal", 'data-target' => '#modal-window', class: 'btn btn-primary btn-lg'}  %>
-
-<div id="modal-window" style="display:none;"></div>
+<div class="videos-info">Check out my favorite videos!</div>
+<% if params[:user_id] == current_user.id.to_s %>
+  <%= link_to "Add video", "#", "data-toggle" => "modal", "data-target" => '#myModal', class: 'btn btn-primary btn-lg add-video-btn' %>
+  <%= render partial: 'new' %>
+<% end %>
 
   <% @user_videos.each do |video| %>
     <div class="videocard">
@@ -17,4 +16,3 @@
       </div>
     </div>
   <% end %>
-
