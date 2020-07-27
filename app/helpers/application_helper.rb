@@ -45,7 +45,7 @@ module ApplicationHelper
   end
 
   def get_video_url_from_post(post)
-    regex1 = /www.youtube.com\/watch\?v=(\w{11})/
+    regex = /www.youtube.com\/watch\?v=(\w{11})/
     video_id = post.text.match(regex)[1]
     embed_url = "https://www.youtube.com/embed/" + video_id
   end
