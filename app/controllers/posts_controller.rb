@@ -18,6 +18,9 @@ class PostsController < ApplicationController
 
   def create
     @post = Post.new(user_id: params[:user_id], text: params[:post][:text])
+    if is_a_video(@post.text)
+      Video.create(user_id: @post.user.id, url: get_video_url_from_post(@post))
+    end
     respond_to do |format|
       if @post.save
         @my_posts = current_user.posts.sort_by {|post| post.created_at}.reverse!

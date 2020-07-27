@@ -7,7 +7,6 @@
 <% else %>
   <% posts = all_posts(current_user.id) %>
 <% end %>
-
 <% posts.each do |post| %>
   <div class="post">
     <div class="post-avatar-username-date">
@@ -17,7 +16,7 @@
       <div class="post-username-date">
         <%= fullname(post.user) %>
         <div class="post-date text-muted">
-          <%= time_ago_in_words(post.created_at) %>
+          <%= time_ago_in_words(post.created_at) + ' ago' %>
         </div>
       </div>
     </div>

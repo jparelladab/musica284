@@ -7,13 +7,12 @@
 
 
 .videocard-video {
-  height: 60vh;
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
   iframe{
     display: block;
     width: 100%;
-    height: 100%;
+    height: 500px;
     object-fit: cover;
     overflow: hidden;
     border-top-left-radius: 5px;
@@ -26,6 +25,12 @@
   padding: 10px;
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
+  position: relative;
+  .delete-video-btn {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
 }
 
 .add-video-btn {
@@ -38,4 +43,5 @@
   padding: 20px;
   margin-bottom: 10px;
 }
+
 

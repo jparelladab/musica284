@@ -30,4 +30,13 @@ class VideosController < ApplicationController
 
   def edit
   end
+
+  def destroy
+    @video = Video.find(params[:id])
+    respond_to do |format|
+      @video.destroy
+      format.js
+    end
+  end
+
 end

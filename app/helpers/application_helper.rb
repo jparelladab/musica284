@@ -26,14 +26,28 @@ module ApplicationHelper
     end
   end
 
+  def is_a_video(text)
+    regex1 = /www.youtube.com\/watch\?v=(\w{11})/
+    regex2 = /www.youtube.com\/embed\//
+    (text.match(regex1) || text.match(regex2)) ? true : false
+  end
+
   def render_youtube_video(text)
-      regex = /www.youtube.com\/watch\?v=(\w{11})/
-    unless(text.nil? || text.match(regex).nil?)
-      video_id = text.match(regex)[1]
-      #video_id = url.split("?v=")[1]
-      embed_url = "https://www.youtube.com/embed/" + video_id
-      render :partial => 'shared/video', :locals => { :url => embed_url }
+    regex = /www.youtube.com\/watch\?v=(\w{11})/
+    if is_a_video(text)
+      if text.match(regex)
+        embed_url = "https://www.youtube.com/embed/" + text.match(regex)[1]
+      else
+        embed_url = text
+      end
+      render partial:'shared/video', locals: { url: embed_url }
     end
+  end
+
+  def get_video_url_from_post(post)
+    regex1 = /www.youtube.com\/watch\?v=(\w{11})/
+    video_id = post.text.match(regex)[1]
+    embed_url = "https://www.youtube.com/embed/" + video_id
   end
 
   def remove_video_link_from_text(text)
@@ -56,5 +70,7 @@ module ApplicationHelper
   def all_posts(user_id)
     user_posts(user_id) + (User.find(user_id).followings.map {|foll| foll.posts}.flatten).sort_by {|post| post.created_at}.reverse!
   end
+
+
 
 end
