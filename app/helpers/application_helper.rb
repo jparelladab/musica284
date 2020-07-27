@@ -18,9 +18,9 @@ module ApplicationHelper
     end
   end
 
-  def find_wallPaper(element)
-    if element.wallPaper.attached?
-        return element.wallPaper.key
+  def find_wallPaper(user)
+    if user.wallPaper.attached?
+        return user.wallPaper.key
     else
         return "sunset-digital-art-mountains-low-poly-wallpaper-preview_ycyatc.jpg"
     end

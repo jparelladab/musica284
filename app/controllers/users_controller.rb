@@ -48,9 +48,9 @@ class UsersController < ApplicationController
 
   def user_params
     if current_user.class == User
-      params.require(:user).permit(:email, :instrument, :gender, :biography, :introduction, :phone, :password, :address, :first_name, :last_name, :avatar, :level_id, :type)
+      params.require(:user).permit(:email, :instrument, :gender, :biography, :introduction, :phone, :password, :address, :first_name, :last_name, :avatar, :level_id, :type, :wallPaper)
     elsif current_user.class == Student
-      params.require(:student).permit(:email, :instrument, :gender, :biography, :introduction, :phone, :password, :address, :first_name, :last_name, :avatar, :level_id, :type)
+      params.require(:student).permit(:email, :instrument, :gender, :biography, :introduction, :phone, :password, :address, :first_name, :last_name, :avatar, :level_id, :type, :wallPaper)
     elsif current_user.class == Teacher
       params.require(:teacher).permit(:email, :instrument, :gender, :biography, :introduction, :phone, :password, :address, :first_name, :last_name, :avatar, :level_id, :type)
     elsif current_user.class == Admin

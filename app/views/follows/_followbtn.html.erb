@@ -1,5 +1,5 @@
 <% if @user.in?(current_user.followings) %>
-  <%= link_to("Unfollow", follow_path(@user), remote: true, method: :delete, class: "unfollow-btn btn btn-danger") %>
+  <%= link_to icon('fas', 'user-slash'), follow_path(@user), remote: true, method: :delete, class: "unfollow-btn" %>
 <% elsif !@user.in?(current_user.followings) && @user != current_user%>
-  <%= link_to("Follow", follows_path(followed: @user), remote: true, method: :post, class: "unfollow-btn btn btn-success") %>
+  <%= link_to icon('fas', 'user'), follows_path(followed: @user), remote: true, method: :post, class: "follow-btn" %>
 <% end %>
